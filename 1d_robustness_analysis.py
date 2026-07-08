@@ -12,14 +12,22 @@
 #   $env:ROBUSTNESS_N_SIMULATIONS='2'
 #   $env:ROBUSTNESS_SIGMAS='0.5'
 #   $env:ROBUSTNESS_INCLUDE_SARIMA='0'
+#   $env:ROBUSTNESS_MAX_WORKERS='2'
 
 from datetime import datetime
+from concurrent.futures import ProcessPoolExecutor, as_completed
 import json
 import math
 import os
 from pathlib import Path
 import shutil
 import warnings
+
+# Keep each worker from starting its own full BLAS/OpenMP thread pool.
+os.environ.setdefault("OMP_NUM_THREADS", "1")
+os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
+os.environ.setdefault("MKL_NUM_THREADS", "1")
+os.environ.setdefault("NUMEXPR_NUM_THREADS", "1")
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -45,6 +53,7 @@ PRIMARY_SIGMA = 0.5
 EXTRA_SIGMAS = [0.2, 1.0]
 INCLUDE_EXTRA_SIGMAS = False
 INCLUDE_SARIMA = True
+MAX_WORKERS = 24
 
 TEST_YEARS_COUNT = 10
 
@@ -96,6 +105,16 @@ def configured_include_sarima():
     if value is None:
         return INCLUDE_SARIMA
     return value.strip().lower() not in {"0", "false", "no", "off"}
+
+
+def configured_max_workers():
+    value = os.environ.get("ROBUSTNESS_MAX_WORKERS")
+    if value is None:
+        return MAX_WORKERS
+    parsed = int(value)
+    if parsed < 1:
+        raise ValueError("ROBUSTNESS_MAX_WORKERS must be positive.")
+    return parsed
 
 
 # ============================================================
@@ -327,10 +346,76 @@ def build_summary(metrics_df, n_simulations):
     return summary_df.sort_values(["Sigma", "RMSE_Mean"]).reset_index(drop=True)
 
 
+def run_single_simulation_task(task):
+    sigma = task["sigma"]
+    simulation = task["simulation"]
+    years = np.asarray(task["years"], dtype=int)
+    years_train = np.asarray(task["years_train"], dtype=int)
+    years_test = np.asarray(task["years_test"], dtype=int)
+    co2_train_true = np.asarray(task["co2_train_true"], dtype=float)
+    co2_test_true = np.asarray(task["co2_test_true"], dtype=float)
+    annual_noise = np.asarray(task["annual_noise"], dtype=float)
+    include_sarima = bool(task["include_sarima"])
+    monthly_df = task["monthly_df"]
+
+    annual_noise_by_year = {
+        int(year): float(noise)
+        for year, noise in zip(years, annual_noise)
+    }
+    co2_train_perturbed = co2_train_true + annual_noise[:len(years_train)]
+
+    model_rows = run_annual_models(
+        years_train=years_train,
+        co2_train_perturbed=co2_train_perturbed,
+        years_test=years_test,
+        co2_test_true=co2_test_true,
+    )
+
+    if include_sarima:
+        try:
+            model_rows.append(
+                fit_sarima_and_forecast(
+                    monthly_df=monthly_df,
+                    annual_noise_by_year=annual_noise_by_year,
+                    years_test=years_test,
+                    co2_test_true=co2_test_true,
+                )
+            )
+        except Exception as exc:
+            model_rows.append({
+                "Model": SARIMA_SPEC["name"],
+                "Model_Key": SARIMA_SPEC["key"],
+                "Model_Family": "monthly_sarima_annualized",
+                "RMSE": np.nan,
+                "MAE": np.nan,
+                "MAPE": np.nan,
+                "R2": np.nan,
+                "Status": f"failed: {type(exc).__name__}: {exc}",
+            })
+
+    rows = []
+    for row in model_rows:
+        rows.append({
+            "Sigma": sigma,
+            "Simulation": simulation,
+            **row,
+            "Perturbation_Std_ppm": sigma,
+            "Test_Comparison_Target": "original_true_test_data",
+        })
+    return rows
+
+
 def run_simulations():
     n_simulations = configured_n_simulations()
     sigmas = configured_sigmas()
     include_sarima = configured_include_sarima()
+    max_workers = configured_max_workers()
+
+    if include_sarima and SARIMAX is None:
+        raise RuntimeError(
+            "statsmodels is required when INCLUDE_SARIMA is True. "
+            "Install dependencies with: pip install -r requirements.txt"
+        )
 
     years, co2 = get_co2_data()
     test_start_index = len(years) - TEST_YEARS_COUNT
@@ -342,57 +427,64 @@ def run_simulations():
     monthly_df = get_monthly_co2_data(as_dataframe=True)
     rng = np.random.default_rng(RANDOM_SEED)
 
-    rows = []
+    tasks = []
     for sigma in sigmas:
-        print(f"Running robustness simulations for sigma={sigma} ppm, n={n_simulations}")
         for simulation in range(1, n_simulations + 1):
-            annual_noise = rng.normal(0.0, sigma, size=len(years))
-            annual_noise_by_year = {
-                int(year): float(noise)
-                for year, noise in zip(years, annual_noise)
+            tasks.append({
+                "sigma": sigma,
+                "simulation": simulation,
+                "annual_noise": rng.normal(0.0, sigma, size=len(years)),
+                "years": years,
+                "years_train": years_train,
+                "years_test": years_test,
+                "co2_train_true": co2_train_true,
+                "co2_test_true": co2_test_true,
+                "monthly_df": monthly_df,
+                "include_sarima": include_sarima,
+            })
+
+    rows = []
+    worker_count = min(max_workers, len(tasks))
+    print(
+        f"Running robustness simulations: sigmas={sigmas}, "
+        f"n={n_simulations}, tasks={len(tasks)}, workers={worker_count}, "
+        f"include_sarima={include_sarima}"
+    )
+
+    if worker_count == 1:
+        for index, task in enumerate(tasks, start=1):
+            rows.extend(run_single_simulation_task(task))
+            if index % 10 == 0 or index == len(tasks):
+                print(f"  completed {index}/{len(tasks)} tasks")
+    else:
+        completed = 0
+        with ProcessPoolExecutor(max_workers=worker_count) as executor:
+            future_to_task = {
+                executor.submit(run_single_simulation_task, task): task
+                for task in tasks
             }
-            co2_train_perturbed = co2_train_true + annual_noise[:test_start_index]
-
-            model_rows = run_annual_models(
-                years_train=years_train,
-                co2_train_perturbed=co2_train_perturbed,
-                years_test=years_test,
-                co2_test_true=co2_test_true,
-            )
-
-            if include_sarima:
+            for future in as_completed(future_to_task):
+                task = future_to_task[future]
                 try:
-                    model_rows.append(
-                        fit_sarima_and_forecast(
-                            monthly_df=monthly_df,
-                            annual_noise_by_year=annual_noise_by_year,
-                            years_test=years_test,
-                            co2_test_true=co2_test_true,
-                        )
-                    )
+                    rows.extend(future.result())
                 except Exception as exc:
-                    model_rows.append({
-                        "Model": SARIMA_SPEC["name"],
-                        "Model_Key": SARIMA_SPEC["key"],
-                        "Model_Family": "monthly_sarima_annualized",
+                    rows.append({
+                        "Sigma": task["sigma"],
+                        "Simulation": task["simulation"],
+                        "Model": "Simulation task",
+                        "Model_Key": "simulation_task",
+                        "Model_Family": "internal",
                         "RMSE": np.nan,
                         "MAE": np.nan,
                         "MAPE": np.nan,
                         "R2": np.nan,
                         "Status": f"failed: {type(exc).__name__}: {exc}",
+                        "Perturbation_Std_ppm": task["sigma"],
+                        "Test_Comparison_Target": "original_true_test_data",
                     })
-
-            for row in model_rows:
-                rows.append({
-                    "Sigma": sigma,
-                    "Simulation": simulation,
-                    **row,
-                    "Perturbation_Std_ppm": sigma,
-                    "Test_Comparison_Target": "original_true_test_data",
-                })
-
-            if simulation % 10 == 0 or simulation == n_simulations:
-                print(f"  completed {simulation}/{n_simulations}")
+                completed += 1
+                if completed % 10 == 0 or completed == len(tasks):
+                    print(f"  completed {completed}/{len(tasks)} tasks")
 
     metrics_df = pd.DataFrame(rows)
     metrics_df = add_rank_columns(metrics_df)
@@ -401,6 +493,8 @@ def run_simulations():
         "n_simulations": n_simulations,
         "sigmas": sigmas,
         "include_sarima": include_sarima,
+        "max_workers": max_workers,
+        "actual_workers": worker_count,
     }
 
 
