@@ -1,0 +1,28 @@
+{
+  "run_timestamp": "2026-07-08T14:34:09",
+  "script": "1d_quadratic_sarima_comparison.py",
+  "comparison_models": [
+    "Quadratic annual",
+    "SARIMA(1,1,1)(2,1,2,12)"
+  ],
+  "note": "SARIMA fitted values and forecasts are averaged by calendar year for direct comparison with the annual quadratic model.",
+  "input_files": {
+    "annual_summary": "annual_fit_outputs\\annual_model_summary.csv",
+    "quadratic_fitted": "annual_fit_outputs\\models\\quadratic\\quadratic_fitted_values.csv",
+    "quadratic_test_predictions": "annual_fit_outputs\\models\\quadratic\\quadratic_test_predictions.csv",
+    "sarima_summary": "SARIMA\u56fe\\SARIMA_model_summary.csv",
+    "sarima_fitted": "SARIMA\u56fe\\models\\SARIMA_1_1_1_2_1_2_12\\SARIMA_1_1_1_2_1_2_12_fitted_values.csv",
+    "sarima_test_forecasts": "SARIMA\u56fe\\models\\SARIMA_1_1_1_2_1_2_12\\SARIMA_1_1_1_2_1_2_12_test_forecasts.csv"
+  },
+  "output_files": [
+    "question_1d_outputs\\question_1d_quadratic_sarima_error_metrics_annualized.csv",
+    "question_1d_outputs\\question_1d_quadratic_sarima_error_metrics_source_summary.csv",
+    "question_1d_outputs\\question_1d_quadratic_sarima_fit_comparison_series.csv",
+    "question_1d_outputs\\question_1d_quadratic_sarima_test_residuals.csv",
+    "question_1d_outputs\\question_1d_quadratic_sarima_full_residuals.csv",
+    "question_1d_outputs\\question_1d_quadratic_sarima_error_metrics_bar.svg",
+    "question_1d_outputs\\question_1d_quadratic_sarima_fit_comparison_line.svg",
+    "question_1d_outputs\\question_1d_quadratic_sarima_test_residual_comparison_line.svg",
+    "question_1d_outputs\\question_1d_quadratic_sarima_full_residual_comparison_line.svg"
+  ]
+}

@@ -1,0 +1,17 @@
+﻿Model,Stage,Metric,Value,Source_Note
+Quadratic annual source summary,Train,RMSE,0.6732293883294775,directly read from original summary output
+Quadratic annual source summary,Train,MAE,0.558768948170235,directly read from original summary output
+Quadratic annual source summary,Train,MAPE,0.1627897427601485,directly read from original summary output
+Quadratic annual source summary,Train,R2,0.9991230340285666,directly read from original summary output
+Quadratic annual source summary,Test,RMSE,1.642923871989323,directly read from original summary output
+Quadratic annual source summary,Test,MAE,1.3984076718690577,directly read from original summary output
+Quadratic annual source summary,Test,MAPE,0.3415196455168228,directly read from original summary output
+Quadratic annual source summary,Test,R2,0.9480372933233594,directly read from original summary output
+SARIMA monthly source summary,Train,RMSE,1.976146430286232,directly read from original summary output
+SARIMA monthly source summary,Train,MAE,0.3372747005904703,directly read from original summary output
+SARIMA monthly source summary,Train,MAPE,0.0997795302509535,directly read from original summary output
+SARIMA monthly source summary,Train,R2,0.9923130137279026,directly read from original summary output
+SARIMA monthly source summary,Test,RMSE,1.5332241952481245,directly read from original summary output
+SARIMA monthly source summary,Test,MAE,1.299526240232892,directly read from original summary output
+SARIMA monthly source summary,Test,MAPE,0.3174782416440906,directly read from original summary output
+SARIMA monthly source summary,Test,R2,0.9575592034206348,directly read from original summary output

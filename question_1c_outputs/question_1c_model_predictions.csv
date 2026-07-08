@@ -1,0 +1,3 @@
+﻿Model,Model_Source,Prediction_2050_ppm,Prediction_2100_ppm,Reaches_685_by_2050,First_Integer_Year_Reaches_685,Estimated_Continuous_Year_Reaches_685,Test_RMSE,Selection_Note,Formula,First_Month_Reaches_685
+Quadratic,annual_full_data,496.8051140451303,688.3268217244595,False,2100,2099.256180269977,1.642923871989323,Annual quadratic model from annual_fit_outputs.,"CO2 = 0.0130376356 * t^2 + 0.8057026899 * t + 315.5215086996, where t = year - 1959",
+"SARIMA(1,1,1)(2,1,2,12)",sarima_full_data_annual_mean,501.2571925489096,704.4963887805399,False,2096,2096.0,1.5332241952481245,"Requested SARIMA(1,1,1)(2,1,2,12); monthly forecasts aggregated to annual means.","order=(1, 1, 1), seasonal_order=(2, 1, 2, 12), trend=c",2096-03

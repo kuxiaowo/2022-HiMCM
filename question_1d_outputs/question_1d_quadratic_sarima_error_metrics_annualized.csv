@@ -1,0 +1,25 @@
+﻿Model,Stage,Metric,Value,Source_Note
+Quadratic annual,Train,SSE,24.021603893455545,annual training fitted values
+Quadratic annual,Train,MSE,0.45323780931048196,annual training fitted values
+Quadratic annual,Train,RMSE,0.6732293883294772,annual training fitted values
+Quadratic annual,Train,MAE,0.5587689481702339,annual training fitted values
+Quadratic annual,Train,MAPE,0.16278974276014824,annual training fitted values
+Quadratic annual,Train,R2,0.9991230340285666,annual training fitted values
+Quadratic annual,Test,SSE,26.991988491524097,annual test forecasts
+Quadratic annual,Test,MSE,2.6991988491524097,annual test forecasts
+Quadratic annual,Test,RMSE,1.642923871989329,annual test forecasts
+Quadratic annual,Test,MAE,1.3984076718690575,annual test forecasts
+Quadratic annual,Test,MAPE,0.3415196455168227,annual test forecasts
+Quadratic annual,Test,R2,0.948037293323359,annual test forecasts
+SARIMA annualized,Train,SSE,15.40069123213562,monthly training fitted values averaged by year
+SARIMA annualized,Train,MSE,0.2961671390795311,monthly training fitted values averaged by year
+SARIMA annualized,Train,RMSE,0.544212402541077,monthly training fitted values averaged by year
+SARIMA annualized,Train,MAE,0.1394987462574842,monthly training fitted values averaged by year
+SARIMA annualized,Train,MAPE,0.04229206365747856,monthly training fitted values averaged by year
+SARIMA annualized,Train,R2,0.9994150077214444,monthly training fitted values averaged by year
+SARIMA annualized,Test,SSE,22.43329379506054,monthly test forecasts averaged by year
+SARIMA annualized,Test,MSE,2.243329379506054,monthly test forecasts averaged by year
+SARIMA annualized,Test,RMSE,1.4977748093441998,monthly test forecasts averaged by year
+SARIMA annualized,Test,MAE,1.282888106374429,monthly test forecasts averaged by year
+SARIMA annualized,Test,MAPE,0.31343838677443436,monthly test forecasts averaged by year
+SARIMA annualized,Test,R2,0.9566986644040378,monthly test forecasts averaged by year

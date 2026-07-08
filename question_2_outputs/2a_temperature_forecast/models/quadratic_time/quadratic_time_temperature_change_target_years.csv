@@ -1,0 +1,7 @@
+﻿Model,Model_Key,Fit_Stage,Reference_Year,Reference_Temperature_Change_From_1951_1980_C,Target_Additional_Change_From_Last_Observed_Year_C,Target_Temperature_Change_From_1951_1980_C,First_Year_Predicted_Additional_Change_At_Least_Target,Forecast_Additional_Change_At_First_Year_C,Forecast_Temperature_Change_From_1951_1980_At_First_Year_C
+Quadratic time trend,quadratic_time,full_data,2021,0.84,1.25,2.09,2055,1.27315315934066,2.11315315934066
+Quadratic time trend,quadratic_time,full_data,2021,0.84,1.5,2.34,2061,1.5152037337662345,2.3552037337662344
+Quadratic time trend,quadratic_time,full_data,2021,0.84,2.0,2.84,2073,2.0369547327672337,2.8769547327672336
+Quadratic time trend,quadratic_time,training_data,2021,0.84,1.25,2.09,2054,1.2756879828766614,2.1156879828766613
+Quadratic time trend,quadratic_time,training_data,2021,0.84,1.5,2.34,2060,1.5227019814566969,2.3627019814566967
+Quadratic time trend,quadratic_time,training_data,2021,0.84,2.0,2.84,2071,2.0095525585525564,2.8495525585525563

@@ -1,0 +1,263 @@
+{
+  "script": "1b_arima.py",
+  "run_timestamp": "2026-07-08T14:30:39",
+  "output_dir": "SARIMA\u56fe",
+  "config": {
+    "test_months_count": 120,
+    "data_end_date": "2021-12-01",
+    "use_deseasonalized": false,
+    "show_figures": false,
+    "model_count": null,
+    "configured_model_count": 5,
+    "active_model_count": 5,
+    "configured_candidate_models": [
+      {
+        "name": "SARIMA(1,1,1)(1,1,1,12)",
+        "order": [
+          1,
+          1,
+          1
+        ],
+        "seasonal_order": [
+          1,
+          1,
+          1,
+          12
+        ],
+        "trend": "c"
+      },
+      {
+        "name": "SARIMA(1,2,1)(1,1,1,12)",
+        "order": [
+          1,
+          2,
+          1
+        ],
+        "seasonal_order": [
+          1,
+          1,
+          1,
+          12
+        ],
+        "trend": "c"
+      },
+      {
+        "name": "SARIMA(2,1,1)(1,1,1,12)",
+        "order": [
+          2,
+          1,
+          1
+        ],
+        "seasonal_order": [
+          1,
+          1,
+          1,
+          12
+        ],
+        "trend": "c"
+      },
+      {
+        "name": "SARIMA(1,1,1)(2,1,2,12)",
+        "order": [
+          1,
+          1,
+          1
+        ],
+        "seasonal_order": [
+          2,
+          1,
+          2,
+          12
+        ],
+        "trend": "c"
+      },
+      {
+        "name": "SARIMA(1,1,1)(5,1,5,12)",
+        "order": [
+          1,
+          1,
+          1
+        ],
+        "seasonal_order": [
+          5,
+          1,
+          5,
+          12
+        ],
+        "trend": "c"
+      }
+    ],
+    "active_models": [
+      {
+        "name": "SARIMA(1,1,1)(1,1,1,12)",
+        "order": [
+          1,
+          1,
+          1
+        ],
+        "seasonal_order": [
+          1,
+          1,
+          1,
+          12
+        ],
+        "trend": "c"
+      },
+      {
+        "name": "SARIMA(1,2,1)(1,1,1,12)",
+        "order": [
+          1,
+          2,
+          1
+        ],
+        "seasonal_order": [
+          1,
+          1,
+          1,
+          12
+        ],
+        "trend": "c"
+      },
+      {
+        "name": "SARIMA(2,1,1)(1,1,1,12)",
+        "order": [
+          2,
+          1,
+          1
+        ],
+        "seasonal_order": [
+          1,
+          1,
+          1,
+          12
+        ],
+        "trend": "c"
+      },
+      {
+        "name": "SARIMA(1,1,1)(2,1,2,12)",
+        "order": [
+          1,
+          1,
+          1
+        ],
+        "seasonal_order": [
+          2,
+          1,
+          2,
+          12
+        ],
+        "trend": "c"
+      },
+      {
+        "name": "SARIMA(1,1,1)(5,1,5,12)",
+        "order": [
+          1,
+          1,
+          1
+        ],
+        "seasonal_order": [
+          5,
+          1,
+          5,
+          12
+        ],
+        "trend": "c"
+      }
+    ]
+  },
+  "data": {
+    "script": "1b_arima.py",
+    "run_timestamp": "2026-07-08T14:30:39",
+    "output_dir": "SARIMA\u56fe",
+    "data_used": "average",
+    "use_deseasonalized": false,
+    "data_end_date": "2021-12-01",
+    "full_data_period": {
+      "start": "1958-03",
+      "end": "2021-12",
+      "observations": 766
+    },
+    "training_period": {
+      "start": "1958-03",
+      "end": "2011-12",
+      "observations": 646
+    },
+    "test_period": {
+      "start": "2012-01",
+      "end": "2021-12",
+      "observations": 120
+    }
+  },
+  "best_models": {
+    "best_by_test_rmse": {
+      "model": "SARIMA(1,1,1)(5,1,5,12)",
+      "test_rmse": 1.3729533423343852
+    },
+    "best_by_full_data_aic": {
+      "model": "SARIMA(1,1,1)(5,1,5,12)",
+      "full_aic": 346.39831644489345
+    },
+    "best_by_full_data_bic": {
+      "model": "SARIMA(1,1,1)(1,1,1,12)",
+      "full_bic": 395.17902638982065
+    }
+  },
+  "output_files": [
+    "SARIMA_AIC_BIC_comparison.svg",
+    "SARIMA_console_output.txt",
+    "SARIMA_fitted_values.csv",
+    "SARIMA_model_parameters.csv",
+    "SARIMA_model_summary.csv",
+    "SARIMA_results.json",
+    "SARIMA_run_manifest.json",
+    "SARIMA_test_error_comparison.svg",
+    "SARIMA_test_forecasts.csv",
+    "SARIMA_test_residual_comparison.svg",
+    "SARIMA_train_error_comparison.svg",
+    "models\\SARIMA_1_1_1_1_1_1_12\\SARIMA_1_1_1_1_1_1_12_fit_forecast.svg",
+    "models\\SARIMA_1_1_1_1_1_1_12\\SARIMA_1_1_1_1_1_1_12_fitted_values.csv",
+    "models\\SARIMA_1_1_1_1_1_1_12\\SARIMA_1_1_1_1_1_1_12_full_data_residuals_over_time.svg",
+    "models\\SARIMA_1_1_1_1_1_1_12\\SARIMA_1_1_1_1_1_1_12_model_parameters.csv",
+    "models\\SARIMA_1_1_1_1_1_1_12\\SARIMA_1_1_1_1_1_1_12_results.json",
+    "models\\SARIMA_1_1_1_1_1_1_12\\SARIMA_1_1_1_1_1_1_12_test_forecast.svg",
+    "models\\SARIMA_1_1_1_1_1_1_12\\SARIMA_1_1_1_1_1_1_12_test_forecasts.csv",
+    "models\\SARIMA_1_1_1_1_1_1_12\\SARIMA_1_1_1_1_1_1_12_test_residuals_over_time.svg",
+    "models\\SARIMA_1_1_1_1_1_1_12\\SARIMA_1_1_1_1_1_1_12_training_data_residuals_over_time.svg",
+    "models\\SARIMA_1_1_1_2_1_2_12\\SARIMA_1_1_1_2_1_2_12_fit_forecast.svg",
+    "models\\SARIMA_1_1_1_2_1_2_12\\SARIMA_1_1_1_2_1_2_12_fitted_values.csv",
+    "models\\SARIMA_1_1_1_2_1_2_12\\SARIMA_1_1_1_2_1_2_12_full_data_residuals_over_time.svg",
+    "models\\SARIMA_1_1_1_2_1_2_12\\SARIMA_1_1_1_2_1_2_12_model_parameters.csv",
+    "models\\SARIMA_1_1_1_2_1_2_12\\SARIMA_1_1_1_2_1_2_12_results.json",
+    "models\\SARIMA_1_1_1_2_1_2_12\\SARIMA_1_1_1_2_1_2_12_test_forecast.svg",
+    "models\\SARIMA_1_1_1_2_1_2_12\\SARIMA_1_1_1_2_1_2_12_test_forecasts.csv",
+    "models\\SARIMA_1_1_1_2_1_2_12\\SARIMA_1_1_1_2_1_2_12_test_residuals_over_time.svg",
+    "models\\SARIMA_1_1_1_2_1_2_12\\SARIMA_1_1_1_2_1_2_12_training_data_residuals_over_time.svg",
+    "models\\SARIMA_1_1_1_5_1_5_12\\SARIMA_1_1_1_5_1_5_12_fit_forecast.svg",
+    "models\\SARIMA_1_1_1_5_1_5_12\\SARIMA_1_1_1_5_1_5_12_fitted_values.csv",
+    "models\\SARIMA_1_1_1_5_1_5_12\\SARIMA_1_1_1_5_1_5_12_full_data_residuals_over_time.svg",
+    "models\\SARIMA_1_1_1_5_1_5_12\\SARIMA_1_1_1_5_1_5_12_model_parameters.csv",
+    "models\\SARIMA_1_1_1_5_1_5_12\\SARIMA_1_1_1_5_1_5_12_results.json",
+    "models\\SARIMA_1_1_1_5_1_5_12\\SARIMA_1_1_1_5_1_5_12_test_forecast.svg",
+    "models\\SARIMA_1_1_1_5_1_5_12\\SARIMA_1_1_1_5_1_5_12_test_forecasts.csv",
+    "models\\SARIMA_1_1_1_5_1_5_12\\SARIMA_1_1_1_5_1_5_12_test_residuals_over_time.svg",
+    "models\\SARIMA_1_1_1_5_1_5_12\\SARIMA_1_1_1_5_1_5_12_training_data_residuals_over_time.svg",
+    "models\\SARIMA_1_2_1_1_1_1_12\\SARIMA_1_2_1_1_1_1_12_fit_forecast.svg",
+    "models\\SARIMA_1_2_1_1_1_1_12\\SARIMA_1_2_1_1_1_1_12_fitted_values.csv",
+    "models\\SARIMA_1_2_1_1_1_1_12\\SARIMA_1_2_1_1_1_1_12_full_data_residuals_over_time.svg",
+    "models\\SARIMA_1_2_1_1_1_1_12\\SARIMA_1_2_1_1_1_1_12_model_parameters.csv",
+    "models\\SARIMA_1_2_1_1_1_1_12\\SARIMA_1_2_1_1_1_1_12_results.json",
+    "models\\SARIMA_1_2_1_1_1_1_12\\SARIMA_1_2_1_1_1_1_12_test_forecast.svg",
+    "models\\SARIMA_1_2_1_1_1_1_12\\SARIMA_1_2_1_1_1_1_12_test_forecasts.csv",
+    "models\\SARIMA_1_2_1_1_1_1_12\\SARIMA_1_2_1_1_1_1_12_test_residuals_over_time.svg",
+    "models\\SARIMA_1_2_1_1_1_1_12\\SARIMA_1_2_1_1_1_1_12_training_data_residuals_over_time.svg",
+    "models\\SARIMA_2_1_1_1_1_1_12\\SARIMA_2_1_1_1_1_1_12_fit_forecast.svg",
+    "models\\SARIMA_2_1_1_1_1_1_12\\SARIMA_2_1_1_1_1_1_12_fitted_values.csv",
+    "models\\SARIMA_2_1_1_1_1_1_12\\SARIMA_2_1_1_1_1_1_12_full_data_residuals_over_time.svg",
+    "models\\SARIMA_2_1_1_1_1_1_12\\SARIMA_2_1_1_1_1_1_12_model_parameters.csv",
+    "models\\SARIMA_2_1_1_1_1_1_12\\SARIMA_2_1_1_1_1_1_12_results.json",
+    "models\\SARIMA_2_1_1_1_1_1_12\\SARIMA_2_1_1_1_1_1_12_test_forecast.svg",
+    "models\\SARIMA_2_1_1_1_1_1_12\\SARIMA_2_1_1_1_1_1_12_test_forecasts.csv",
+    "models\\SARIMA_2_1_1_1_1_1_12\\SARIMA_2_1_1_1_1_1_12_test_residuals_over_time.svg",
+    "models\\SARIMA_2_1_1_1_1_1_12\\SARIMA_2_1_1_1_1_1_12_training_data_residuals_over_time.svg"
+  ]
+}

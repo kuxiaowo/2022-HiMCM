@@ -1,0 +1,230 @@
+================================================================================
+ANNUAL FITTING MODELS FOR CO2 DATA
+================================================================================
+Full data period: 1959 to 2021
+Full data observations: 63
+Training period: 1959 to 2011
+Test period: 2012 to 2021
+Test observations: 10 years
+Number of candidate models: 4
+
+================================================================================
+QUADRATIC MODEL
+================================================================================
+Model type: polynomial
+Polynomial degree: 2
+Parameter count: 3
+
+Full-data model
+-----------------------------------
+CO2 = 0.0130376356 * t^2 + 0.8057026899 * t + 315.5215086996, where t = year - 1959
+Full-data in-sample error:
+SSE          = 32.6638
+MSE          = 0.5185
+RMSE         = 0.7201 ppm
+MAE          = 0.6136 ppm
+MAPE         = 0.1721%
+R^2          = 0.9994
+Adjusted R^2 = 0.9994
+
+Training-only model
+-----------------------------------
+CO2 = 0.0118480675 * t^2 + 0.8605405502 * t + 315.1360910997, where t = year - 1959
+Training-only in-sample error:
+SSE          = 24.0216
+MSE          = 0.4532
+RMSE         = 0.6732 ppm
+MAE          = 0.5588 ppm
+MAPE         = 0.1628%
+R^2          = 0.9991
+Adjusted R^2 = 0.9991
+
+Training-only model on test data:
+SSE          = 26.9920
+MSE          = 2.6992
+RMSE         = 1.6429 ppm
+MAE          = 1.3984 ppm
+MAPE         = 0.3415%
+R^2          = 0.9480
+Adjusted R^2 = 0.9332
+
+================================================================================
+CUBIC MODEL
+================================================================================
+Model type: polynomial
+Polynomial degree: 3
+Parameter count: 4
+
+Full-data model
+-----------------------------------
+CO2 = 0.0000412428 * t^3 + 0.0092020541 * t^2 + 0.9000662444 * t + 315.0535677517, where t = year - 1959
+Full-data in-sample error:
+SSE          = 30.2794
+MSE          = 0.4806
+RMSE         = 0.6933 ppm
+MAE          = 0.5821 ppm
+MAPE         = 0.1661%
+R^2          = 0.9995
+Adjusted R^2 = 0.9994
+
+Training-only model
+-----------------------------------
+CO2 = -0.0000635258 * t^3 + 0.0168030782 * t^2 + 0.7584546245 * t + 315.5572670097, where t = year - 1959
+Training-only in-sample error:
+SSE          = 22.3370
+MSE          = 0.4215
+RMSE         = 0.6492 ppm
+MAE          = 0.5420 ppm
+MAPE         = 0.1559%
+R^2          = 0.9992
+Adjusted R^2 = 0.9991
+
+Training-only model on test data:
+SSE          = 84.3934
+MSE          = 8.4393
+RMSE         = 2.9051 ppm
+MAE          = 2.5910 ppm
+MAPE         = 0.6338%
+R^2          = 0.8375
+Adjusted R^2 = 0.7563
+
+================================================================================
+QUARTIC MODEL
+================================================================================
+Model type: polynomial
+Polynomial degree: 4
+Parameter count: 5
+
+Full-data model
+-----------------------------------
+CO2 = 0.0000061294 * t^4 + -0.0007188051 * t^3 + 0.0393369032 * t^2 + 0.4925176942 * t + 316.2258873724, where t = year - 1959
+Full-data in-sample error:
+SSE          = 17.0610
+MSE          = 0.2708
+RMSE         = 0.5204 ppm
+MAE          = 0.4062 ppm
+MAPE         = 0.1142%
+R^2          = 0.9997
+Adjusted R^2 = 0.9997
+
+Training-only model
+-----------------------------------
+CO2 = 0.0000107700 * t^4 + -0.0011836054 * t^3 + 0.0540134166 * t^2 + 0.3378647148 * t + 316.5569381000, where t = year - 1959
+Training-only in-sample error:
+SSE          = 13.7502
+MSE          = 0.2594
+RMSE         = 0.5094 ppm
+MAE          = 0.4124 ppm
+MAPE         = 0.1176%
+R^2          = 0.9995
+Adjusted R^2 = 0.9995
+
+Training-only model on test data:
+SSE          = 87.7926
+MSE          = 8.7793
+RMSE         = 2.9630 ppm
+MAE          = 2.5206 ppm
+MAPE         = 0.6158%
+R^2          = 0.8310
+Adjusted R^2 = 0.6958
+
+================================================================================
+EXPONENTIAL MODEL
+================================================================================
+Model type: exponential
+Parameter count: 2
+
+Full-data model
+-----------------------------------
+CO2 = 309.8386869760 * exp(0.0044917135 * t), where t = year - 1959
+Full-data in-sample error:
+SSE          = 525.4018
+MSE          = 8.3397
+RMSE         = 2.8879 ppm
+MAE          = 2.3633 ppm
+MAPE         = 0.6594%
+R^2          = 0.9905
+Adjusted R^2 = 0.9903
+
+Training-only model
+-----------------------------------
+CO2 = 311.4110698139 * exp(0.0042236571 * t), where t = year - 1959
+Training-only in-sample error:
+SSE          = 202.2058
+MSE          = 3.8152
+RMSE         = 1.9533 ppm
+MAE          = 1.6122 ppm
+MAPE         = 0.4648%
+R^2          = 0.9926
+Adjusted R^2 = 0.9925
+
+Training-only model on test data:
+SSE          = 736.8995
+MSE          = 73.6900
+RMSE         = 8.5843 ppm
+MAE          = 8.2418 ppm
+MAPE         = 2.0237%
+R^2          = -0.4186
+Adjusted R^2 = -0.5959
+
+================================================================================
+SUMMARY SORTED BY TEST RMSE
+================================================================================
+      Model   Model_Key  Model_Type  Polynomial_Degree  Parameter_Count                                                                                                                   Full_Formula                                                                                                                  Train_Formula   Full_SSE  Full_MSE  Full_RMSE  Full_MAE  Full_MAPE  Full_R2  Full_Adjusted_R2  Train_SSE  Train_MSE  Train_RMSE  Train_MAE  Train_MAPE  Train_R2  Train_Adjusted_R2   Test_SSE  Test_MSE  Test_RMSE  Test_MAE  Test_MAPE   Test_R2  Test_Adjusted_R2
+  Quadratic   quadratic  polynomial                2.0                3                                            CO2 = 0.0130376356 * t^2 + 0.8057026899 * t + 315.5215086996, where t = year - 1959                                            CO2 = 0.0118480675 * t^2 + 0.8605405502 * t + 315.1360910997, where t = year - 1959  32.663825  0.518473   0.720051  0.613639   0.172122 0.999409          0.999389  24.021604   0.453238    0.673229   0.558769    0.162790  0.999123           0.999088  26.991988  2.699199   1.642924  1.398408   0.341520  0.948037          0.933191
+      Cubic       cubic  polynomial                3.0                4                       CO2 = 0.0000412428 * t^3 + 0.0092020541 * t^2 + 0.9000662444 * t + 315.0535677517, where t = year - 1959                      CO2 = -0.0000635258 * t^3 + 0.0168030782 * t^2 + 0.7584546245 * t + 315.5572670097, where t = year - 1959  30.279370  0.480625   0.693271  0.582056   0.166146 0.999452          0.999424  22.336969   0.421452    0.649194   0.542039    0.155903  0.999185           0.999135  84.393390  8.439339   2.905054  2.591041   0.633827  0.837533          0.756299
+    Quartic     quartic  polynomial                4.0                5 CO2 = 0.0000061294 * t^4 + -0.0007188051 * t^3 + 0.0393369032 * t^2 + 0.4925176942 * t + 316.2258873724, where t = year - 1959 CO2 = 0.0000107700 * t^4 + -0.0011836054 * t^3 + 0.0540134166 * t^2 + 0.3378647148 * t + 316.5569381000, where t = year - 1959  17.061015  0.270810   0.520394  0.406172   0.114185 0.999691          0.999670  13.750248   0.259439    0.509351   0.412416    0.117644  0.999498           0.999456  87.792612  8.779261   2.962982  2.520581   0.615756  0.830989          0.695780
+Exponential exponential exponential                NaN                2                                                            CO2 = 309.8386869760 * exp(0.0044917135 * t), where t = year - 1959                                                            CO2 = 311.4110698139 * exp(0.0042236571 * t), where t = year - 1959 525.401782  8.339711   2.887856  2.363305   0.659443 0.990488          0.990333 202.205831   3.815204    1.953255   1.612249    0.464836  0.992618           0.992473 736.899506 73.689951   8.584285  8.241773   2.023703 -0.418617         -0.595944
+
+================================================================================
+BEST MODEL INDICATORS
+================================================================================
+Best by test RMSE: Quadratic
+
+Saved result files:
+  annual_fit_outputs\annual_console_output.txt
+  annual_fit_outputs\annual_fitted_values.csv
+  annual_fit_outputs\annual_model_parameters.csv
+  annual_fit_outputs\annual_model_summary.csv
+  annual_fit_outputs\annual_results.json
+  annual_fit_outputs\annual_run_manifest.json
+  annual_fit_outputs\annual_test_error_comparison.svg
+  annual_fit_outputs\annual_test_predictions.csv
+  annual_fit_outputs\annual_test_residual_comparison.svg
+  annual_fit_outputs\annual_train_error_comparison.svg
+  annual_fit_outputs\models\cubic\cubic_fit_forecast.svg
+  annual_fit_outputs\models\cubic\cubic_fitted_values.csv
+  annual_fit_outputs\models\cubic\cubic_full_data_residuals_over_time.svg
+  annual_fit_outputs\models\cubic\cubic_model_parameters.csv
+  annual_fit_outputs\models\cubic\cubic_results.json
+  annual_fit_outputs\models\cubic\cubic_test_forecast.svg
+  annual_fit_outputs\models\cubic\cubic_test_predictions.csv
+  annual_fit_outputs\models\cubic\cubic_test_residuals_over_time.svg
+  annual_fit_outputs\models\cubic\cubic_training_data_residuals_over_time.svg
+  annual_fit_outputs\models\exponential\exponential_fit_forecast.svg
+  annual_fit_outputs\models\exponential\exponential_fitted_values.csv
+  annual_fit_outputs\models\exponential\exponential_full_data_residuals_over_time.svg
+  annual_fit_outputs\models\exponential\exponential_model_parameters.csv
+  annual_fit_outputs\models\exponential\exponential_results.json
+  annual_fit_outputs\models\exponential\exponential_test_forecast.svg
+  annual_fit_outputs\models\exponential\exponential_test_predictions.csv
+  annual_fit_outputs\models\exponential\exponential_test_residuals_over_time.svg
+  annual_fit_outputs\models\exponential\exponential_training_data_residuals_over_time.svg
+  annual_fit_outputs\models\quadratic\quadratic_fit_forecast.svg
+  annual_fit_outputs\models\quadratic\quadratic_fitted_values.csv
+  annual_fit_outputs\models\quadratic\quadratic_full_data_residuals_over_time.svg
+  annual_fit_outputs\models\quadratic\quadratic_model_parameters.csv
+  annual_fit_outputs\models\quadratic\quadratic_results.json
+  annual_fit_outputs\models\quadratic\quadratic_test_forecast.svg
+  annual_fit_outputs\models\quadratic\quadratic_test_predictions.csv
+  annual_fit_outputs\models\quadratic\quadratic_test_residuals_over_time.svg
+  annual_fit_outputs\models\quadratic\quadratic_training_data_residuals_over_time.svg
+  annual_fit_outputs\models\quartic\quartic_fit_forecast.svg
+  annual_fit_outputs\models\quartic\quartic_fitted_values.csv
+  annual_fit_outputs\models\quartic\quartic_full_data_residuals_over_time.svg
+  annual_fit_outputs\models\quartic\quartic_model_parameters.csv
+  annual_fit_outputs\models\quartic\quartic_results.json
+  annual_fit_outputs\models\quartic\quartic_test_forecast.svg
+  annual_fit_outputs\models\quartic\quartic_test_predictions.csv
+  annual_fit_outputs\models\quartic\quartic_test_residuals_over_time.svg
+  annual_fit_outputs\models\quartic\quartic_training_data_residuals_over_time.svg

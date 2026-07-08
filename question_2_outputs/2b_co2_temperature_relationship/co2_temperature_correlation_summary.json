@@ -1,0 +1,8 @@
+{
+  "Aligned_Period": "1959-2021",
+  "Observations": 63,
+  "Pearson_R_CO2_Temp": 0.961318248780683,
+  "Spearman_R_CO2_Temp": 0.948970686189994,
+  "Pearson_R_Year_Temp": 0.9477123036837343,
+  "Pearson_R_Year_CO2": 0.9911930941405609
+}

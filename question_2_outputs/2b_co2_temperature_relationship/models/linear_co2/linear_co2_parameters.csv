@@ -1,0 +1,3 @@
+﻿Model,Model_Key,Fit_Stage,Formula,Parameters_JSON,Parameter_Count
+Linear CO2,linear_co2,full_data,Temperature change from 1951-1980 base period = a * CO2 + b,"{""a"": 0.010476572976201732, ""b"": -3.3925725096719934}",2
+Linear CO2,linear_co2,training_data,Temperature change from 1951-1980 base period = a * CO2 + b,"{""a"": 0.010408000127446873, ""b"": -3.3689842662755045}",2

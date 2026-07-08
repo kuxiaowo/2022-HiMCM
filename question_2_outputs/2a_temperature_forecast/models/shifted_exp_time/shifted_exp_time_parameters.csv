@@ -1,0 +1,3 @@
+﻿Model,Model_Key,Model_Type,Fit_Stage,Formula,Parameters_JSON,Parameter_Count,Fit_Start_Year,Fit_End_Year
+Shifted exponential time trend,shifted_exp_time,shifted_exp_time,full_data,"Temperature change from 1951-1980 base period = A * exp(B * t) - shift, t = year - 1958","{""A"": 0.22959534724755923, ""B"": 0.028219364090525802, ""shift"": 0.30000000000000004}",3,1958,2021
+Shifted exponential time trend,shifted_exp_time,shifted_exp_time,training_data,"Temperature change from 1951-1980 base period = A * exp(B * t) - shift, t = year - 1958","{""A"": 0.22522888739489394, ""B"": 0.029233914287636487, ""shift"": 0.30000000000000004}",3,1958,2011

@@ -1,0 +1,395 @@
+================================================================================
+SARIMA MODELING FOR MONTHLY CO2 DATA
+================================================================================
+Data used: average
+Full data period: 1958-03 to 2021-12
+Full data observations: 766
+Training period: 1958-03 to 2011-12
+Test period: 2012-01 to 2021-12
+Test observations: 120 months
+Configured candidate models: 5
+Active models to run: 5
+MODEL_COUNT setting: None
+Active model parameters:
+  1. SARIMA(1,1,1)(1,1,1,12) | order=(1, 1, 1) | seasonal_order=(1, 1, 1, 12) | trend=c
+  2. SARIMA(1,2,1)(1,1,1,12) | order=(1, 2, 1) | seasonal_order=(1, 1, 1, 12) | trend=c
+  3. SARIMA(2,1,1)(1,1,1,12) | order=(2, 1, 1) | seasonal_order=(1, 1, 1, 12) | trend=c
+  4. SARIMA(1,1,1)(2,1,2,12) | order=(1, 1, 1) | seasonal_order=(2, 1, 2, 12) | trend=c
+  5. SARIMA(1,1,1)(5,1,5,12) | order=(1, 1, 1) | seasonal_order=(5, 1, 5, 12) | trend=c
+
+================================================================================
+SARIMA(1,1,1)(1,1,1,12)
+================================================================================
+Order: (1, 1, 1)
+Seasonal order: (1, 1, 1, 12)
+Trend: c
+
+Full-data SARIMA model
+-----------------------------------
+Parameters:
+intercept    0.001830
+ar.L1        0.218132
+ma.L1       -0.584665
+ar.S.L12    -0.000559
+ma.S.L12    -0.881519
+sigma2       0.092943
+dtype: float64
+AIC = 367.5472
+BIC = 395.1790
+Full-data in-sample error:
+SSE  = 804.8097
+MSE  = 1.0688
+RMSE = 1.0338 ppm
+MAE  = 0.2799 ppm
+MAPE = 0.0800%
+R^2  = 0.9988
+
+Training-only SARIMA model
+-----------------------------------
+Parameters:
+intercept    0.001748
+ar.L1        0.207310
+ma.L1       -0.549655
+ar.S.L12    -0.000590
+ma.S.L12    -0.886652
+sigma2       0.088169
+dtype: float64
+AIC = 280.7216
+BIC = 307.2903
+
+Training-only in-sample error:
+SSE  = 717.4046
+MSE  = 1.1333
+RMSE = 1.0646 ppm
+MAE  = 0.2808 ppm
+MAPE = 0.0821%
+R^2  = 0.9978
+
+Training-only model on test data:
+SSE  = 267.9809
+MSE  = 2.2332
+RMSE = 1.4944 ppm
+MAE  = 1.2663 ppm
+MAPE = 0.3094%
+R^2  = 0.9597
+
+================================================================================
+SARIMA(1,2,1)(1,1,1,12)
+================================================================================
+Order: (1, 2, 1)
+Seasonal order: (1, 1, 1, 12)
+Trend: c
+
+Full-data SARIMA model
+-----------------------------------
+Parameters:
+intercept   -9.315183e-07
+ar.L1       -4.488721e-01
+ma.L1       -1.000994e+00
+ar.S.L12    -6.012280e-02
+ma.S.L12    -8.603891e-01
+sigma2       9.791393e-02
+dtype: float64
+AIC = 422.3066
+BIC = 449.9303
+Full-data in-sample error:
+SSE  = 3205.1777
+MSE  = 4.2622
+RMSE = 2.0645 ppm
+MAE  = 0.3280 ppm
+MAPE = 0.0947%
+R^2  = 0.9951
+
+Training-only SARIMA model
+-----------------------------------
+Parameters:
+intercept   -0.000004
+ar.L1       -0.513923
+ma.L1       -0.999641
+ar.S.L12    -0.113959
+ma.S.L12    -0.829459
+sigma2       0.096916
+dtype: float64
+AIC = 342.4013
+BIC = 368.9603
+
+Training-only in-sample error:
+SSE  = 4380.3365
+MSE  = 6.9309
+RMSE = 2.6327 ppm
+MAE  = 0.3554 ppm
+MAPE = 0.1053%
+R^2  = 0.9866
+
+Training-only model on test data:
+SSE  = 486.1287
+MSE  = 4.0511
+RMSE = 2.0127 ppm
+MAE  = 1.7014 ppm
+MAPE = 0.4154%
+R^2  = 0.9269
+
+================================================================================
+SARIMA(2,1,1)(1,1,1,12)
+================================================================================
+Order: (2, 1, 1)
+Seasonal order: (1, 1, 1, 12)
+Trend: c
+
+Full-data SARIMA model
+-----------------------------------
+Parameters:
+intercept    0.000328
+ar.L1        0.673069
+ar.L2        0.202366
+ma.L1       -0.998474
+ar.S.L12    -0.132864
+ma.S.L12    -0.588331
+sigma2       0.103368
+dtype: float64
+AIC = 445.4446
+BIC = 477.6817
+Full-data in-sample error:
+SSE  = 10416.2433
+MSE  = 13.8330
+RMSE = 3.7193 ppm
+MAE  = 0.4329 ppm
+MAPE = 0.1276%
+R^2  = 0.9842
+
+Training-only SARIMA model
+-----------------------------------
+Parameters:
+intercept    0.000879
+ar.L1        0.452840
+ar.L2        0.140676
+ma.L1       -1.239393
+ar.S.L12    -0.012339
+ma.S.L12    -0.895048
+sigma2       0.057009
+dtype: float64
+AIC = 281.5718
+BIC = 312.5685
+
+Training-only in-sample error:
+SSE  = 4291.4699
+MSE  = 6.7796
+RMSE = 2.6038 ppm
+MAE  = 0.3649 ppm
+MAPE = 0.1086%
+R^2  = 0.9869
+
+Training-only model on test data:
+SSE  = 287.9126
+MSE  = 2.3993
+RMSE = 1.5490 ppm
+MAE  = 1.3129 ppm
+MAPE = 0.3207%
+R^2  = 0.9567
+
+================================================================================
+SARIMA(1,1,1)(2,1,2,12)
+================================================================================
+Order: (1, 1, 1)
+Seasonal order: (2, 1, 2, 12)
+Trend: c
+
+Full-data SARIMA model
+-----------------------------------
+Parameters:
+intercept    0.002612
+ar.L1        0.218811
+ma.L1       -0.587850
+ar.S.L12    -0.361849
+ar.S.L24    -0.034328
+ma.S.L12    -0.519013
+ma.S.L24    -0.315313
+sigma2       0.093157
+dtype: float64
+AIC = 365.2142
+BIC = 401.9256
+Full-data in-sample error:
+SSE  = 2532.1012
+MSE  = 3.4125
+RMSE = 1.8473 ppm
+MAE  = 0.3260 ppm
+MAPE = 0.0944%
+R^2  = 0.9960
+
+Training-only SARIMA model
+-----------------------------------
+Parameters:
+intercept    0.002448
+ar.L1        0.197738
+ma.L1       -0.549659
+ar.S.L12    -0.360791
+ar.S.L24    -0.044778
+ma.S.L12    -0.532566
+ma.S.L24    -0.309964
+sigma2       0.088300
+dtype: float64
+AIC = 278.0984
+BIC = 313.3666
+
+Training-only in-sample error:
+SSE  = 2429.0062
+MSE  = 3.9052
+RMSE = 1.9761 ppm
+MAE  = 0.3373 ppm
+MAPE = 0.0998%
+R^2  = 0.9923
+
+Training-only model on test data:
+SSE  = 282.0932
+MSE  = 2.3508
+RMSE = 1.5332 ppm
+MAE  = 1.2995 ppm
+MAPE = 0.3175%
+R^2  = 0.9576
+
+================================================================================
+SARIMA(1,1,1)(5,1,5,12)
+================================================================================
+Order: (1, 1, 1)
+Seasonal order: (5, 1, 5, 12)
+Trend: c
+
+Full-data SARIMA model
+-----------------------------------
+Parameters:
+intercept    0.005864
+ar.L1        0.171259
+ma.L1       -0.535227
+ar.S.L12    -0.564210
+ar.S.L24    -0.799932
+ar.S.L36    -0.304195
+ar.S.L48    -0.017569
+ar.S.L60    -0.045064
+ma.S.L12    -0.297277
+ma.S.L24     0.312416
+ma.S.L36    -0.405319
+ma.S.L48    -0.276888
+ma.S.L60    -0.011456
+sigma2       0.090374
+dtype: float64
+AIC = 346.3983
+BIC = 409.9323
+Full-data in-sample error:
+SSE  = 105.6109
+MSE  = 0.1496
+RMSE = 0.3868 ppm
+MAE  = 0.2506 ppm
+MAPE = 0.0702%
+R^2  = 0.9998
+
+Training-only SARIMA model
+-----------------------------------
+Parameters:
+intercept    0.004819
+ar.L1        0.202768
+ma.L1       -0.532057
+ar.S.L12    -0.543733
+ar.S.L24    -0.759348
+ar.S.L36    -0.253977
+ar.S.L48    -0.011120
+ar.S.L60    -0.030464
+ma.S.L12    -0.334593
+ma.S.L24     0.278711
+ma.S.L36    -0.439849
+ma.S.L48    -0.237846
+ma.S.L60     0.008578
+sigma2       0.085199
+dtype: float64
+AIC = 259.9391
+BIC = 320.8025
+
+Training-only in-sample error:
+SSE  = 70.3540
+MSE  = 0.1201
+RMSE = 0.3465 ppm
+MAE  = 0.2428 ppm
+MAPE = 0.0697%
+R^2  = 0.9997
+
+Training-only model on test data:
+SSE  = 226.2001
+MSE  = 1.8850
+RMSE = 1.3730 ppm
+MAE  = 1.1638 ppm
+MAPE = 0.2844%
+R^2  = 0.9660
+
+================================================================================
+SUMMARY SORTED BY TEST RMSE
+================================================================================
+                  Model     Order Seasonal_Order Trend   Full_AIC   Full_BIC  Train_AIC  Train_BIC     Full_SSE  Full_MSE  Full_RMSE  Full_MAE  Full_MAPE  Full_R2   Train_SSE  Train_MSE  Train_RMSE  Train_MAE  Train_MAPE  Train_R2   Test_SSE  Test_MSE  Test_RMSE  Test_MAE  Test_MAPE  Test_R2
+SARIMA(1,1,1)(5,1,5,12) (1, 1, 1)  (5, 1, 5, 12)     c 346.398316 409.932274 259.939072 320.802521   105.610937  0.149591   0.386769  0.250600   0.070181 0.999818   70.354037   0.120058    0.346494   0.242816    0.069660  0.999747 226.200106  1.885001   1.372953  1.163786   0.284383 0.965968
+SARIMA(1,1,1)(1,1,1,12) (1, 1, 1)  (1, 1, 1, 12)     c 367.547239 395.179026 280.721620 307.290252   804.809699  1.068804   1.033830  0.279890   0.079982 0.998781  717.404598   1.133341    1.064585   0.280782    0.082136  0.997811 267.980933  2.233174   1.494381  1.266337   0.309384 0.959682
+SARIMA(1,1,1)(2,1,2,12) (1, 1, 1)  (2, 1, 2, 12)     c 365.214235 401.925647 278.098375 313.366606  2532.101178  3.412535   1.847305  0.326049   0.094370 0.996050 2429.006232   3.905155    1.976146   0.337275    0.099780  0.992313 282.093172  2.350776   1.533224  1.299526   0.317478 0.957559
+SARIMA(2,1,1)(1,1,1,12) (2, 1, 1)  (1, 1, 1, 12)     c 445.444610 477.681695 281.571751 312.568488 10416.243276 13.832992   3.719273  0.432940   0.127572 0.984224 4291.469881   6.779573    2.603761   0.364883    0.108632  0.986907 287.912643  2.399272   1.548958  1.312934   0.320748 0.956684
+SARIMA(1,2,1)(1,1,1,12) (1, 2, 1)  (1, 1, 1, 12)     c 422.306630 449.930293 342.401328 368.960259  3205.177668  4.262204   2.064511  0.327991   0.094718 0.995134 4380.336452   6.930912    2.632663   0.355450    0.105327  0.986597 486.128728  4.051073   2.012728  1.701412   0.415409 0.926862
+
+================================================================================
+BEST MODEL INDICATORS
+================================================================================
+Best by test RMSE: SARIMA(1,1,1)(5,1,5,12)
+Best by full-data AIC: SARIMA(1,1,1)(5,1,5,12)
+Best by full-data BIC: SARIMA(1,1,1)(1,1,1,12)
+
+Saved result files:
+  SARIMA图\SARIMA_AIC_BIC_comparison.svg
+  SARIMA图\SARIMA_console_output.txt
+  SARIMA图\SARIMA_fitted_values.csv
+  SARIMA图\SARIMA_model_parameters.csv
+  SARIMA图\SARIMA_model_summary.csv
+  SARIMA图\SARIMA_results.json
+  SARIMA图\SARIMA_run_manifest.json
+  SARIMA图\SARIMA_test_error_comparison.svg
+  SARIMA图\SARIMA_test_forecasts.csv
+  SARIMA图\SARIMA_test_residual_comparison.svg
+  SARIMA图\SARIMA_train_error_comparison.svg
+  SARIMA图\models\SARIMA_1_1_1_1_1_1_12\SARIMA_1_1_1_1_1_1_12_fit_forecast.svg
+  SARIMA图\models\SARIMA_1_1_1_1_1_1_12\SARIMA_1_1_1_1_1_1_12_fitted_values.csv
+  SARIMA图\models\SARIMA_1_1_1_1_1_1_12\SARIMA_1_1_1_1_1_1_12_full_data_residuals_over_time.svg
+  SARIMA图\models\SARIMA_1_1_1_1_1_1_12\SARIMA_1_1_1_1_1_1_12_model_parameters.csv
+  SARIMA图\models\SARIMA_1_1_1_1_1_1_12\SARIMA_1_1_1_1_1_1_12_results.json
+  SARIMA图\models\SARIMA_1_1_1_1_1_1_12\SARIMA_1_1_1_1_1_1_12_test_forecast.svg
+  SARIMA图\models\SARIMA_1_1_1_1_1_1_12\SARIMA_1_1_1_1_1_1_12_test_forecasts.csv
+  SARIMA图\models\SARIMA_1_1_1_1_1_1_12\SARIMA_1_1_1_1_1_1_12_test_residuals_over_time.svg
+  SARIMA图\models\SARIMA_1_1_1_1_1_1_12\SARIMA_1_1_1_1_1_1_12_training_data_residuals_over_time.svg
+  SARIMA图\models\SARIMA_1_1_1_2_1_2_12\SARIMA_1_1_1_2_1_2_12_fit_forecast.svg
+  SARIMA图\models\SARIMA_1_1_1_2_1_2_12\SARIMA_1_1_1_2_1_2_12_fitted_values.csv
+  SARIMA图\models\SARIMA_1_1_1_2_1_2_12\SARIMA_1_1_1_2_1_2_12_full_data_residuals_over_time.svg
+  SARIMA图\models\SARIMA_1_1_1_2_1_2_12\SARIMA_1_1_1_2_1_2_12_model_parameters.csv
+  SARIMA图\models\SARIMA_1_1_1_2_1_2_12\SARIMA_1_1_1_2_1_2_12_results.json
+  SARIMA图\models\SARIMA_1_1_1_2_1_2_12\SARIMA_1_1_1_2_1_2_12_test_forecast.svg
+  SARIMA图\models\SARIMA_1_1_1_2_1_2_12\SARIMA_1_1_1_2_1_2_12_test_forecasts.csv
+  SARIMA图\models\SARIMA_1_1_1_2_1_2_12\SARIMA_1_1_1_2_1_2_12_test_residuals_over_time.svg
+  SARIMA图\models\SARIMA_1_1_1_2_1_2_12\SARIMA_1_1_1_2_1_2_12_training_data_residuals_over_time.svg
+  SARIMA图\models\SARIMA_1_1_1_5_1_5_12\SARIMA_1_1_1_5_1_5_12_fit_forecast.svg
+  SARIMA图\models\SARIMA_1_1_1_5_1_5_12\SARIMA_1_1_1_5_1_5_12_fitted_values.csv
+  SARIMA图\models\SARIMA_1_1_1_5_1_5_12\SARIMA_1_1_1_5_1_5_12_full_data_residuals_over_time.svg
+  SARIMA图\models\SARIMA_1_1_1_5_1_5_12\SARIMA_1_1_1_5_1_5_12_model_parameters.csv
+  SARIMA图\models\SARIMA_1_1_1_5_1_5_12\SARIMA_1_1_1_5_1_5_12_results.json
+  SARIMA图\models\SARIMA_1_1_1_5_1_5_12\SARIMA_1_1_1_5_1_5_12_test_forecast.svg
+  SARIMA图\models\SARIMA_1_1_1_5_1_5_12\SARIMA_1_1_1_5_1_5_12_test_forecasts.csv
+  SARIMA图\models\SARIMA_1_1_1_5_1_5_12\SARIMA_1_1_1_5_1_5_12_test_residuals_over_time.svg
+  SARIMA图\models\SARIMA_1_1_1_5_1_5_12\SARIMA_1_1_1_5_1_5_12_training_data_residuals_over_time.svg
+  SARIMA图\models\SARIMA_1_2_1_1_1_1_12\SARIMA_1_2_1_1_1_1_12_fit_forecast.svg
+  SARIMA图\models\SARIMA_1_2_1_1_1_1_12\SARIMA_1_2_1_1_1_1_12_fitted_values.csv
+  SARIMA图\models\SARIMA_1_2_1_1_1_1_12\SARIMA_1_2_1_1_1_1_12_full_data_residuals_over_time.svg
+  SARIMA图\models\SARIMA_1_2_1_1_1_1_12\SARIMA_1_2_1_1_1_1_12_model_parameters.csv
+  SARIMA图\models\SARIMA_1_2_1_1_1_1_12\SARIMA_1_2_1_1_1_1_12_results.json
+  SARIMA图\models\SARIMA_1_2_1_1_1_1_12\SARIMA_1_2_1_1_1_1_12_test_forecast.svg
+  SARIMA图\models\SARIMA_1_2_1_1_1_1_12\SARIMA_1_2_1_1_1_1_12_test_forecasts.csv
+  SARIMA图\models\SARIMA_1_2_1_1_1_1_12\SARIMA_1_2_1_1_1_1_12_test_residuals_over_time.svg
+  SARIMA图\models\SARIMA_1_2_1_1_1_1_12\SARIMA_1_2_1_1_1_1_12_training_data_residuals_over_time.svg
+  SARIMA图\models\SARIMA_2_1_1_1_1_1_12\SARIMA_2_1_1_1_1_1_12_fit_forecast.svg
+  SARIMA图\models\SARIMA_2_1_1_1_1_1_12\SARIMA_2_1_1_1_1_1_12_fitted_values.csv
+  SARIMA图\models\SARIMA_2_1_1_1_1_1_12\SARIMA_2_1_1_1_1_1_12_full_data_residuals_over_time.svg
+  SARIMA图\models\SARIMA_2_1_1_1_1_1_12\SARIMA_2_1_1_1_1_1_12_model_parameters.csv
+  SARIMA图\models\SARIMA_2_1_1_1_1_1_12\SARIMA_2_1_1_1_1_1_12_results.json
+  SARIMA图\models\SARIMA_2_1_1_1_1_1_12\SARIMA_2_1_1_1_1_1_12_test_forecast.svg
+  SARIMA图\models\SARIMA_2_1_1_1_1_1_12\SARIMA_2_1_1_1_1_1_12_test_forecasts.csv
+  SARIMA图\models\SARIMA_2_1_1_1_1_1_12\SARIMA_2_1_1_1_1_1_12_test_residuals_over_time.svg
+  SARIMA图\models\SARIMA_2_1_1_1_1_1_12\SARIMA_2_1_1_1_1_1_12_training_data_residuals_over_time.svg

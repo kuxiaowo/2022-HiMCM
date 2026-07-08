@@ -1,0 +1,68 @@
+{
+  "settings": {
+    "annual_output_dir": "annual_fit_outputs",
+    "sarima_output_dir": "SARIMA\u56fe",
+    "fit_stage": "full_data",
+    "annual_model_key": "quadratic",
+    "sarima_order": [
+      1,
+      1,
+      1
+    ],
+    "sarima_seasonal_order": [
+      2,
+      1,
+      2,
+      12
+    ],
+    "sarima_trend": "c",
+    "sarima_model_name": "SARIMA(1,1,1)(2,1,2,12)",
+    "target_ppm": 685.0,
+    "prediction_years": [
+      2050,
+      2100
+    ],
+    "search_end_year": 2200,
+    "plot_end_year": 2100
+  },
+  "plots": {
+    "quadratic_forecast": "question_1c_outputs\\question_1c_quadratic_forecast_to_2100.svg",
+    "sarima_forecast": "question_1c_outputs\\question_1c_sarima_1_1_1_2_1_2_12_forecast_to_2100.svg",
+    "combined_forecast": "question_1c_outputs\\question_1c_quadratic_and_sarima_forecast_to_2100.svg"
+  },
+  "models": [
+    {
+      "Model": "Quadratic",
+      "Model_Source": "annual_full_data",
+      "Prediction_2050_ppm": 496.8051140451303,
+      "Prediction_2100_ppm": 688.3268217244595,
+      "Reaches_685_by_2050": false,
+      "First_Integer_Year_Reaches_685": 2100,
+      "Estimated_Continuous_Year_Reaches_685": 2099.256180269977,
+      "Test_RMSE": 1.642923871989323,
+      "Selection_Note": "Annual quadratic model from annual_fit_outputs.",
+      "Formula": "CO2 = 0.0130376356 * t^2 + 0.8057026899 * t + 315.5215086996, where t = year - 1959",
+      "First_Month_Reaches_685": null
+    },
+    {
+      "Model": "SARIMA(1,1,1)(2,1,2,12)",
+      "Model_Source": "sarima_full_data_annual_mean",
+      "Prediction_2050_ppm": 501.2571925489096,
+      "Prediction_2100_ppm": 704.4963887805399,
+      "Reaches_685_by_2050": false,
+      "First_Integer_Year_Reaches_685": 2096,
+      "Estimated_Continuous_Year_Reaches_685": 2096.0,
+      "Test_RMSE": 1.5332241952481245,
+      "Selection_Note": "Requested SARIMA(1,1,1)(2,1,2,12); monthly forecasts aggregated to annual means.",
+      "Formula": "order=(1, 1, 1), seasonal_order=(2, 1, 2, 12), trend=c",
+      "First_Month_Reaches_685": "2096-03"
+    }
+  ],
+  "conclusion": {
+    "models_reaching_685_by_2050": [],
+    "models_not_reaching_685_by_2050": [
+      "Quadratic",
+      "SARIMA(1,1,1)(2,1,2,12)"
+    ]
+  }
+}

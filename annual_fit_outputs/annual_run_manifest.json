@@ -1,0 +1,114 @@
+{
+  "script": "1b_annual_models.py",
+  "run_timestamp": "2026-07-08T14:23:11",
+  "output_dir": "annual_fit_outputs",
+  "config": {
+    "test_years_count": 10,
+    "show_figures": false,
+    "models": [
+      {
+        "name": "Quadratic",
+        "key": "quadratic",
+        "model_type": "polynomial",
+        "degree": 2,
+        "parameter_count": 3
+      },
+      {
+        "name": "Cubic",
+        "key": "cubic",
+        "model_type": "polynomial",
+        "degree": 3,
+        "parameter_count": 4
+      },
+      {
+        "name": "Quartic",
+        "key": "quartic",
+        "model_type": "polynomial",
+        "degree": 4,
+        "parameter_count": 5
+      },
+      {
+        "name": "Exponential",
+        "key": "exponential",
+        "model_type": "exponential",
+        "degree": null,
+        "parameter_count": 2
+      }
+    ]
+  },
+  "data": {
+    "script": "1b_annual_models.py",
+    "run_timestamp": "2026-07-08T14:23:11",
+    "output_dir": "annual_fit_outputs",
+    "data_period": {
+      "first_year": 1959,
+      "last_year": 2021,
+      "observations": 63
+    },
+    "training_period": {
+      "first_year": 1959,
+      "last_year": 2011,
+      "observations": 53
+    },
+    "test_period": {
+      "first_year": 2012,
+      "last_year": 2021,
+      "observations": 10
+    }
+  },
+  "best_models": {
+    "best_by_test_rmse": {
+      "model": "Quadratic",
+      "model_key": "quadratic",
+      "test_rmse": 1.6429238719893233
+    }
+  },
+  "output_files": [
+    "annual_console_output.txt",
+    "annual_fitted_values.csv",
+    "annual_model_parameters.csv",
+    "annual_model_summary.csv",
+    "annual_results.json",
+    "annual_run_manifest.json",
+    "annual_test_error_comparison.svg",
+    "annual_test_predictions.csv",
+    "annual_test_residual_comparison.svg",
+    "annual_train_error_comparison.svg",
+    "models\\cubic\\cubic_fit_forecast.svg",
+    "models\\cubic\\cubic_fitted_values.csv",
+    "models\\cubic\\cubic_full_data_residuals_over_time.svg",
+    "models\\cubic\\cubic_model_parameters.csv",
+    "models\\cubic\\cubic_results.json",
+    "models\\cubic\\cubic_test_forecast.svg",
+    "models\\cubic\\cubic_test_predictions.csv",
+    "models\\cubic\\cubic_test_residuals_over_time.svg",
+    "models\\cubic\\cubic_training_data_residuals_over_time.svg",
+    "models\\exponential\\exponential_fit_forecast.svg",
+    "models\\exponential\\exponential_fitted_values.csv",
+    "models\\exponential\\exponential_full_data_residuals_over_time.svg",
+    "models\\exponential\\exponential_model_parameters.csv",
+    "models\\exponential\\exponential_results.json",
+    "models\\exponential\\exponential_test_forecast.svg",
+    "models\\exponential\\exponential_test_predictions.csv",
+    "models\\exponential\\exponential_test_residuals_over_time.svg",
+    "models\\exponential\\exponential_training_data_residuals_over_time.svg",
+    "models\\quadratic\\quadratic_fit_forecast.svg",
+    "models\\quadratic\\quadratic_fitted_values.csv",
+    "models\\quadratic\\quadratic_full_data_residuals_over_time.svg",
+    "models\\quadratic\\quadratic_model_parameters.csv",
+    "models\\quadratic\\quadratic_results.json",
+    "models\\quadratic\\quadratic_test_forecast.svg",
+    "models\\quadratic\\quadratic_test_predictions.csv",
+    "models\\quadratic\\quadratic_test_residuals_over_time.svg",
+    "models\\quadratic\\quadratic_training_data_residuals_over_time.svg",
+    "models\\quartic\\quartic_fit_forecast.svg",
+    "models\\quartic\\quartic_fitted_values.csv",
+    "models\\quartic\\quartic_full_data_residuals_over_time.svg",
+    "models\\quartic\\quartic_model_parameters.csv",
+    "models\\quartic\\quartic_results.json",
+    "models\\quartic\\quartic_test_forecast.svg",
+    "models\\quartic\\quartic_test_predictions.csv",
+    "models\\quartic\\quartic_test_residuals_over_time.svg",
+    "models\\quartic\\quartic_training_data_residuals_over_time.svg"
+  ]
+}

@@ -1,0 +1,3 @@
+﻿Model,Model_Key,Fit_Stage,Formula,Parameters_JSON,Parameter_Count
+Radiative forcing proxy log2(CO2/280),log2_co2_280,full_data,Temperature change from 1951-1980 base period = a * log2(CO2 / 280) + b,"{""a"": 2.617406806898011, ""b"": -0.5570657664926902}",2
+Radiative forcing proxy log2(CO2/280),log2_co2_280,training_data,Temperature change from 1951-1980 base period = a * log2(CO2 / 280) + b,"{""a"": 2.5274508695079247, ""b"": -0.5320797820138249}",2

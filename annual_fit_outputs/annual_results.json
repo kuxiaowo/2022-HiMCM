@@ -1,0 +1,5822 @@
+{
+  "metadata": {
+    "script": "1b_annual_models.py",
+    "run_timestamp": "2026-07-08T14:23:11",
+    "output_dir": "annual_fit_outputs",
+    "data_period": {
+      "first_year": 1959,
+      "last_year": 2021,
+      "observations": 63
+    },
+    "training_period": {
+      "first_year": 1959,
+      "last_year": 2011,
+      "observations": 53
+    },
+    "test_period": {
+      "first_year": 2012,
+      "last_year": 2021,
+      "observations": 10
+    }
+  },
+  "models": [
+    {
+      "model": "Quadratic",
+      "model_key": "quadratic",
+      "model_type": "polynomial",
+      "polynomial_degree": 2,
+      "parameter_count": 3,
+      "full_data": {
+        "formula": "CO2 = 0.0130376356 * t^2 + 0.8057026899 * t + 315.5215086996, where t = year - 1959",
+        "coefficients": {
+          "a": 0.013037635619272262,
+          "b": 0.8057026899154177,
+          "c": 315.5215086996337
+        },
+        "metrics": {
+          "SSE": 32.663824526361616,
+          "MSE": 0.5184734051803431,
+          "RMSE": 0.7200509740152728,
+          "MAE": 0.6136391232131942,
+          "MAPE": 0.172121981966412,
+          "R2": 0.9994086751710017,
+          "Adjusted_R2": 0.9993889643433684
+        }
+      },
+      "training_data": {
+        "formula": "CO2 = 0.0118480675 * t^2 + 0.8605405502 * t + 315.1360910997, where t = year - 1959",
+        "coefficients": {
+          "a": 0.011848067458500228,
+          "b": 0.860540550213147,
+          "c": 315.136091099676
+        },
+        "metrics": {
+          "SSE": 24.021603893455566,
+          "MSE": 0.4532378093104824,
+          "RMSE": 0.6732293883294775,
+          "MAE": 0.558768948170235,
+          "MAPE": 0.1627897427601485,
+          "R2": 0.9991230340285666,
+          "Adjusted_R2": 0.9990879553897093
+        }
+      },
+      "test_data": {
+        "metrics": {
+          "SSE": 26.991988491523905,
+          "MSE": 2.6991988491523906,
+          "RMSE": 1.6429238719893233,
+          "MAE": 1.3984076718690575,
+          "MAPE": 0.34151964551682285,
+          "R2": 0.9480372933233594,
+          "Adjusted_R2": 0.9331908057014621
+        },
+        "predictions": [
+          {
+            "year": 2012,
+            "observed_co2": 394.06,
+            "forecast_co2": 394.0259617518999,
+            "error": 0.03403824810010292,
+            "absolute_error": 0.03403824810010292
+          },
+          {
+            "year": 2013,
+            "observed_co2": 396.74,
+            "forecast_co2": 396.1542455201726,
+            "error": 0.5857544798274148,
+            "absolute_error": 0.5857544798274148
+          },
+          {
+            "year": 2014,
+            "observed_co2": 398.81,
+            "forecast_co2": 398.30622542336226,
+            "error": 0.5037745766377384,
+            "absolute_error": 0.5037745766377384
+          },
+          {
+            "year": 2015,
+            "observed_co2": 401.01,
+            "forecast_co2": 400.48190146146896,
+            "error": 0.528098538531026,
+            "absolute_error": 0.528098538531026
+          },
+          {
+            "year": 2016,
+            "observed_co2": 404.41,
+            "forecast_co2": 402.6812736344926,
+            "error": 1.7287263655074412,
+            "absolute_error": 1.7287263655074412
+          },
+          {
+            "year": 2017,
+            "observed_co2": 406.76,
+            "forecast_co2": 404.9043419424333,
+            "error": 1.8556580575666999,
+            "absolute_error": 1.8556580575666999
+          },
+          {
+            "year": 2018,
+            "observed_co2": 408.72,
+            "forecast_co2": 407.151106385291,
+            "error": 1.5688936147090544,
+            "absolute_error": 1.5688936147090544
+          },
+          {
+            "year": 2019,
+            "observed_co2": 411.66,
+            "forecast_co2": 409.42156696306563,
+            "error": 2.2384330369343957,
+            "absolute_error": 2.2384330369343957
+          },
+          {
+            "year": 2020,
+            "observed_co2": 414.24,
+            "forecast_co2": 411.7157236757573,
+            "error": 2.5242763242426918,
+            "absolute_error": 2.5242763242426918
+          },
+          {
+            "year": 2021,
+            "observed_co2": 416.45,
+            "forecast_co2": 414.033576523366,
+            "error": 2.4164234766340087,
+            "absolute_error": 2.4164234766340087
+          }
+        ]
+      }
+    },
+    {
+      "model": "Cubic",
+      "model_key": "cubic",
+      "model_type": "polynomial",
+      "polynomial_degree": 3,
+      "parameter_count": 4,
+      "full_data": {
+        "formula": "CO2 = 0.0000412428 * t^3 + 0.0092020541 * t^2 + 0.9000662444 * t + 315.0535677517, where t = year - 1959",
+        "coefficients": {
+          "a": 4.124281226343708e-05,
+          "b": 0.009202054078772875,
+          "c": 0.9000662443741451,
+          "d": 315.0535677516929
+        },
+        "metrics": {
+          "SSE": 30.27936968563858,
+          "MSE": 0.4806249156450568,
+          "RMSE": 0.6932711703547587,
+          "MAE": 0.582056281985144,
+          "MAPE": 0.16614563253250877,
+          "R2": 0.9994518418047744,
+          "Adjusted_R2": 0.9994239693541698
+        }
+      },
+      "training_data": {
+        "formula": "CO2 = -0.0000635258 * t^3 + 0.0168030782 * t^2 + 0.7584546245 * t + 315.5572670097, where t = year - 1959",
+        "coefficients": {
+          "a": -6.352577828715011e-05,
+          "b": 0.01680307816489822,
+          "c": 0.758454624505682,
+          "d": 315.5572670097198
+        },
+        "metrics": {
+          "SSE": 22.33696886112078,
+          "MSE": 0.42145224266265624,
+          "RMSE": 0.6491935325175816,
+          "MAE": 0.5420393857533232,
+          "MAPE": 0.1559032642544948,
+          "R2": 0.9991845356503648,
+          "Adjusted_R2": 0.9991346092616116
+        }
+      },
+      "test_data": {
+        "metrics": {
+          "SSE": 84.39338992521265,
+          "MSE": 8.439338992521265,
+          "RMSE": 2.9050540429605203,
+          "MAE": 2.5910406334319305,
+          "MAPE": 0.6338272378792031,
+          "R2": 0.8375329417649882,
+          "Adjusted_R2": 0.7562994126474822
+        },
+        "predictions": [
+          {
+            "year": 2012,
+            "observed_co2": 394.06,
+            "forecast_co2": 393.49768137966396,
+            "error": 0.5623186203360433,
+            "absolute_error": 0.5623186203360433
+          },
+          {
+            "year": 2013,
+            "observed_co2": 396.74,
+            "forecast_co2": 395.50856950966204,
+            "error": 1.2314304903379707,
+            "absolute_error": 1.2314304903379707
+          },
+          {
+            "year": 2014,
+            "observed_co2": 398.81,
+            "forecast_co2": 397.53248144382485,
+            "error": 1.2775185561751528,
+            "absolute_error": 1.2775185561751528
+          },
+          {
+            "year": 2015,
+            "observed_co2": 401.01,
+            "forecast_co2": 399.56903602748264,
+            "error": 1.440963972517352,
+            "absolute_error": 1.440963972517352
+          },
+          {
+            "year": 2016,
+            "observed_co2": 404.41,
+            "forecast_co2": 401.61785210596577,
+            "error": 2.792147894034258,
+            "absolute_error": 2.792147894034258
+          },
+          {
+            "year": 2017,
+            "observed_co2": 406.76,
+            "forecast_co2": 403.67854852460454,
+            "error": 3.081451475395454,
+            "absolute_error": 3.081451475395454
+          },
+          {
+            "year": 2018,
+            "observed_co2": 408.72,
+            "forecast_co2": 405.75074412872914,
+            "error": 2.9692558712708887,
+            "absolute_error": 2.9692558712708887
+          },
+          {
+            "year": 2019,
+            "observed_co2": 411.66,
+            "forecast_co2": 407.8340577636699,
+            "error": 3.8259422363301496,
+            "absolute_error": 3.8259422363301496
+          },
+          {
+            "year": 2020,
+            "observed_co2": 414.24,
+            "forecast_co2": 409.92810827475705,
+            "error": 4.311891725242958,
+            "absolute_error": 4.311891725242958
+          },
+          {
+            "year": 2021,
+            "observed_co2": 416.45,
+            "forecast_co2": 412.0325145073209,
+            "error": 4.417485492679077,
+            "absolute_error": 4.417485492679077
+          }
+        ]
+      }
+    },
+    {
+      "model": "Quartic",
+      "model_key": "quartic",
+      "model_type": "polynomial",
+      "polynomial_degree": 4,
+      "parameter_count": 5,
+      "full_data": {
+        "formula": "CO2 = 0.0000061294 * t^4 + -0.0007188051 * t^3 + 0.0393369032 * t^2 + 0.4925176942 * t + 316.2258873724, where t = year - 1959",
+        "coefficients": {
+          "a": 6.129418674202447e-06,
+          "b": -0.0007188051033376766,
+          "c": 0.03933690317487044,
+          "d": 0.4925176942014454,
+          "e": 316.22588737237106
+        },
+        "metrics": {
+          "SSE": 17.061015345147613,
+          "MSE": 0.27080976738329543,
+          "RMSE": 0.5203938579415551,
+          "MAE": 0.40617163471176265,
+          "MAPE": 0.11418520627436239,
+          "R2": 0.999691138373176,
+          "Adjusted_R2": 0.9996698375713261
+        }
+      },
+      "training_data": {
+        "formula": "CO2 = 0.0000107700 * t^4 + -0.0011836054 * t^3 + 0.0540134166 * t^2 + 0.3378647148 * t + 316.5569381000, where t = year - 1959",
+        "coefficients": {
+          "a": 1.076999666286497e-05,
+          "b": -0.0011836054312250965,
+          "c": 0.05401341663509598,
+          "d": 0.33786471482749325,
+          "e": 316.5569380999668
+        },
+        "metrics": {
+          "SSE": 13.750247828157356,
+          "MSE": 0.25943863826711994,
+          "RMSE": 0.509351193448214,
+          "MAE": 0.41241639477694547,
+          "MAPE": 0.1176438208563326,
+          "R2": 0.999498014391647,
+          "Adjusted_R2": 0.9994561822576176
+        }
+      },
+      "test_data": {
+        "metrics": {
+          "SSE": 87.79261246410357,
+          "MSE": 8.779261246410357,
+          "RMSE": 2.9629818167532442,
+          "MAE": 2.5205807187080667,
+          "MAPE": 0.6157557628008815,
+          "R2": 0.8309890443499282,
+          "Adjusted_R2": 0.6957802798298707
+        },
+        "predictions": [
+          {
+            "year": 2012,
+            "observed_co2": 394.06,
+            "forecast_co2": 394.9562835677093,
+            "error": -0.896283567709304,
+            "absolute_error": 0.896283567709304
+          },
+          {
+            "year": 2013,
+            "observed_co2": 396.74,
+            "forecast_co2": 397.50739473031666,
+            "error": -0.7673947303166528,
+            "absolute_error": 0.7673947303166528
+          },
+          {
+            "year": 2014,
+            "observed_co2": 398.81,
+            "forecast_co2": 400.1599298296976,
+            "error": -1.3499298296976008,
+            "absolute_error": 1.3499298296976008
+          },
+          {
+            "year": 2015,
+            "observed_co2": 401.01,
+            "forecast_co2": 402.92087438889973,
+            "error": -1.9108743888997424,
+            "absolute_error": 1.9108743888997424
+          },
+          {
+            "year": 2016,
+            "observed_co2": 404.41,
+            "forecast_co2": 405.79747241089075,
+            "error": -1.387472410890723,
+            "absolute_error": 1.387472410890723
+          },
+          {
+            "year": 2017,
+            "observed_co2": 406.76,
+            "forecast_co2": 408.7972263785581,
+            "error": -2.0372263785581026,
+            "absolute_error": 2.0372263785581026
+          },
+          {
+            "year": 2018,
+            "observed_co2": 408.72,
+            "forecast_co2": 411.927897254709,
+            "error": -3.207897254708996,
+            "absolute_error": 3.207897254708996
+          },
+          {
+            "year": 2019,
+            "observed_co2": 411.66,
+            "forecast_co2": 415.1975044820711,
+            "error": -3.5375044820710855,
+            "absolute_error": 3.5375044820710855
+          },
+          {
+            "year": 2020,
+            "observed_co2": 414.24,
+            "forecast_co2": 418.6143259832914,
+            "error": -4.374325983291385,
+            "absolute_error": 4.374325983291385
+          },
+          {
+            "year": 2021,
+            "observed_co2": 416.45,
+            "forecast_co2": 422.18689816093706,
+            "error": -5.7368981609370735,
+            "absolute_error": 5.7368981609370735
+          }
+        ]
+      }
+    },
+    {
+      "model": "Exponential",
+      "model_key": "exponential",
+      "model_type": "exponential",
+      "polynomial_degree": null,
+      "parameter_count": 2,
+      "full_data": {
+        "formula": "CO2 = 309.8386869760 * exp(0.0044917135 * t), where t = year - 1959",
+        "coefficients": {
+          "A": 309.8386869760351,
+          "B": 0.004491713492551753,
+          "ln_A": 5.736051797449115
+        },
+        "metrics": {
+          "SSE": 525.4017817641426,
+          "MSE": 8.339710821653057,
+          "RMSE": 2.887855748068635,
+          "MAE": 2.363305369997411,
+          "MAPE": 0.6594426499898566,
+          "R2": 0.9904884647385267,
+          "Adjusted_R2": 0.9903325379309615
+        }
+      },
+      "training_data": {
+        "formula": "CO2 = 311.4110698139 * exp(0.0042236571 * t), where t = year - 1959",
+        "coefficients": {
+          "A": 311.4110698138718,
+          "B": 0.0042236571336438135,
+          "ln_A": 5.7411138073032975
+        },
+        "metrics": {
+          "SSE": 202.205831375626,
+          "MSE": 3.815204365577849,
+          "RMSE": 1.953254813273949,
+          "MAE": 1.6122492655695972,
+          "MAPE": 0.46483583443582344,
+          "R2": 0.9926179936140676,
+          "Adjusted_R2": 0.992473248390814
+        }
+      },
+      "test_data": {
+        "metrics": {
+          "SSE": 736.8995056471192,
+          "MSE": 73.68995056471192,
+          "RMSE": 8.58428509339665,
+          "MAE": 8.241772640185616,
+          "MAPE": 2.023703046487975,
+          "R2": -0.4186169675541713,
+          "Adjusted_R2": -0.5959440884984428
+        },
+        "predictions": [
+          {
+            "year": 2012,
+            "observed_co2": 394.06,
+            "forecast_co2": 389.54042054163773,
+            "error": 4.519579458362273,
+            "absolute_error": 4.519579458362273
+          },
+          {
+            "year": 2013,
+            "observed_co2": 396.74,
+            "forecast_co2": 391.1891851748898,
+            "error": 5.550814825110194,
+            "absolute_error": 5.550814825110194
+          },
+          {
+            "year": 2014,
+            "observed_co2": 398.81,
+            "forecast_co2": 392.8449283517602,
+            "error": 5.965071648239814,
+            "absolute_error": 5.965071648239814
+          },
+          {
+            "year": 2015,
+            "observed_co2": 401.01,
+            "forecast_co2": 394.5076796095583,
+            "error": 6.502320390441696,
+            "absolute_error": 6.502320390441696
+          },
+          {
+            "year": 2016,
+            "observed_co2": 404.41,
+            "forecast_co2": 396.1774686106129,
+            "error": 8.232531389387134,
+            "absolute_error": 8.232531389387134
+          },
+          {
+            "year": 2017,
+            "observed_co2": 406.76,
+            "forecast_co2": 397.8543251428008,
+            "error": 8.905674857199187,
+            "absolute_error": 8.905674857199187
+          },
+          {
+            "year": 2018,
+            "observed_co2": 408.72,
+            "forecast_co2": 399.5382791200793,
+            "error": 9.181720879920704,
+            "absolute_error": 9.181720879920704
+          },
+          {
+            "year": 2019,
+            "observed_co2": 411.66,
+            "forecast_co2": 401.2293605830187,
+            "error": 10.430639416981307,
+            "absolute_error": 10.430639416981307
+          },
+          {
+            "year": 2020,
+            "observed_co2": 414.24,
+            "forecast_co2": 402.9275996993389,
+            "error": 11.312400300661125,
+            "absolute_error": 11.312400300661125
+          },
+          {
+            "year": 2021,
+            "observed_co2": 416.45,
+            "forecast_co2": 404.63302676444727,
+            "error": 11.816973235552723,
+            "absolute_error": 11.816973235552723
+          }
+        ]
+      }
+    }
+  ],
+  "summary": [
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Model_Type": "polynomial",
+      "Polynomial_Degree": 2.0,
+      "Parameter_Count": 3,
+      "Full_Formula": "CO2 = 0.0130376356 * t^2 + 0.8057026899 * t + 315.5215086996, where t = year - 1959",
+      "Train_Formula": "CO2 = 0.0118480675 * t^2 + 0.8605405502 * t + 315.1360910997, where t = year - 1959",
+      "Full_SSE": 32.663824526361616,
+      "Full_MSE": 0.5184734051803431,
+      "Full_RMSE": 0.7200509740152728,
+      "Full_MAE": 0.6136391232131942,
+      "Full_MAPE": 0.172121981966412,
+      "Full_R2": 0.9994086751710017,
+      "Full_Adjusted_R2": 0.9993889643433684,
+      "Train_SSE": 24.021603893455566,
+      "Train_MSE": 0.4532378093104824,
+      "Train_RMSE": 0.6732293883294775,
+      "Train_MAE": 0.558768948170235,
+      "Train_MAPE": 0.1627897427601485,
+      "Train_R2": 0.9991230340285666,
+      "Train_Adjusted_R2": 0.9990879553897093,
+      "Test_SSE": 26.991988491523905,
+      "Test_MSE": 2.6991988491523906,
+      "Test_RMSE": 1.6429238719893233,
+      "Test_MAE": 1.3984076718690575,
+      "Test_MAPE": 0.34151964551682285,
+      "Test_R2": 0.9480372933233594,
+      "Test_Adjusted_R2": 0.9331908057014621
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Model_Type": "polynomial",
+      "Polynomial_Degree": 3.0,
+      "Parameter_Count": 4,
+      "Full_Formula": "CO2 = 0.0000412428 * t^3 + 0.0092020541 * t^2 + 0.9000662444 * t + 315.0535677517, where t = year - 1959",
+      "Train_Formula": "CO2 = -0.0000635258 * t^3 + 0.0168030782 * t^2 + 0.7584546245 * t + 315.5572670097, where t = year - 1959",
+      "Full_SSE": 30.27936968563858,
+      "Full_MSE": 0.4806249156450568,
+      "Full_RMSE": 0.6932711703547587,
+      "Full_MAE": 0.582056281985144,
+      "Full_MAPE": 0.16614563253250877,
+      "Full_R2": 0.9994518418047744,
+      "Full_Adjusted_R2": 0.9994239693541698,
+      "Train_SSE": 22.33696886112078,
+      "Train_MSE": 0.42145224266265624,
+      "Train_RMSE": 0.6491935325175816,
+      "Train_MAE": 0.5420393857533232,
+      "Train_MAPE": 0.1559032642544948,
+      "Train_R2": 0.9991845356503648,
+      "Train_Adjusted_R2": 0.9991346092616116,
+      "Test_SSE": 84.39338992521265,
+      "Test_MSE": 8.439338992521265,
+      "Test_RMSE": 2.9050540429605203,
+      "Test_MAE": 2.5910406334319305,
+      "Test_MAPE": 0.6338272378792031,
+      "Test_R2": 0.8375329417649882,
+      "Test_Adjusted_R2": 0.7562994126474822
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Model_Type": "polynomial",
+      "Polynomial_Degree": 4.0,
+      "Parameter_Count": 5,
+      "Full_Formula": "CO2 = 0.0000061294 * t^4 + -0.0007188051 * t^3 + 0.0393369032 * t^2 + 0.4925176942 * t + 316.2258873724, where t = year - 1959",
+      "Train_Formula": "CO2 = 0.0000107700 * t^4 + -0.0011836054 * t^3 + 0.0540134166 * t^2 + 0.3378647148 * t + 316.5569381000, where t = year - 1959",
+      "Full_SSE": 17.061015345147613,
+      "Full_MSE": 0.27080976738329543,
+      "Full_RMSE": 0.5203938579415551,
+      "Full_MAE": 0.40617163471176265,
+      "Full_MAPE": 0.11418520627436239,
+      "Full_R2": 0.999691138373176,
+      "Full_Adjusted_R2": 0.9996698375713261,
+      "Train_SSE": 13.750247828157356,
+      "Train_MSE": 0.25943863826711994,
+      "Train_RMSE": 0.509351193448214,
+      "Train_MAE": 0.41241639477694547,
+      "Train_MAPE": 0.1176438208563326,
+      "Train_R2": 0.999498014391647,
+      "Train_Adjusted_R2": 0.9994561822576176,
+      "Test_SSE": 87.79261246410357,
+      "Test_MSE": 8.779261246410357,
+      "Test_RMSE": 2.9629818167532442,
+      "Test_MAE": 2.5205807187080667,
+      "Test_MAPE": 0.6157557628008815,
+      "Test_R2": 0.8309890443499282,
+      "Test_Adjusted_R2": 0.6957802798298707
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Model_Type": "exponential",
+      "Polynomial_Degree": null,
+      "Parameter_Count": 2,
+      "Full_Formula": "CO2 = 309.8386869760 * exp(0.0044917135 * t), where t = year - 1959",
+      "Train_Formula": "CO2 = 311.4110698139 * exp(0.0042236571 * t), where t = year - 1959",
+      "Full_SSE": 525.4017817641426,
+      "Full_MSE": 8.339710821653057,
+      "Full_RMSE": 2.887855748068635,
+      "Full_MAE": 2.363305369997411,
+      "Full_MAPE": 0.6594426499898566,
+      "Full_R2": 0.9904884647385267,
+      "Full_Adjusted_R2": 0.9903325379309615,
+      "Train_SSE": 202.205831375626,
+      "Train_MSE": 3.815204365577849,
+      "Train_RMSE": 1.953254813273949,
+      "Train_MAE": 1.6122492655695972,
+      "Train_MAPE": 0.46483583443582344,
+      "Train_R2": 0.9926179936140676,
+      "Train_Adjusted_R2": 0.992473248390814,
+      "Test_SSE": 736.8995056471192,
+      "Test_MSE": 73.68995056471192,
+      "Test_RMSE": 8.58428509339665,
+      "Test_MAE": 8.241772640185616,
+      "Test_MAPE": 2.023703046487975,
+      "Test_R2": -0.4186169675541713,
+      "Test_Adjusted_R2": -0.5959440884984428
+    }
+  ],
+  "parameters": [
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Model_Type": "polynomial",
+      "Fit_Stage": "full_data",
+      "Polynomial_Degree": 2.0,
+      "First_Year_For_t": 1959,
+      "Data_Start_Year": 1959,
+      "Data_End_Year": 2021,
+      "Test_Start_Year": 2012,
+      "Formula": "CO2 = 0.0130376356 * t^2 + 0.8057026899 * t + 315.5215086996, where t = year - 1959",
+      "Coefficients_JSON": "{\"a\": 0.013037635619272262, \"b\": 0.8057026899154177, \"c\": 315.5215086996337}",
+      "Coefficient_a": 0.013037635619272262,
+      "Coefficient_b": 0.8057026899154177,
+      "Coefficient_c": 315.5215086996337,
+      "Coefficient_d": null,
+      "Coefficient_e": null,
+      "Coefficient_A": null,
+      "Coefficient_B": null,
+      "Coefficient_ln_A": null
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Model_Type": "polynomial",
+      "Fit_Stage": "training_data",
+      "Polynomial_Degree": 2.0,
+      "First_Year_For_t": 1959,
+      "Data_Start_Year": 1959,
+      "Data_End_Year": 2011,
+      "Test_Start_Year": 2012,
+      "Formula": "CO2 = 0.0118480675 * t^2 + 0.8605405502 * t + 315.1360910997, where t = year - 1959",
+      "Coefficients_JSON": "{\"a\": 0.011848067458500228, \"b\": 0.860540550213147, \"c\": 315.136091099676}",
+      "Coefficient_a": 0.011848067458500228,
+      "Coefficient_b": 0.860540550213147,
+      "Coefficient_c": 315.136091099676,
+      "Coefficient_d": null,
+      "Coefficient_e": null,
+      "Coefficient_A": null,
+      "Coefficient_B": null,
+      "Coefficient_ln_A": null
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Model_Type": "polynomial",
+      "Fit_Stage": "full_data",
+      "Polynomial_Degree": 3.0,
+      "First_Year_For_t": 1959,
+      "Data_Start_Year": 1959,
+      "Data_End_Year": 2021,
+      "Test_Start_Year": 2012,
+      "Formula": "CO2 = 0.0000412428 * t^3 + 0.0092020541 * t^2 + 0.9000662444 * t + 315.0535677517, where t = year - 1959",
+      "Coefficients_JSON": "{\"a\": 4.124281226343708e-05, \"b\": 0.009202054078772875, \"c\": 0.9000662443741451, \"d\": 315.0535677516929}",
+      "Coefficient_a": 4.124281226343708e-05,
+      "Coefficient_b": 0.009202054078772875,
+      "Coefficient_c": 0.9000662443741451,
+      "Coefficient_d": 315.0535677516929,
+      "Coefficient_e": null,
+      "Coefficient_A": null,
+      "Coefficient_B": null,
+      "Coefficient_ln_A": null
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Model_Type": "polynomial",
+      "Fit_Stage": "training_data",
+      "Polynomial_Degree": 3.0,
+      "First_Year_For_t": 1959,
+      "Data_Start_Year": 1959,
+      "Data_End_Year": 2011,
+      "Test_Start_Year": 2012,
+      "Formula": "CO2 = -0.0000635258 * t^3 + 0.0168030782 * t^2 + 0.7584546245 * t + 315.5572670097, where t = year - 1959",
+      "Coefficients_JSON": "{\"a\": -6.352577828715011e-05, \"b\": 0.01680307816489822, \"c\": 0.758454624505682, \"d\": 315.5572670097198}",
+      "Coefficient_a": -6.352577828715011e-05,
+      "Coefficient_b": 0.01680307816489822,
+      "Coefficient_c": 0.758454624505682,
+      "Coefficient_d": 315.5572670097198,
+      "Coefficient_e": null,
+      "Coefficient_A": null,
+      "Coefficient_B": null,
+      "Coefficient_ln_A": null
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Model_Type": "polynomial",
+      "Fit_Stage": "full_data",
+      "Polynomial_Degree": 4.0,
+      "First_Year_For_t": 1959,
+      "Data_Start_Year": 1959,
+      "Data_End_Year": 2021,
+      "Test_Start_Year": 2012,
+      "Formula": "CO2 = 0.0000061294 * t^4 + -0.0007188051 * t^3 + 0.0393369032 * t^2 + 0.4925176942 * t + 316.2258873724, where t = year - 1959",
+      "Coefficients_JSON": "{\"a\": 6.129418674202447e-06, \"b\": -0.0007188051033376766, \"c\": 0.03933690317487044, \"d\": 0.4925176942014454, \"e\": 316.22588737237106}",
+      "Coefficient_a": 6.129418674202447e-06,
+      "Coefficient_b": -0.0007188051033376766,
+      "Coefficient_c": 0.03933690317487044,
+      "Coefficient_d": 0.4925176942014454,
+      "Coefficient_e": 316.22588737237106,
+      "Coefficient_A": null,
+      "Coefficient_B": null,
+      "Coefficient_ln_A": null
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Model_Type": "polynomial",
+      "Fit_Stage": "training_data",
+      "Polynomial_Degree": 4.0,
+      "First_Year_For_t": 1959,
+      "Data_Start_Year": 1959,
+      "Data_End_Year": 2011,
+      "Test_Start_Year": 2012,
+      "Formula": "CO2 = 0.0000107700 * t^4 + -0.0011836054 * t^3 + 0.0540134166 * t^2 + 0.3378647148 * t + 316.5569381000, where t = year - 1959",
+      "Coefficients_JSON": "{\"a\": 1.076999666286497e-05, \"b\": -0.0011836054312250965, \"c\": 0.05401341663509598, \"d\": 0.33786471482749325, \"e\": 316.5569380999668}",
+      "Coefficient_a": 1.076999666286497e-05,
+      "Coefficient_b": -0.0011836054312250965,
+      "Coefficient_c": 0.05401341663509598,
+      "Coefficient_d": 0.33786471482749325,
+      "Coefficient_e": 316.5569380999668,
+      "Coefficient_A": null,
+      "Coefficient_B": null,
+      "Coefficient_ln_A": null
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Model_Type": "exponential",
+      "Fit_Stage": "full_data",
+      "Polynomial_Degree": null,
+      "First_Year_For_t": 1959,
+      "Data_Start_Year": 1959,
+      "Data_End_Year": 2021,
+      "Test_Start_Year": 2012,
+      "Formula": "CO2 = 309.8386869760 * exp(0.0044917135 * t), where t = year - 1959",
+      "Coefficients_JSON": "{\"A\": 309.8386869760351, \"B\": 0.004491713492551753, \"ln_A\": 5.736051797449115}",
+      "Coefficient_a": null,
+      "Coefficient_b": null,
+      "Coefficient_c": null,
+      "Coefficient_d": null,
+      "Coefficient_e": null,
+      "Coefficient_A": 309.8386869760351,
+      "Coefficient_B": 0.004491713492551753,
+      "Coefficient_ln_A": 5.736051797449115
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Model_Type": "exponential",
+      "Fit_Stage": "training_data",
+      "Polynomial_Degree": null,
+      "First_Year_For_t": 1959,
+      "Data_Start_Year": 1959,
+      "Data_End_Year": 2011,
+      "Test_Start_Year": 2012,
+      "Formula": "CO2 = 311.4110698139 * exp(0.0042236571 * t), where t = year - 1959",
+      "Coefficients_JSON": "{\"A\": 311.4110698138718, \"B\": 0.0042236571336438135, \"ln_A\": 5.7411138073032975}",
+      "Coefficient_a": null,
+      "Coefficient_b": null,
+      "Coefficient_c": null,
+      "Coefficient_d": null,
+      "Coefficient_e": null,
+      "Coefficient_A": 311.4110698138718,
+      "Coefficient_B": 0.0042236571336438135,
+      "Coefficient_ln_A": 5.7411138073032975
+    }
+  ],
+  "fitted_values": [
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1959,
+      "Observed_CO2": 315.98,
+      "Fitted_CO2": 315.5215086996337,
+      "Residual": 0.4584913003662905,
+      "Absolute_Residual": 0.4584913003662905
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1960,
+      "Observed_CO2": 316.91,
+      "Fitted_CO2": 316.3402490251684,
+      "Residual": 0.5697509748316065,
+      "Absolute_Residual": 0.5697509748316065
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1961,
+      "Observed_CO2": 317.64,
+      "Fitted_CO2": 317.18506462194165,
+      "Residual": 0.4549353780583374,
+      "Absolute_Residual": 0.4549353780583374
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1962,
+      "Observed_CO2": 318.45,
+      "Fitted_CO2": 318.0559554899534,
+      "Residual": 0.3940445100465695,
+      "Absolute_Residual": 0.3940445100465695
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1963,
+      "Observed_CO2": 318.99,
+      "Fitted_CO2": 318.95292162920373,
+      "Residual": 0.03707837079628007,
+      "Absolute_Residual": 0.03707837079628007
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1964,
+      "Observed_CO2": 319.62,
+      "Fitted_CO2": 319.87596303969264,
+      "Residual": -0.2559630396926309,
+      "Absolute_Residual": 0.2559630396926309
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1965,
+      "Observed_CO2": 320.04,
+      "Fitted_CO2": 320.82507972142,
+      "Residual": -0.7850797214200043,
+      "Absolute_Residual": 0.7850797214200043
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1966,
+      "Observed_CO2": 321.37,
+      "Fitted_CO2": 321.800271674386,
+      "Residual": -0.430271674386006,
+      "Absolute_Residual": 0.430271674386006
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1967,
+      "Observed_CO2": 322.18,
+      "Fitted_CO2": 322.8015388985905,
+      "Residual": -0.6215388985904724,
+      "Absolute_Residual": 0.6215388985904724
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1968,
+      "Observed_CO2": 323.05,
+      "Fitted_CO2": 323.82888139403354,
+      "Residual": -0.7788813940335331,
+      "Absolute_Residual": 0.7788813940335331
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1969,
+      "Observed_CO2": 324.62,
+      "Fitted_CO2": 324.88229916071515,
+      "Residual": -0.2622991607151448,
+      "Absolute_Residual": 0.2622991607151448
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1970,
+      "Observed_CO2": 325.68,
+      "Fitted_CO2": 325.9617921986353,
+      "Residual": -0.28179219863528715,
+      "Absolute_Residual": 0.28179219863528715
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1971,
+      "Observed_CO2": 326.32,
+      "Fitted_CO2": 327.0673605077939,
+      "Residual": -0.7473605077939283,
+      "Absolute_Residual": 0.7473605077939283
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1972,
+      "Observed_CO2": 327.46,
+      "Fitted_CO2": 328.19900408819115,
+      "Residual": -0.7390040881911659,
+      "Absolute_Residual": 0.7390040881911659
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1973,
+      "Observed_CO2": 329.68,
+      "Fitted_CO2": 329.35672293982697,
+      "Residual": 0.3232770601730408,
+      "Absolute_Residual": 0.3232770601730408
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1974,
+      "Observed_CO2": 330.19,
+      "Fitted_CO2": 330.54051706270127,
+      "Residual": -0.3505170627012717,
+      "Absolute_Residual": 0.3505170627012717
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1975,
+      "Observed_CO2": 331.13,
+      "Fitted_CO2": 331.7503864568141,
+      "Residual": -0.6203864568141171,
+      "Absolute_Residual": 0.6203864568141171
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1976,
+      "Observed_CO2": 332.03,
+      "Fitted_CO2": 332.9863311221655,
+      "Residual": -0.9563311221655226,
+      "Absolute_Residual": 0.9563311221655226
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1977,
+      "Observed_CO2": 333.84,
+      "Fitted_CO2": 334.2483510587555,
+      "Residual": -0.4083510587554997,
+      "Absolute_Residual": 0.4083510587554997
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1978,
+      "Observed_CO2": 335.41,
+      "Fitted_CO2": 335.53644626658394,
+      "Residual": -0.1264462665839119,
+      "Absolute_Residual": 0.1264462665839119
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1979,
+      "Observed_CO2": 336.84,
+      "Fitted_CO2": 336.850616745651,
+      "Residual": -0.010616745651020665,
+      "Absolute_Residual": 0.010616745651020665
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1980,
+      "Observed_CO2": 338.76,
+      "Fitted_CO2": 338.1908624959566,
+      "Residual": 0.5691375040433968,
+      "Absolute_Residual": 0.5691375040433968
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1981,
+      "Observed_CO2": 340.12,
+      "Fitted_CO2": 339.5571835175007,
+      "Residual": 0.5628164824993291,
+      "Absolute_Residual": 0.5628164824993291
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1982,
+      "Observed_CO2": 341.48,
+      "Fitted_CO2": 340.94957981028335,
+      "Residual": 0.5304201897166649,
+      "Absolute_Residual": 0.5304201897166649
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1983,
+      "Observed_CO2": 343.15,
+      "Fitted_CO2": 342.36805137430457,
+      "Residual": 0.7819486256954065,
+      "Absolute_Residual": 0.7819486256954065
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1984,
+      "Observed_CO2": 344.87,
+      "Fitted_CO2": 343.8125982095643,
+      "Residual": 1.0574017904356765,
+      "Absolute_Residual": 1.0574017904356765
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1985,
+      "Observed_CO2": 346.35,
+      "Fitted_CO2": 345.2832203160626,
+      "Residual": 1.0667796839373977,
+      "Absolute_Residual": 1.0667796839373977
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1986,
+      "Observed_CO2": 347.61,
+      "Fitted_CO2": 346.77991769379946,
+      "Residual": 0.830082306200552,
+      "Absolute_Residual": 0.830082306200552
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1987,
+      "Observed_CO2": 349.31,
+      "Fitted_CO2": 348.3026903427749,
+      "Residual": 1.0073096572251075,
+      "Absolute_Residual": 1.0073096572251075
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1988,
+      "Observed_CO2": 351.69,
+      "Fitted_CO2": 349.8515382629888,
+      "Residual": 1.8384617370111869,
+      "Absolute_Residual": 1.8384617370111869
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1989,
+      "Observed_CO2": 353.2,
+      "Fitted_CO2": 351.4264614544413,
+      "Residual": 1.7735385455586652,
+      "Absolute_Residual": 1.7735385455586652
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1990,
+      "Observed_CO2": 354.45,
+      "Fitted_CO2": 353.0274599171323,
+      "Residual": 1.4225400828676698,
+      "Absolute_Residual": 1.4225400828676698
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1991,
+      "Observed_CO2": 355.7,
+      "Fitted_CO2": 354.6545336510619,
+      "Residual": 1.0454663489380778,
+      "Absolute_Residual": 1.0454663489380778
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1992,
+      "Observed_CO2": 356.54,
+      "Fitted_CO2": 356.30768265623,
+      "Residual": 0.23231734377003477,
+      "Absolute_Residual": 0.23231734377003477
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1993,
+      "Observed_CO2": 357.21,
+      "Fitted_CO2": 357.98690693263666,
+      "Residual": -0.7769069326366775,
+      "Absolute_Residual": 0.7769069326366775
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1994,
+      "Observed_CO2": 358.96,
+      "Fitted_CO2": 359.69220648028187,
+      "Residual": -0.7322064802818886,
+      "Absolute_Residual": 0.7322064802818886
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1995,
+      "Observed_CO2": 360.97,
+      "Fitted_CO2": 361.4235812991656,
+      "Residual": -0.45358129916559164,
+      "Absolute_Residual": 0.45358129916559164
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1996,
+      "Observed_CO2": 362.74,
+      "Fitted_CO2": 363.1810313892879,
+      "Residual": -0.4410313892879003,
+      "Absolute_Residual": 0.4410313892879003
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1997,
+      "Observed_CO2": 363.88,
+      "Fitted_CO2": 364.96455675064874,
+      "Residual": -1.0845567506487441,
+      "Absolute_Residual": 1.0845567506487441
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1998,
+      "Observed_CO2": 366.84,
+      "Fitted_CO2": 366.77415738324817,
+      "Residual": 0.06584261675180869,
+      "Absolute_Residual": 0.06584261675180869
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 1999,
+      "Observed_CO2": 368.54,
+      "Fitted_CO2": 368.6098332870861,
+      "Residual": -0.0698332870860554,
+      "Absolute_Residual": 0.0698332870860554
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2000,
+      "Observed_CO2": 369.71,
+      "Fitted_CO2": 370.4715844621625,
+      "Residual": -0.7615844621625456,
+      "Absolute_Residual": 0.7615844621625456
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2001,
+      "Observed_CO2": 371.32,
+      "Fitted_CO2": 372.35941090847757,
+      "Residual": -1.0394109084775778,
+      "Absolute_Residual": 1.0394109084775778
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2002,
+      "Observed_CO2": 373.45,
+      "Fitted_CO2": 374.2733126260311,
+      "Residual": -0.823312626031111,
+      "Absolute_Residual": 0.823312626031111
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2003,
+      "Observed_CO2": 375.98,
+      "Fitted_CO2": 376.2132896148232,
+      "Residual": -0.23328961482320665,
+      "Absolute_Residual": 0.23328961482320665
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2004,
+      "Observed_CO2": 377.7,
+      "Fitted_CO2": 378.17934187485383,
+      "Residual": -0.4793418748538443,
+      "Absolute_Residual": 0.4793418748538443
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2005,
+      "Observed_CO2": 379.98,
+      "Fitted_CO2": 380.17146940612304,
+      "Residual": -0.19146940612301933,
+      "Absolute_Residual": 0.19146940612301933
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2006,
+      "Observed_CO2": 382.09,
+      "Fitted_CO2": 382.1896722086308,
+      "Residual": -0.09967220863080684,
+      "Absolute_Residual": 0.09967220863080684
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2007,
+      "Observed_CO2": 384.02,
+      "Fitted_CO2": 384.23395028237707,
+      "Residual": -0.21395028237708402,
+      "Absolute_Residual": 0.21395028237708402
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2008,
+      "Observed_CO2": 385.83,
+      "Fitted_CO2": 386.3043036273619,
+      "Residual": -0.47430362736190546,
+      "Absolute_Residual": 0.47430362736190546
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2009,
+      "Observed_CO2": 387.64,
+      "Fitted_CO2": 388.40073224358525,
+      "Residual": -0.7607322435852666,
+      "Absolute_Residual": 0.7607322435852666
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2010,
+      "Observed_CO2": 390.1,
+      "Fitted_CO2": 390.52323613104716,
+      "Residual": -0.4232361310471333,
+      "Absolute_Residual": 0.4232361310471333
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2011,
+      "Observed_CO2": 391.85,
+      "Fitted_CO2": 392.67181528974766,
+      "Residual": -0.821815289747633,
+      "Absolute_Residual": 0.821815289747633
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2012,
+      "Observed_CO2": 394.06,
+      "Fitted_CO2": 394.84646971968664,
+      "Residual": -0.7864697196866359,
+      "Absolute_Residual": 0.7864697196866359
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2013,
+      "Observed_CO2": 396.74,
+      "Fitted_CO2": 397.0471994208642,
+      "Residual": -0.30719942086420815,
+      "Absolute_Residual": 0.30719942086420815
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2014,
+      "Observed_CO2": 398.81,
+      "Fitted_CO2": 399.2740043932803,
+      "Residual": -0.4640043932802769,
+      "Absolute_Residual": 0.4640043932802769
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2015,
+      "Observed_CO2": 401.01,
+      "Fitted_CO2": 401.52688463693494,
+      "Residual": -0.5168846369349467,
+      "Absolute_Residual": 0.5168846369349467
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2016,
+      "Observed_CO2": 404.41,
+      "Fitted_CO2": 403.80584015182814,
+      "Residual": 0.6041598481718893,
+      "Absolute_Residual": 0.6041598481718893
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2017,
+      "Observed_CO2": 406.76,
+      "Fitted_CO2": 406.1108709379598,
+      "Residual": 0.6491290620401742,
+      "Absolute_Residual": 0.6491290620401742
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2018,
+      "Observed_CO2": 408.72,
+      "Fitted_CO2": 408.4419769953301,
+      "Residual": 0.278023004669933,
+      "Absolute_Residual": 0.278023004669933
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2019,
+      "Observed_CO2": 411.66,
+      "Fitted_CO2": 410.79915832393897,
+      "Residual": 0.8608416760610567,
+      "Absolute_Residual": 0.8608416760610567
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2020,
+      "Observed_CO2": 414.24,
+      "Fitted_CO2": 413.18241492378627,
+      "Residual": 1.0575850762137406,
+      "Absolute_Residual": 1.0575850762137406
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "full_data",
+      "Year": 2021,
+      "Observed_CO2": 416.45,
+      "Fitted_CO2": 415.5917467948722,
+      "Residual": 0.8582532051277667,
+      "Absolute_Residual": 0.8582532051277667
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1959,
+      "Observed_CO2": 315.98,
+      "Fitted_CO2": 315.136091099676,
+      "Residual": 0.8439089003240383,
+      "Absolute_Residual": 0.8439089003240383
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1960,
+      "Observed_CO2": 316.91,
+      "Fitted_CO2": 316.00847971734765,
+      "Residual": 0.9015202826523705,
+      "Absolute_Residual": 0.9015202826523705
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1961,
+      "Observed_CO2": 317.64,
+      "Fitted_CO2": 316.90456446993625,
+      "Residual": 0.7354355300637394,
+      "Absolute_Residual": 0.7354355300637394
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1962,
+      "Observed_CO2": 318.45,
+      "Fitted_CO2": 317.8243453574419,
+      "Residual": 0.6256546425580609,
+      "Absolute_Residual": 0.6256546425580609
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1963,
+      "Observed_CO2": 318.99,
+      "Fitted_CO2": 318.7678223798646,
+      "Residual": 0.22217762013542597,
+      "Absolute_Residual": 0.22217762013542597
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1964,
+      "Observed_CO2": 319.62,
+      "Fitted_CO2": 319.7349955372042,
+      "Residual": -0.11499553720420863,
+      "Absolute_Residual": 0.11499553720420863
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1965,
+      "Observed_CO2": 320.04,
+      "Fitted_CO2": 320.7258648294609,
+      "Residual": -0.6858648294608543,
+      "Absolute_Residual": 0.6858648294608543
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1966,
+      "Observed_CO2": 321.37,
+      "Fitted_CO2": 321.7404302566345,
+      "Residual": -0.37043025663450635,
+      "Absolute_Residual": 0.37043025663450635
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1967,
+      "Observed_CO2": 322.18,
+      "Fitted_CO2": 322.7786918187252,
+      "Residual": -0.5986918187251717,
+      "Absolute_Residual": 0.5986918187251717
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1968,
+      "Observed_CO2": 323.05,
+      "Fitted_CO2": 323.8406495157328,
+      "Residual": -0.7906495157328095,
+      "Absolute_Residual": 0.7906495157328095
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1969,
+      "Observed_CO2": 324.62,
+      "Fitted_CO2": 324.9263033476575,
+      "Residual": -0.3063033476574901,
+      "Absolute_Residual": 0.3063033476574901
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1970,
+      "Observed_CO2": 325.68,
+      "Fitted_CO2": 326.03565331449914,
+      "Residual": -0.3556533144991363,
+      "Absolute_Residual": 0.3556533144991363
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1971,
+      "Observed_CO2": 326.32,
+      "Fitted_CO2": 327.16869941625777,
+      "Residual": -0.848699416257773,
+      "Absolute_Residual": 0.848699416257773
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1972,
+      "Observed_CO2": 327.46,
+      "Fitted_CO2": 328.3254416529334,
+      "Residual": -0.8654416529334412,
+      "Absolute_Residual": 0.8654416529334412
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1973,
+      "Observed_CO2": 329.68,
+      "Fitted_CO2": 329.5058800245261,
+      "Residual": 0.1741199754739,
+      "Absolute_Residual": 0.1741199754739
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1974,
+      "Observed_CO2": 330.19,
+      "Fitted_CO2": 330.7100145310357,
+      "Residual": -0.5200145310357129,
+      "Absolute_Residual": 0.5200145310357129
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1975,
+      "Observed_CO2": 331.13,
+      "Fitted_CO2": 331.9378451724624,
+      "Residual": -0.8078451724624074,
+      "Absolute_Residual": 0.8078451724624074
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1976,
+      "Observed_CO2": 332.03,
+      "Fitted_CO2": 333.18937194880607,
+      "Residual": -1.159371948806097,
+      "Absolute_Residual": 1.159371948806097
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1977,
+      "Observed_CO2": 333.84,
+      "Fitted_CO2": 334.4645948600667,
+      "Residual": -0.6245948600667361,
+      "Absolute_Residual": 0.6245948600667361
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1978,
+      "Observed_CO2": 335.41,
+      "Fitted_CO2": 335.7635139062444,
+      "Residual": -0.3535139062443591,
+      "Absolute_Residual": 0.3535139062443591
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1979,
+      "Observed_CO2": 336.84,
+      "Fitted_CO2": 337.08612908733903,
+      "Residual": -0.2461290873390567,
+      "Absolute_Residual": 0.2461290873390567
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1980,
+      "Observed_CO2": 338.76,
+      "Fitted_CO2": 338.43244040335065,
+      "Residual": 0.327559596649337,
+      "Absolute_Residual": 0.327559596649337
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1981,
+      "Observed_CO2": 340.12,
+      "Fitted_CO2": 339.8024478542793,
+      "Residual": 0.3175521457206969,
+      "Absolute_Residual": 0.3175521457206969
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1982,
+      "Observed_CO2": 341.48,
+      "Fitted_CO2": 341.196151440125,
+      "Residual": 0.28384855987502533,
+      "Absolute_Residual": 0.28384855987502533
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1983,
+      "Observed_CO2": 343.15,
+      "Fitted_CO2": 342.61355116088765,
+      "Residual": 0.5364488391123245,
+      "Absolute_Residual": 0.5364488391123245
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1984,
+      "Observed_CO2": 344.87,
+      "Fitted_CO2": 344.0546470165673,
+      "Residual": 0.8153529834327173,
+      "Absolute_Residual": 0.8153529834327173
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1985,
+      "Observed_CO2": 346.35,
+      "Fitted_CO2": 345.51943900716395,
+      "Residual": 0.8305609928360695,
+      "Absolute_Residual": 0.8305609928360695
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1986,
+      "Observed_CO2": 347.61,
+      "Fitted_CO2": 347.0079271326776,
+      "Residual": 0.6020728673224198,
+      "Absolute_Residual": 0.6020728673224198
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1987,
+      "Observed_CO2": 349.31,
+      "Fitted_CO2": 348.52011139310827,
+      "Residual": 0.7898886068917363,
+      "Absolute_Residual": 0.7898886068917363
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1988,
+      "Observed_CO2": 351.69,
+      "Fitted_CO2": 350.0559917884559,
+      "Residual": 1.634008211544085,
+      "Absolute_Residual": 1.634008211544085
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1989,
+      "Observed_CO2": 353.2,
+      "Fitted_CO2": 351.6155683187206,
+      "Residual": 1.5844316812793977,
+      "Absolute_Residual": 1.5844316812793977
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1990,
+      "Observed_CO2": 354.45,
+      "Fitted_CO2": 353.19884098390224,
+      "Residual": 1.2511590160977448,
+      "Absolute_Residual": 1.2511590160977448
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1991,
+      "Observed_CO2": 355.7,
+      "Fitted_CO2": 354.8058097840009,
+      "Residual": 0.8941902159990605,
+      "Absolute_Residual": 0.8941902159990605
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1992,
+      "Observed_CO2": 356.54,
+      "Fitted_CO2": 356.4364747190166,
+      "Residual": 0.10352528098343328,
+      "Absolute_Residual": 0.10352528098343328
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1993,
+      "Observed_CO2": 357.21,
+      "Fitted_CO2": 358.0908357889492,
+      "Residual": -0.8808357889492413,
+      "Absolute_Residual": 0.8808357889492413
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1994,
+      "Observed_CO2": 358.96,
+      "Fitted_CO2": 359.7688929937989,
+      "Residual": -0.8088929937989064,
+      "Absolute_Residual": 0.8088929937989064
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1995,
+      "Observed_CO2": 360.97,
+      "Fitted_CO2": 361.4706463335656,
+      "Residual": -0.5006463335655553,
+      "Absolute_Residual": 0.5006463335655553
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1996,
+      "Observed_CO2": 362.74,
+      "Fitted_CO2": 363.19609580824925,
+      "Residual": -0.4560958082492448,
+      "Absolute_Residual": 0.4560958082492448
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1997,
+      "Observed_CO2": 363.88,
+      "Fitted_CO2": 364.9452414178499,
+      "Residual": -1.0652414178499043,
+      "Absolute_Residual": 1.0652414178499043
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1998,
+      "Observed_CO2": 366.84,
+      "Fitted_CO2": 366.7180831623676,
+      "Residual": 0.1219168376323978,
+      "Absolute_Residual": 0.1219168376323978
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 1999,
+      "Observed_CO2": 368.54,
+      "Fitted_CO2": 368.51462104180223,
+      "Residual": 0.025378958197791235,
+      "Absolute_Residual": 0.025378958197791235
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 2000,
+      "Observed_CO2": 369.71,
+      "Fitted_CO2": 370.3348550561539,
+      "Residual": -0.6248550561539332,
+      "Absolute_Residual": 0.6248550561539332
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 2001,
+      "Observed_CO2": 371.32,
+      "Fitted_CO2": 372.17878520542257,
+      "Residual": -0.8587852054225777,
+      "Absolute_Residual": 0.8587852054225777
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 2002,
+      "Observed_CO2": 373.45,
+      "Fitted_CO2": 374.0464114896082,
+      "Residual": -0.5964114896082151,
+      "Absolute_Residual": 0.5964114896082151
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 2003,
+      "Observed_CO2": 375.98,
+      "Fitted_CO2": 375.93773390871087,
+      "Residual": 0.042266091289150154,
+      "Absolute_Residual": 0.042266091289150154
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 2004,
+      "Observed_CO2": 377.7,
+      "Fitted_CO2": 377.85275246273056,
+      "Residual": -0.1527524627305752,
+      "Absolute_Residual": 0.1527524627305752
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 2005,
+      "Observed_CO2": 379.98,
+      "Fitted_CO2": 379.79146715166723,
+      "Residual": 0.18853284833278394,
+      "Absolute_Residual": 0.18853284833278394
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 2006,
+      "Observed_CO2": 382.09,
+      "Fitted_CO2": 381.7538779755209,
+      "Residual": 0.33612202447909567,
+      "Absolute_Residual": 0.33612202447909567
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 2007,
+      "Observed_CO2": 384.02,
+      "Fitted_CO2": 383.73998493429156,
+      "Residual": 0.28001506570842594,
+      "Absolute_Residual": 0.28001506570842594
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 2008,
+      "Observed_CO2": 385.83,
+      "Fitted_CO2": 385.7497880279792,
+      "Residual": 0.08021197202077701,
+      "Absolute_Residual": 0.08021197202077701
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 2009,
+      "Observed_CO2": 387.64,
+      "Fitted_CO2": 387.7832872565839,
+      "Residual": -0.1432872565839034,
+      "Absolute_Residual": 0.1432872565839034
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 2010,
+      "Observed_CO2": 390.1,
+      "Fitted_CO2": 389.8404826201056,
+      "Residual": 0.2595173798944188,
+      "Absolute_Residual": 0.2595173798944188
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Fit_Stage": "training_data",
+      "Year": 2011,
+      "Observed_CO2": 391.85,
+      "Fitted_CO2": 391.92137411854424,
+      "Residual": -0.07137411854421316,
+      "Absolute_Residual": 0.07137411854421316
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1959,
+      "Observed_CO2": 315.98,
+      "Fitted_CO2": 315.0535677516929,
+      "Residual": 0.9264322483070941,
+      "Absolute_Residual": 0.9264322483070941
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1960,
+      "Observed_CO2": 316.91,
+      "Fitted_CO2": 315.9628772929581,
+      "Residual": 0.947122707041899,
+      "Absolute_Residual": 0.947122707041899
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1961,
+      "Observed_CO2": 317.64,
+      "Fitted_CO2": 316.8908383992544,
+      "Residual": 0.7491616007455946,
+      "Absolute_Residual": 0.7491616007455946
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1962,
+      "Observed_CO2": 318.45,
+      "Fitted_CO2": 317.8376985274554,
+      "Residual": 0.6123014725445728,
+      "Absolute_Residual": 0.6123014725445728
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1963,
+      "Observed_CO2": 318.99,
+      "Fitted_CO2": 318.8037051344347,
+      "Residual": 0.18629486556528718,
+      "Absolute_Residual": 0.18629486556528718
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1964,
+      "Observed_CO2": 319.62,
+      "Fitted_CO2": 319.7891056770659,
+      "Residual": -0.16910567706588608,
+      "Absolute_Residual": 0.16910567706588608
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1965,
+      "Observed_CO2": 320.04,
+      "Fitted_CO2": 320.7941476122225,
+      "Residual": -0.7541476122224822,
+      "Absolute_Residual": 0.7541476122224822
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1966,
+      "Observed_CO2": 321.37,
+      "Fitted_CO2": 321.8190783967782,
+      "Residual": -0.44907839677819084,
+      "Absolute_Residual": 0.44907839677819084
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1967,
+      "Observed_CO2": 322.18,
+      "Fitted_CO2": 322.86414548760644,
+      "Residual": -0.684145487606429,
+      "Absolute_Residual": 0.684145487606429
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1968,
+      "Observed_CO2": 323.05,
+      "Fitted_CO2": 323.92959634158086,
+      "Residual": -0.8795963415808501,
+      "Absolute_Residual": 0.8795963415808501
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1969,
+      "Observed_CO2": 324.62,
+      "Fitted_CO2": 325.0156784155751,
+      "Residual": -0.3956784155751052,
+      "Absolute_Residual": 0.3956784155751052
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1970,
+      "Observed_CO2": 325.68,
+      "Fitted_CO2": 326.12263916646265,
+      "Residual": -0.4426391664626408,
+      "Absolute_Residual": 0.4426391664626408
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1971,
+      "Observed_CO2": 326.32,
+      "Fitted_CO2": 327.25072605111717,
+      "Residual": -0.9307260511171762,
+      "Absolute_Residual": 0.9307260511171762
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1972,
+      "Observed_CO2": 327.46,
+      "Fitted_CO2": 328.4001865264122,
+      "Residual": -0.9401865264122193,
+      "Absolute_Residual": 0.9401865264122193
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1973,
+      "Observed_CO2": 329.68,
+      "Fitted_CO2": 329.5712680492213,
+      "Residual": 0.10873195077869013,
+      "Absolute_Residual": 0.10873195077869013
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1974,
+      "Observed_CO2": 330.19,
+      "Fitted_CO2": 330.7642180764181,
+      "Residual": -0.5742180764181057,
+      "Absolute_Residual": 0.5742180764181057
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1975,
+      "Observed_CO2": 331.13,
+      "Fitted_CO2": 331.97928406487614,
+      "Residual": -0.8492840648761444,
+      "Absolute_Residual": 0.8492840648761444
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1976,
+      "Observed_CO2": 332.03,
+      "Fitted_CO2": 333.216713471469,
+      "Residual": -1.1867134714690337,
+      "Absolute_Residual": 1.1867134714690337
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1977,
+      "Observed_CO2": 333.84,
+      "Fitted_CO2": 334.4767537530703,
+      "Residual": -0.6367537530703089,
+      "Absolute_Residual": 0.6367537530703089
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1978,
+      "Observed_CO2": 335.41,
+      "Fitted_CO2": 335.7596523665536,
+      "Residual": -0.34965236655358467,
+      "Absolute_Residual": 0.34965236655358467
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1979,
+      "Observed_CO2": 336.84,
+      "Fitted_CO2": 337.06565676879245,
+      "Residual": -0.22565676879247576,
+      "Absolute_Residual": 0.22565676879247576
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1980,
+      "Observed_CO2": 338.76,
+      "Fitted_CO2": 338.3950144166605,
+      "Residual": 0.3649855833394895,
+      "Absolute_Residual": 0.3649855833394895
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1981,
+      "Observed_CO2": 340.12,
+      "Fitted_CO2": 339.7479727670313,
+      "Residual": 0.3720272329687191,
+      "Absolute_Residual": 0.3720272329687191
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1982,
+      "Observed_CO2": 341.48,
+      "Fitted_CO2": 341.1247792767783,
+      "Residual": 0.3552207232216915,
+      "Absolute_Residual": 0.3552207232216915
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1983,
+      "Observed_CO2": 343.15,
+      "Fitted_CO2": 342.5256814027753,
+      "Residual": 0.6243185972246579,
+      "Absolute_Residual": 0.6243185972246579
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1984,
+      "Observed_CO2": 344.87,
+      "Fitted_CO2": 343.9509266018958,
+      "Residual": 0.9190733981042172,
+      "Absolute_Residual": 0.9190733981042172
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1985,
+      "Observed_CO2": 346.35,
+      "Fitted_CO2": 345.4007623310133,
+      "Residual": 0.9492376689867115,
+      "Absolute_Residual": 0.9492376689867115
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1986,
+      "Observed_CO2": 347.61,
+      "Fitted_CO2": 346.8754360470015,
+      "Residual": 0.7345639529985419,
+      "Absolute_Residual": 0.7345639529985419
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1987,
+      "Observed_CO2": 349.31,
+      "Fitted_CO2": 348.3751952067339,
+      "Residual": 0.9348047932660961,
+      "Absolute_Residual": 0.9348047932660961
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1988,
+      "Observed_CO2": 351.69,
+      "Fitted_CO2": 349.9002872670841,
+      "Residual": 1.7897127329159161,
+      "Absolute_Residual": 1.7897127329159161
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1989,
+      "Observed_CO2": 353.2,
+      "Fitted_CO2": 351.4509596849257,
+      "Residual": 1.7490403150742964,
+      "Absolute_Residual": 1.7490403150742964
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1990,
+      "Observed_CO2": 354.45,
+      "Fitted_CO2": 353.0274599171322,
+      "Residual": 1.4225400828677834,
+      "Absolute_Residual": 1.4225400828677834
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1991,
+      "Observed_CO2": 355.7,
+      "Fitted_CO2": 354.6300354205773,
+      "Residual": 1.069964579422674,
+      "Absolute_Residual": 1.069964579422674
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1992,
+      "Observed_CO2": 356.54,
+      "Fitted_CO2": 356.2589336521345,
+      "Residual": 0.28106634786553286,
+      "Absolute_Residual": 0.28106634786553286
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1993,
+      "Observed_CO2": 357.21,
+      "Fitted_CO2": 357.9144020686774,
+      "Residual": -0.7044020686774388,
+      "Absolute_Residual": 0.7044020686774388
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1994,
+      "Observed_CO2": 358.96,
+      "Fitted_CO2": 359.59668812707963,
+      "Residual": -0.6366881270796512,
+      "Absolute_Residual": 0.6366881270796512
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1995,
+      "Observed_CO2": 360.97,
+      "Fitted_CO2": 361.3060392842147,
+      "Residual": -0.336039284214678,
+      "Absolute_Residual": 0.336039284214678
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1996,
+      "Observed_CO2": 362.74,
+      "Fitted_CO2": 363.0427029969562,
+      "Residual": -0.3027029969562136,
+      "Absolute_Residual": 0.3027029969562136
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1997,
+      "Observed_CO2": 363.88,
+      "Fitted_CO2": 364.80692672217776,
+      "Residual": -0.9269267221777682,
+      "Absolute_Residual": 0.9269267221777682
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1998,
+      "Observed_CO2": 366.84,
+      "Fitted_CO2": 366.59895791675297,
+      "Residual": 0.2410420832470095,
+      "Absolute_Residual": 0.2410420832470095
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 1999,
+      "Observed_CO2": 368.54,
+      "Fitted_CO2": 368.4190440375553,
+      "Residual": 0.12095596244472517,
+      "Absolute_Residual": 0.12095596244472517
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2000,
+      "Observed_CO2": 369.71,
+      "Fitted_CO2": 370.26743254145845,
+      "Residual": -0.5574325414584678,
+      "Absolute_Residual": 0.5574325414584678
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2001,
+      "Observed_CO2": 371.32,
+      "Fitted_CO2": 372.1443708853359,
+      "Residual": -0.8243708853358953,
+      "Absolute_Residual": 0.8243708853358953
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2002,
+      "Observed_CO2": 373.45,
+      "Fitted_CO2": 374.0501065260613,
+      "Residual": -0.6001065260613245,
+      "Absolute_Residual": 0.6001065260613245
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2003,
+      "Observed_CO2": 375.98,
+      "Fitted_CO2": 375.9848869205082,
+      "Residual": -0.004886920508170078,
+      "Absolute_Residual": 0.004886920508170078
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2004,
+      "Observed_CO2": 377.7,
+      "Fitted_CO2": 377.9489595255502,
+      "Residual": -0.2489595255502195,
+      "Absolute_Residual": 0.2489595255502195
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2005,
+      "Observed_CO2": 379.98,
+      "Fitted_CO2": 379.94257179806095,
+      "Residual": 0.03742820193906482,
+      "Absolute_Residual": 0.03742820193906482
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2006,
+      "Observed_CO2": 382.09,
+      "Fitted_CO2": 381.9659711949139,
+      "Residual": 0.12402880508608405,
+      "Absolute_Residual": 0.12402880508608405
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2007,
+      "Observed_CO2": 384.02,
+      "Fitted_CO2": 384.0194051729826,
+      "Residual": 0.0005948270173803394,
+      "Absolute_Residual": 0.0005948270173803394
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2008,
+      "Observed_CO2": 385.83,
+      "Fitted_CO2": 386.10312118914084,
+      "Residual": -0.27312118914085204,
+      "Absolute_Residual": 0.27312118914085204
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2009,
+      "Observed_CO2": 387.64,
+      "Fitted_CO2": 388.217366700262,
+      "Residual": -0.5773667002620186,
+      "Absolute_Residual": 0.5773667002620186
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2010,
+      "Observed_CO2": 390.1,
+      "Fitted_CO2": 390.36238916321975,
+      "Residual": -0.26238916321972283,
+      "Absolute_Residual": 0.26238916321972283
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2011,
+      "Observed_CO2": 391.85,
+      "Fitted_CO2": 392.5384360348877,
+      "Residual": -0.6884360348876726,
+      "Absolute_Residual": 0.6884360348876726
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2012,
+      "Observed_CO2": 394.06,
+      "Fitted_CO2": 394.7457547721393,
+      "Residual": -0.6857547721393189,
+      "Absolute_Residual": 0.6857547721393189
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2013,
+      "Observed_CO2": 396.74,
+      "Fitted_CO2": 396.9845928318483,
+      "Residual": -0.24459283184830838,
+      "Absolute_Residual": 0.24459283184830838
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2014,
+      "Observed_CO2": 398.81,
+      "Fitted_CO2": 399.2551976708882,
+      "Residual": -0.4451976708882057,
+      "Absolute_Residual": 0.4451976708882057
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2015,
+      "Observed_CO2": 401.01,
+      "Fitted_CO2": 401.5578167461326,
+      "Residual": -0.5478167461325825,
+      "Absolute_Residual": 0.5478167461325825
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2016,
+      "Observed_CO2": 404.41,
+      "Fitted_CO2": 403.892697514455,
+      "Residual": 0.5173024855450308,
+      "Absolute_Residual": 0.5173024855450308
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2017,
+      "Observed_CO2": 406.76,
+      "Fitted_CO2": 406.26008743272905,
+      "Residual": 0.4999125672709397,
+      "Absolute_Residual": 0.4999125672709397
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2018,
+      "Observed_CO2": 408.72,
+      "Fitted_CO2": 408.6602339578283,
+      "Residual": 0.05976604217170234,
+      "Absolute_Residual": 0.05976604217170234
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2019,
+      "Observed_CO2": 411.66,
+      "Fitted_CO2": 411.0933845466264,
+      "Residual": 0.566615453373629,
+      "Absolute_Residual": 0.566615453373629
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2020,
+      "Observed_CO2": 414.24,
+      "Fitted_CO2": 413.55978665599685,
+      "Residual": 0.6802133440031639,
+      "Absolute_Residual": 0.6802133440031639
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "full_data",
+      "Year": 2021,
+      "Observed_CO2": 416.45,
+      "Fitted_CO2": 416.05968774281325,
+      "Residual": 0.3903122571867357,
+      "Absolute_Residual": 0.3903122571867357
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1959,
+      "Observed_CO2": 315.98,
+      "Fitted_CO2": 315.5572670097198,
+      "Residual": 0.42273299028022393,
+      "Absolute_Residual": 0.42273299028022393
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1960,
+      "Observed_CO2": 316.91,
+      "Fitted_CO2": 316.3324611866121,
+      "Residual": 0.577538813387946,
+      "Absolute_Residual": 0.577538813387946
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1961,
+      "Observed_CO2": 317.64,
+      "Fitted_CO2": 317.14088036516443,
+      "Residual": 0.49911963483555155,
+      "Absolute_Residual": 0.49911963483555155
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1962,
+      "Observed_CO2": 318.45,
+      "Fitted_CO2": 317.98214339070717,
+      "Residual": 0.4678566092928236,
+      "Absolute_Residual": 0.4678566092928236
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1963,
+      "Observed_CO2": 318.99,
+      "Fitted_CO2": 318.8558691085705,
+      "Residual": 0.13413089142949275,
+      "Absolute_Residual": 0.13413089142949275
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1964,
+      "Observed_CO2": 319.62,
+      "Fitted_CO2": 319.7616763640848,
+      "Residual": -0.14167636408478756,
+      "Absolute_Residual": 0.14167636408478756
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1965,
+      "Observed_CO2": 320.04,
+      "Fitted_CO2": 320.6991840025802,
+      "Residual": -0.6591840025801616,
+      "Absolute_Residual": 0.6591840025801616
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1966,
+      "Observed_CO2": 321.37,
+      "Fitted_CO2": 321.6680108693871,
+      "Residual": -0.29801086938709886,
+      "Absolute_Residual": 0.29801086938709886
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1967,
+      "Observed_CO2": 322.18,
+      "Fitted_CO2": 322.6677758098357,
+      "Residual": -0.48777580983568214,
+      "Absolute_Residual": 0.48777580983568214
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1968,
+      "Observed_CO2": 323.05,
+      "Fitted_CO2": 323.69809766925636,
+      "Residual": -0.6480976692563445,
+      "Absolute_Residual": 0.6480976692563445
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1969,
+      "Observed_CO2": 324.62,
+      "Fitted_CO2": 324.7585952929793,
+      "Residual": -0.1385952929792893,
+      "Absolute_Residual": 0.1385952929792893
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1970,
+      "Observed_CO2": 325.68,
+      "Fitted_CO2": 325.8488875263348,
+      "Residual": -0.16888752633479953,
+      "Absolute_Residual": 0.16888752633479953
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1971,
+      "Observed_CO2": 326.32,
+      "Fitted_CO2": 326.96859321465314,
+      "Residual": -0.6485932146531468,
+      "Absolute_Residual": 0.6485932146531468
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1972,
+      "Observed_CO2": 327.46,
+      "Fitted_CO2": 328.1173312032646,
+      "Residual": -0.6573312032646186,
+      "Absolute_Residual": 0.6573312032646186
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1973,
+      "Observed_CO2": 329.68,
+      "Fitted_CO2": 329.2947203374994,
+      "Residual": 0.38527966250057943,
+      "Absolute_Residual": 0.38527966250057943
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1974,
+      "Observed_CO2": 330.19,
+      "Fitted_CO2": 330.500379462688,
+      "Residual": -0.3103794626879903,
+      "Absolute_Residual": 0.3103794626879903
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1975,
+      "Observed_CO2": 331.13,
+      "Fitted_CO2": 331.73392742416047,
+      "Residual": -0.6039274241604744,
+      "Absolute_Residual": 0.6039274241604744
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1976,
+      "Observed_CO2": 332.03,
+      "Fitted_CO2": 332.9949830672472,
+      "Residual": -0.9649830672472035,
+      "Absolute_Residual": 0.9649830672472035
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1977,
+      "Observed_CO2": 333.84,
+      "Fitted_CO2": 334.2831652372784,
+      "Residual": -0.4431652372784356,
+      "Absolute_Residual": 0.4431652372784356
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1978,
+      "Observed_CO2": 335.41,
+      "Fitted_CO2": 335.5980927795845,
+      "Residual": -0.18809277958445136,
+      "Absolute_Residual": 0.18809277958445136
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1979,
+      "Observed_CO2": 336.84,
+      "Fitted_CO2": 336.9393845394955,
+      "Residual": -0.0993845394955315,
+      "Absolute_Residual": 0.0993845394955315
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1980,
+      "Observed_CO2": 338.76,
+      "Fitted_CO2": 338.3066593623419,
+      "Residual": 0.45334063765807286,
+      "Absolute_Residual": 0.45334063765807286
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1981,
+      "Observed_CO2": 340.12,
+      "Fitted_CO2": 339.69953609345396,
+      "Residual": 0.42046390654604693,
+      "Absolute_Residual": 0.42046390654604693
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1982,
+      "Observed_CO2": 341.48,
+      "Fitted_CO2": 341.1176335781619,
+      "Residual": 0.3623664218381464,
+      "Absolute_Residual": 0.3623664218381464
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1983,
+      "Observed_CO2": 343.15,
+      "Fitted_CO2": 342.56057066179596,
+      "Residual": 0.5894293382040132,
+      "Absolute_Residual": 0.5894293382040132
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1984,
+      "Observed_CO2": 344.87,
+      "Fitted_CO2": 344.02796618968654,
+      "Residual": 0.8420338103134668,
+      "Absolute_Residual": 0.8420338103134668
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1985,
+      "Observed_CO2": 346.35,
+      "Fitted_CO2": 345.5194390071638,
+      "Residual": 0.8305609928362401,
+      "Absolute_Residual": 0.8305609928362401
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1986,
+      "Observed_CO2": 347.61,
+      "Fitted_CO2": 347.03460795955806,
+      "Residual": 0.5753920404419546,
+      "Absolute_Residual": 0.5753920404419546
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1987,
+      "Observed_CO2": 349.31,
+      "Fitted_CO2": 348.57309189219956,
+      "Residual": 0.7369081078004456,
+      "Absolute_Residual": 0.7369081078004456
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1988,
+      "Observed_CO2": 351.69,
+      "Fitted_CO2": 350.13450965041864,
+      "Residual": 1.555490349581362,
+      "Absolute_Residual": 1.555490349581362
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1989,
+      "Observed_CO2": 353.2,
+      "Fitted_CO2": 351.7184800795456,
+      "Residual": 1.4815199204543887,
+      "Absolute_Residual": 1.4815199204543887
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1990,
+      "Observed_CO2": 354.45,
+      "Fitted_CO2": 353.32462202491064,
+      "Residual": 1.12537797508935,
+      "Absolute_Residual": 1.12537797508935
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1991,
+      "Observed_CO2": 355.7,
+      "Fitted_CO2": 354.95255433184406,
+      "Residual": 0.7474456681559332,
+      "Absolute_Residual": 0.7474456681559332
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1992,
+      "Observed_CO2": 356.54,
+      "Fitted_CO2": 356.60189584567615,
+      "Residual": -0.061895845676133376,
+      "Absolute_Residual": 0.061895845676133376
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1993,
+      "Observed_CO2": 357.21,
+      "Fitted_CO2": 358.2722654117372,
+      "Residual": -1.0622654117372008,
+      "Absolute_Residual": 1.0622654117372008
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1994,
+      "Observed_CO2": 358.96,
+      "Fitted_CO2": 359.96328187535744,
+      "Residual": -1.0032818753574588,
+      "Absolute_Residual": 1.0032818753574588
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1995,
+      "Observed_CO2": 360.97,
+      "Fitted_CO2": 361.6745640818672,
+      "Residual": -0.7045640818671473,
+      "Absolute_Residual": 0.7045640818671473
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1996,
+      "Observed_CO2": 362.74,
+      "Fitted_CO2": 363.4057308765967,
+      "Residual": -0.6657308765966832,
+      "Absolute_Residual": 0.6657308765966832
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1997,
+      "Observed_CO2": 363.88,
+      "Fitted_CO2": 365.15640110487624,
+      "Residual": -1.2764011048762427,
+      "Absolute_Residual": 1.2764011048762427
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1998,
+      "Observed_CO2": 366.84,
+      "Fitted_CO2": 366.9261936120361,
+      "Residual": -0.08619361203614062,
+      "Absolute_Residual": 0.08619361203614062
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 1999,
+      "Observed_CO2": 368.54,
+      "Fitted_CO2": 368.7147272434066,
+      "Residual": -0.1747272434066076,
+      "Absolute_Residual": 0.1747272434066076
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 2000,
+      "Observed_CO2": 369.71,
+      "Fitted_CO2": 370.521620844318,
+      "Residual": -0.8116208443180426,
+      "Absolute_Residual": 0.8116208443180426
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 2001,
+      "Observed_CO2": 371.32,
+      "Fitted_CO2": 372.34649326010054,
+      "Residual": -1.0264932601005512,
+      "Absolute_Residual": 1.0264932601005512
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 2002,
+      "Observed_CO2": 373.45,
+      "Fitted_CO2": 374.1889633360845,
+      "Residual": -0.7389633360845096,
+      "Absolute_Residual": 0.7389633360845096
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 2003,
+      "Observed_CO2": 375.98,
+      "Fitted_CO2": 376.0486499176002,
+      "Residual": -0.06864991760016892,
+      "Absolute_Residual": 0.06864991760016892
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 2004,
+      "Observed_CO2": 377.7,
+      "Fitted_CO2": 377.9251718499778,
+      "Residual": -0.22517184997781214,
+      "Absolute_Residual": 0.22517184997781214
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 2005,
+      "Observed_CO2": 379.98,
+      "Fitted_CO2": 379.81814797854776,
+      "Residual": 0.16185202145226185,
+      "Absolute_Residual": 0.16185202145226185
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 2006,
+      "Observed_CO2": 382.09,
+      "Fitted_CO2": 381.72719714864024,
+      "Residual": 0.36280285135973145,
+      "Absolute_Residual": 0.36280285135973145
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 2007,
+      "Observed_CO2": 384.02,
+      "Fitted_CO2": 383.6519382055855,
+      "Residual": 0.36806179441447284,
+      "Absolute_Residual": 0.36806179441447284
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 2008,
+      "Observed_CO2": 385.83,
+      "Fitted_CO2": 385.5919899947139,
+      "Residual": 0.2380100052860712,
+      "Absolute_Residual": 0.2380100052860712
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 2009,
+      "Observed_CO2": 387.64,
+      "Fitted_CO2": 387.54697136135565,
+      "Residual": 0.0930286386443413,
+      "Absolute_Residual": 0.0930286386443413
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 2010,
+      "Observed_CO2": 390.1,
+      "Fitted_CO2": 389.5165011508411,
+      "Residual": 0.5834988491589002,
+      "Absolute_Residual": 0.5834988491589002
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Fit_Stage": "training_data",
+      "Year": 2011,
+      "Observed_CO2": 391.85,
+      "Fitted_CO2": 391.5001982085004,
+      "Residual": 0.3498017914996012,
+      "Absolute_Residual": 0.3498017914996012
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1959,
+      "Observed_CO2": 315.98,
+      "Fitted_CO2": 316.22588737237106,
+      "Residual": -0.24588737237104397,
+      "Absolute_Residual": 0.24588737237104397
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1960,
+      "Observed_CO2": 316.91,
+      "Fitted_CO2": 316.7570292940627,
+      "Residual": 0.15297070593732087,
+      "Absolute_Residual": 0.15297070593732087
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1961,
+      "Observed_CO2": 317.64,
+      "Fitted_CO2": 317.3626180033455,
+      "Residual": 0.2773819966544693,
+      "Absolute_Residual": 0.2773819966544693
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1962,
+      "Observed_CO2": 318.45,
+      "Fitted_CO2": 318.03856132867173,
+      "Residual": 0.4114386713282556,
+      "Absolute_Residual": 0.4114386713282556
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1963,
+      "Observed_CO2": 318.99,
+      "Fitted_CO2": 318.7809142045418,
+      "Residual": 0.20908579545823613,
+      "Absolute_Residual": 0.20908579545823613
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1964,
+      "Observed_CO2": 319.62,
+      "Fitted_CO2": 319.5858786715042,
+      "Residual": 0.034121328495814396,
+      "Absolute_Residual": 0.034121328495814396
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1965,
+      "Observed_CO2": 320.04,
+      "Fitted_CO2": 320.4498038761559,
+      "Residual": -0.4098038761558769,
+      "Absolute_Residual": 0.4098038761558769
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1966,
+      "Observed_CO2": 321.37,
+      "Fitted_CO2": 321.36918607114177,
+      "Residual": 0.000813928858235613,
+      "Absolute_Residual": 0.000813928858235613
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1967,
+      "Observed_CO2": 322.18,
+      "Fitted_CO2": 322.340668615155,
+      "Residual": -0.16066861515497521,
+      "Absolute_Residual": 0.16066861515497521
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1968,
+      "Observed_CO2": 323.05,
+      "Fitted_CO2": 323.36104197293685,
+      "Residual": -0.31104197293683455,
+      "Absolute_Residual": 0.31104197293683455
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1969,
+      "Observed_CO2": 324.62,
+      "Fitted_CO2": 324.4272437152769,
+      "Residual": 0.1927562847230888,
+      "Absolute_Residual": 0.1927562847230888
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1970,
+      "Observed_CO2": 325.68,
+      "Fitted_CO2": 325.5363585190128,
+      "Residual": 0.14364148098718488,
+      "Absolute_Residual": 0.14364148098718488
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1971,
+      "Observed_CO2": 326.32,
+      "Fitted_CO2": 326.6856181670305,
+      "Residual": -0.36561816703050454,
+      "Absolute_Residual": 0.36561816703050454
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1972,
+      "Observed_CO2": 327.46,
+      "Fitted_CO2": 327.87240154826395,
+      "Residual": -0.412401548263972,
+      "Absolute_Residual": 0.412401548263972
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1973,
+      "Observed_CO2": 329.68,
+      "Fitted_CO2": 329.0942346576955,
+      "Residual": 0.5857653423045122,
+      "Absolute_Residual": 0.5857653423045122
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1974,
+      "Observed_CO2": 330.19,
+      "Fitted_CO2": 330.34879059635546,
+      "Residual": -0.158790596355459,
+      "Absolute_Residual": 0.158790596355459
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1975,
+      "Observed_CO2": 331.13,
+      "Fitted_CO2": 331.6338895713224,
+      "Residual": -0.5038895713224179,
+      "Absolute_Residual": 0.5038895713224179
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1976,
+      "Observed_CO2": 332.03,
+      "Fitted_CO2": 332.94749889572324,
+      "Residual": -0.9174988957232699,
+      "Absolute_Residual": 0.9174988957232699
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1977,
+      "Observed_CO2": 333.84,
+      "Fitted_CO2": 334.28773298873284,
+      "Residual": -0.4477329887328665,
+      "Absolute_Residual": 0.4477329887328665
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1978,
+      "Observed_CO2": 335.41,
+      "Fitted_CO2": 335.65285337557435,
+      "Residual": -0.2428533755743274,
+      "Absolute_Residual": 0.2428533755743274
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1979,
+      "Observed_CO2": 336.84,
+      "Fitted_CO2": 337.0412686875191,
+      "Residual": -0.20126868751913207,
+      "Absolute_Residual": 0.20126868751913207
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1980,
+      "Observed_CO2": 338.76,
+      "Fitted_CO2": 338.4515346618866,
+      "Residual": 0.30846533811336485,
+      "Absolute_Residual": 0.30846533811336485
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1981,
+      "Observed_CO2": 340.12,
+      "Fitted_CO2": 339.88235414204456,
+      "Residual": 0.23764585795544235,
+      "Absolute_Residual": 0.23764585795544235
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1982,
+      "Observed_CO2": 341.48,
+      "Fitted_CO2": 341.33257707740876,
+      "Residual": 0.14742292259126089,
+      "Absolute_Residual": 0.14742292259126089
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1983,
+      "Observed_CO2": 343.15,
+      "Fitted_CO2": 342.8012005234433,
+      "Residual": 0.3487994765566782,
+      "Absolute_Residual": 0.3487994765566782
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1984,
+      "Observed_CO2": 344.87,
+      "Fitted_CO2": 344.28736864166035,
+      "Residual": 0.5826313583396541,
+      "Absolute_Residual": 0.5826313583396541
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1985,
+      "Observed_CO2": 346.35,
+      "Fitted_CO2": 345.7903726996204,
+      "Residual": 0.5596273003796455,
+      "Absolute_Residual": 0.5596273003796455
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1986,
+      "Observed_CO2": 347.61,
+      "Fitted_CO2": 347.309651070932,
+      "Residual": 0.30034892906803634,
+      "Absolute_Residual": 0.30034892906803634
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1987,
+      "Observed_CO2": 349.31,
+      "Fitted_CO2": 348.8447892352518,
+      "Residual": 0.46521076474817846,
+      "Absolute_Residual": 0.46521076474817846
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1988,
+      "Observed_CO2": 351.69,
+      "Fitted_CO2": 350.395519778285,
+      "Residual": 1.2944802217149913,
+      "Absolute_Residual": 1.2944802217149913
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1989,
+      "Observed_CO2": 353.2,
+      "Fitted_CO2": 351.9617223917845,
+      "Residual": 1.2382776082154692,
+      "Absolute_Residual": 1.2382776082154692
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1990,
+      "Observed_CO2": 354.45,
+      "Fitted_CO2": 353.5434238735518,
+      "Residual": 0.9065761264482148,
+      "Absolute_Residual": 0.9065761264482148
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1991,
+      "Observed_CO2": 355.7,
+      "Fitted_CO2": 355.14079812743614,
+      "Residual": 0.5592018725638468,
+      "Absolute_Residual": 0.5592018725638468
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1992,
+      "Observed_CO2": 356.54,
+      "Fitted_CO2": 356.7541661633354,
+      "Residual": -0.21416616333539196,
+      "Absolute_Residual": 0.21416616333539196
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1993,
+      "Observed_CO2": 357.21,
+      "Fitted_CO2": 358.3839960971954,
+      "Residual": -1.1739960971954133,
+      "Absolute_Residual": 1.1739960971954133
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1994,
+      "Observed_CO2": 358.96,
+      "Fitted_CO2": 360.0309031510101,
+      "Residual": -1.0709031510101,
+      "Absolute_Residual": 1.0709031510101
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1995,
+      "Observed_CO2": 360.97,
+      "Fitted_CO2": 361.69564965282177,
+      "Residual": -0.725649652821744,
+      "Absolute_Residual": 0.725649652821744
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1996,
+      "Observed_CO2": 362.74,
+      "Fitted_CO2": 363.3791450367208,
+      "Residual": -0.6391450367207767,
+      "Absolute_Residual": 0.6391450367207767
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1997,
+      "Observed_CO2": 363.88,
+      "Fitted_CO2": 365.0824458428457,
+      "Residual": -1.202445842845691,
+      "Absolute_Residual": 1.202445842845691
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1998,
+      "Observed_CO2": 366.84,
+      "Fitted_CO2": 366.80675571738334,
+      "Residual": 0.0332442826166357,
+      "Absolute_Residual": 0.0332442826166357
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 1999,
+      "Observed_CO2": 368.54,
+      "Fitted_CO2": 368.5534254125685,
+      "Residual": -0.013425412568494721,
+      "Absolute_Residual": 0.013425412568494721
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2000,
+      "Observed_CO2": 369.71,
+      "Fitted_CO2": 370.3239527866845,
+      "Residual": -0.6139527866845356,
+      "Absolute_Residual": 0.6139527866845356
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2001,
+      "Observed_CO2": 371.32,
+      "Fitted_CO2": 372.1199828040625,
+      "Residual": -0.7999828040624948,
+      "Absolute_Residual": 0.7999828040624948
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2002,
+      "Observed_CO2": 373.45,
+      "Fitted_CO2": 373.943307535082,
+      "Residual": -0.4933075350820104,
+      "Absolute_Residual": 0.4933075350820104
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2003,
+      "Observed_CO2": 375.98,
+      "Fitted_CO2": 375.7958661561707,
+      "Residual": 0.18413384382932918,
+      "Absolute_Residual": 0.18413384382932918
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2004,
+      "Observed_CO2": 377.7,
+      "Fitted_CO2": 377.67974494980433,
+      "Residual": 0.020255050195657986,
+      "Absolute_Residual": 0.020255050195657986
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2005,
+      "Observed_CO2": 379.98,
+      "Fitted_CO2": 379.5971773045071,
+      "Residual": 0.38282269549290504,
+      "Absolute_Residual": 0.38282269549290504
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2006,
+      "Observed_CO2": 382.09,
+      "Fitted_CO2": 381.5505437148511,
+      "Residual": 0.5394562851489013,
+      "Absolute_Residual": 0.5394562851489013
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2007,
+      "Observed_CO2": 384.02,
+      "Fitted_CO2": 383.54237178145667,
+      "Residual": 0.47762821854331605,
+      "Absolute_Residual": 0.47762821854331605
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2008,
+      "Observed_CO2": 385.83,
+      "Fitted_CO2": 385.5753362109924,
+      "Residual": 0.2546637890075658,
+      "Absolute_Residual": 0.2546637890075658
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2009,
+      "Observed_CO2": 387.64,
+      "Fitted_CO2": 387.65225881617516,
+      "Residual": -0.012258816175176435,
+      "Absolute_Residual": 0.012258816175176435
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2010,
+      "Observed_CO2": 390.1,
+      "Fitted_CO2": 389.7761085157697,
+      "Residual": 0.3238914842303302,
+      "Absolute_Residual": 0.3238914842303302
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2011,
+      "Observed_CO2": 391.85,
+      "Fitted_CO2": 391.9500013345893,
+      "Residual": -0.1000013345892512,
+      "Absolute_Residual": 0.1000013345892512
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2012,
+      "Observed_CO2": 394.06,
+      "Fitted_CO2": 394.177200403495,
+      "Residual": -0.11720040349501915,
+      "Absolute_Residual": 0.11720040349501915
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2013,
+      "Observed_CO2": 396.74,
+      "Fitted_CO2": 396.4611159593966,
+      "Residual": 0.27888404060342964,
+      "Absolute_Residual": 0.27888404060342964
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2014,
+      "Observed_CO2": 398.81,
+      "Fitted_CO2": 398.80530534525144,
+      "Residual": 0.0046946547485617884,
+      "Absolute_Residual": 0.0046946547485617884
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2015,
+      "Observed_CO2": 401.01,
+      "Fitted_CO2": 401.2134730100655,
+      "Residual": -0.20347301006552243,
+      "Absolute_Residual": 0.20347301006552243
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2016,
+      "Observed_CO2": 404.41,
+      "Fitted_CO2": 403.6894705088929,
+      "Residual": 0.7205294911071292,
+      "Absolute_Residual": 0.7205294911071292
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2017,
+      "Observed_CO2": 406.76,
+      "Fitted_CO2": 406.2372965028356,
+      "Residual": 0.5227034971644002,
+      "Absolute_Residual": 0.5227034971644002
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2018,
+      "Observed_CO2": 408.72,
+      "Fitted_CO2": 408.8610967590441,
+      "Residual": -0.1410967590440464,
+      "Absolute_Residual": 0.1410967590440464
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2019,
+      "Observed_CO2": 411.66,
+      "Fitted_CO2": 411.5651641507169,
+      "Residual": 0.09483584928312894,
+      "Absolute_Residual": 0.09483584928312894
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2020,
+      "Observed_CO2": 414.24,
+      "Fitted_CO2": 414.3539386571008,
+      "Residual": -0.11393865710078899,
+      "Absolute_Residual": 0.11393865710078899
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "full_data",
+      "Year": 2021,
+      "Observed_CO2": 416.45,
+      "Fitted_CO2": 417.2320073634907,
+      "Residual": -0.7820073634907203,
+      "Absolute_Residual": 0.7820073634907203
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1959,
+      "Observed_CO2": 315.98,
+      "Fitted_CO2": 316.5569380999668,
+      "Residual": -0.5769380999668101,
+      "Absolute_Residual": 0.5769380999668101
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1960,
+      "Observed_CO2": 316.91,
+      "Fitted_CO2": 316.9476433959949,
+      "Residual": -0.03764339599484856,
+      "Absolute_Residual": 0.03764339599484856
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1961,
+      "Observed_CO2": 317.64,
+      "Fitted_CO2": 317.439424672659,
+      "Residual": 0.20057532734097094,
+      "Absolute_Residual": 0.20057532734097094
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1962,
+      "Observed_CO2": 318.45,
+      "Fitted_CO2": 318.02556801725177,
+      "Residual": 0.42443198274821725,
+      "Absolute_Residual": 0.42443198274821725
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1963,
+      "Observed_CO2": 318.99,
+      "Fitted_CO2": 318.69961799698564,
+      "Residual": 0.290382003014372,
+      "Absolute_Residual": 0.290382003014372
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1964,
+      "Observed_CO2": 319.62,
+      "Fitted_CO2": 319.45537765899286,
+      "Residual": 0.16462234100714568,
+      "Absolute_Residual": 0.16462234100714568
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1965,
+      "Observed_CO2": 320.04,
+      "Fitted_CO2": 320.2869085303257,
+      "Residual": -0.24690853032569748,
+      "Absolute_Residual": 0.24690853032569748
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1966,
+      "Observed_CO2": 321.37,
+      "Fitted_CO2": 321.1885306179563,
+      "Residual": 0.18146938204370144,
+      "Absolute_Residual": 0.18146938204370144
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1967,
+      "Observed_CO2": 322.18,
+      "Fitted_CO2": 322.15482240877674,
+      "Residual": 0.02517759122326879,
+      "Absolute_Residual": 0.02517759122326879
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1968,
+      "Observed_CO2": 323.05,
+      "Fitted_CO2": 323.180620869599,
+      "Residual": -0.13062086959899943,
+      "Absolute_Residual": 0.13062086959899943
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1969,
+      "Observed_CO2": 324.62,
+      "Fitted_CO2": 324.2610214471549,
+      "Residual": 0.3589785528450875,
+      "Absolute_Residual": 0.3589785528450875
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1970,
+      "Observed_CO2": 325.68,
+      "Fitted_CO2": 325.3913780680963,
+      "Residual": 0.28862193190371954,
+      "Absolute_Residual": 0.28862193190371954
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1971,
+      "Observed_CO2": 326.32,
+      "Fitted_CO2": 326.56730313899476,
+      "Residual": -0.2473031389947664,
+      "Absolute_Residual": 0.2473031389947664
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1972,
+      "Observed_CO2": 327.46,
+      "Fitted_CO2": 327.784667546342,
+      "Residual": -0.32466754634202744,
+      "Absolute_Residual": 0.32466754634202744
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1973,
+      "Observed_CO2": 329.68,
+      "Fitted_CO2": 329.0396006565495,
+      "Residual": 0.6403993434504969,
+      "Absolute_Residual": 0.6403993434504969
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1974,
+      "Observed_CO2": 330.19,
+      "Fitted_CO2": 330.32849031594867,
+      "Residual": -0.13849031594867256,
+      "Absolute_Residual": 0.13849031594867256
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1975,
+      "Observed_CO2": 331.13,
+      "Fitted_CO2": 331.6479828507908,
+      "Residual": -0.5179828507908155,
+      "Absolute_Residual": 0.5179828507908155
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1976,
+      "Observed_CO2": 332.03,
+      "Fitted_CO2": 332.9949830672472,
+      "Residual": -0.9649830672472035,
+      "Absolute_Residual": 0.9649830672472035
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1977,
+      "Observed_CO2": 333.84,
+      "Fitted_CO2": 334.36665425140893,
+      "Residual": -0.5266542514089565,
+      "Absolute_Residual": 0.5266542514089565
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1978,
+      "Observed_CO2": 335.41,
+      "Fitted_CO2": 335.76041816928716,
+      "Residual": -0.3504181692871384,
+      "Absolute_Residual": 0.3504181692871384
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1979,
+      "Observed_CO2": 336.84,
+      "Fitted_CO2": 337.1739550668127,
+      "Residual": -0.33395506681273446,
+      "Absolute_Residual": 0.33395506681273446
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1980,
+      "Observed_CO2": 338.76,
+      "Fitted_CO2": 338.60520366983656,
+      "Residual": 0.1547963301634354,
+      "Absolute_Residual": 0.1547963301634354
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1981,
+      "Observed_CO2": 340.12,
+      "Fitted_CO2": 340.0523611841294,
+      "Residual": 0.06763881587062315,
+      "Absolute_Residual": 0.06763881587062315
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1982,
+      "Observed_CO2": 341.48,
+      "Fitted_CO2": 341.513883295382,
+      "Residual": -0.033883295381997414,
+      "Absolute_Residual": 0.033883295381997414
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1983,
+      "Observed_CO2": 343.15,
+      "Fitted_CO2": 342.9884841692049,
+      "Residual": 0.16151583079505372,
+      "Absolute_Residual": 0.16151583079505372
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1984,
+      "Observed_CO2": 344.87,
+      "Fitted_CO2": 344.47513645112866,
+      "Residual": 0.3948635488713421,
+      "Absolute_Residual": 0.3948635488713421
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1985,
+      "Observed_CO2": 346.35,
+      "Fitted_CO2": 345.9730712666036,
+      "Residual": 0.37692873339642574,
+      "Absolute_Residual": 0.37692873339642574
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1986,
+      "Observed_CO2": 347.61,
+      "Fitted_CO2": 347.4817782210002,
+      "Residual": 0.1282217789998299,
+      "Absolute_Residual": 0.1282217789998299
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1987,
+      "Observed_CO2": 349.31,
+      "Fitted_CO2": 349.0010053996085,
+      "Residual": 0.3089946003914861,
+      "Absolute_Residual": 0.3089946003914861
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1988,
+      "Observed_CO2": 351.69,
+      "Fitted_CO2": 350.5307593676388,
+      "Residual": 1.159240632361218,
+      "Absolute_Residual": 1.159240632361218
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1989,
+      "Observed_CO2": 353.2,
+      "Fitted_CO2": 352.071305170221,
+      "Residual": 1.128694829778965,
+      "Absolute_Residual": 1.128694829778965
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1990,
+      "Observed_CO2": 354.45,
+      "Fitted_CO2": 353.6231663324052,
+      "Residual": 0.8268336675947694,
+      "Absolute_Residual": 0.8268336675947694
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1991,
+      "Observed_CO2": 355.7,
+      "Fitted_CO2": 355.18712485916126,
+      "Residual": 0.5128751408387302,
+      "Absolute_Residual": 0.5128751408387302
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1992,
+      "Observed_CO2": 356.54,
+      "Fitted_CO2": 356.76422123537884,
+      "Residual": -0.22422123537882044,
+      "Absolute_Residual": 0.22422123537882044
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1993,
+      "Observed_CO2": 357.21,
+      "Fitted_CO2": 358.35575442586764,
+      "Residual": -1.1457544258676648,
+      "Absolute_Residual": 1.1457544258676648
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1994,
+      "Observed_CO2": 358.96,
+      "Fitted_CO2": 359.9632818753574,
+      "Residual": -1.003281875357402,
+      "Absolute_Residual": 1.003281875357402
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1995,
+      "Observed_CO2": 360.97,
+      "Fitted_CO2": 361.58861950849746,
+      "Residual": -0.6186195084974315,
+      "Absolute_Residual": 0.6186195084974315
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1996,
+      "Observed_CO2": 362.74,
+      "Fitted_CO2": 363.2338417298573,
+      "Residual": -0.49384172985730856,
+      "Absolute_Residual": 0.49384172985730856
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1997,
+      "Observed_CO2": 363.88,
+      "Fitted_CO2": 364.90128142392626,
+      "Residual": -1.0212814239262684,
+      "Absolute_Residual": 1.0212814239262684
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1998,
+      "Observed_CO2": 366.84,
+      "Fitted_CO2": 366.5935299551135,
+      "Residual": 0.24647004488645052,
+      "Absolute_Residual": 0.24647004488645052
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 1999,
+      "Observed_CO2": 368.54,
+      "Fitted_CO2": 368.31343716774825,
+      "Residual": 0.22656283225177276,
+      "Absolute_Residual": 0.22656283225177276
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 2000,
+      "Observed_CO2": 369.71,
+      "Fitted_CO2": 370.0641113860795,
+      "Residual": -0.3541113860795235,
+      "Absolute_Residual": 0.3541113860795235
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 2001,
+      "Observed_CO2": 371.32,
+      "Fitted_CO2": 371.84891941427617,
+      "Residual": -0.5289194142761744,
+      "Absolute_Residual": 0.5289194142761744
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 2002,
+      "Observed_CO2": 373.45,
+      "Fitted_CO2": 373.67148653642715,
+      "Residual": -0.22148653642716454,
+      "Absolute_Residual": 0.22148653642716454
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 2003,
+      "Observed_CO2": 375.98,
+      "Fitted_CO2": 375.53569651654124,
+      "Residual": 0.444303483458782,
+      "Absolute_Residual": 0.444303483458782
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 2004,
+      "Observed_CO2": 377.7,
+      "Fitted_CO2": 377.4456915985471,
+      "Residual": 0.2543084014528745,
+      "Absolute_Residual": 0.2543084014528745
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 2005,
+      "Observed_CO2": 379.98,
+      "Fitted_CO2": 379.40587250629335,
+      "Residual": 0.5741274937066692,
+      "Absolute_Residual": 0.5741274937066692
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 2006,
+      "Observed_CO2": 382.09,
+      "Fitted_CO2": 381.4208984435484,
+      "Residual": 0.669101556451551,
+      "Absolute_Residual": 0.669101556451551
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 2007,
+      "Observed_CO2": 384.02,
+      "Fitted_CO2": 383.4956870940008,
+      "Residual": 0.5243129059991816,
+      "Absolute_Residual": 0.5243129059991816
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 2008,
+      "Observed_CO2": 385.83,
+      "Fitted_CO2": 385.6354146212587,
+      "Residual": 0.19458537874129433,
+      "Absolute_Residual": 0.19458537874129433
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 2009,
+      "Observed_CO2": 387.64,
+      "Fitted_CO2": 387.84551566885045,
+      "Residual": -0.20551566885046668,
+      "Absolute_Residual": 0.20551566885046668
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 2010,
+      "Observed_CO2": 390.1,
+      "Fitted_CO2": 390.1316833602241,
+      "Residual": -0.03168336022406493,
+      "Absolute_Residual": 0.03168336022406493
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Fit_Stage": "training_data",
+      "Year": 2011,
+      "Observed_CO2": 391.85,
+      "Fitted_CO2": 392.49986929874774,
+      "Residual": -0.649869298747717,
+      "Absolute_Residual": 0.649869298747717
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1959,
+      "Observed_CO2": 315.98,
+      "Fitted_CO2": 309.8386869760351,
+      "Residual": 6.141313023964926,
+      "Absolute_Residual": 6.141313023964926
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1960,
+      "Observed_CO2": 316.91,
+      "Fitted_CO2": 311.2335238455075,
+      "Residual": 5.676476154492548,
+      "Absolute_Residual": 5.676476154492548
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1961,
+      "Observed_CO2": 317.64,
+      "Fitted_CO2": 312.634640014416,
+      "Residual": 5.005359985583993,
+      "Absolute_Residual": 5.005359985583993
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1962,
+      "Observed_CO2": 318.45,
+      "Fitted_CO2": 314.0420637510137,
+      "Residual": 4.407936248986289,
+      "Absolute_Residual": 4.407936248986289
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1963,
+      "Observed_CO2": 318.99,
+      "Fitted_CO2": 315.45582345081186,
+      "Residual": 3.534176549188146,
+      "Absolute_Residual": 3.534176549188146
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1964,
+      "Observed_CO2": 319.62,
+      "Fitted_CO2": 316.8759476371534,
+      "Residual": 2.7440523628466167,
+      "Absolute_Residual": 2.7440523628466167
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1965,
+      "Observed_CO2": 320.04,
+      "Fitted_CO2": 318.3024649617878,
+      "Residual": 1.7375350382122292,
+      "Absolute_Residual": 1.7375350382122292
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1966,
+      "Observed_CO2": 321.37,
+      "Fitted_CO2": 319.73540420544975,
+      "Residual": 1.6345957945502505,
+      "Absolute_Residual": 1.6345957945502505
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1967,
+      "Observed_CO2": 322.18,
+      "Fitted_CO2": 321.1747942784392,
+      "Residual": 1.0052057215607988,
+      "Absolute_Residual": 1.0052057215607988
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1968,
+      "Observed_CO2": 323.05,
+      "Fitted_CO2": 322.6206642212054,
+      "Residual": 0.42933577879460927,
+      "Absolute_Residual": 0.42933577879460927
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1969,
+      "Observed_CO2": 324.62,
+      "Fitted_CO2": 324.0730432049318,
+      "Residual": 0.5469567950681835,
+      "Absolute_Residual": 0.5469567950681835
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1970,
+      "Observed_CO2": 325.68,
+      "Fitted_CO2": 325.53196053212577,
+      "Residual": 0.14803946787424138,
+      "Absolute_Residual": 0.14803946787424138
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1971,
+      "Observed_CO2": 326.32,
+      "Fitted_CO2": 326.99744563720867,
+      "Residual": -0.6774456372086775,
+      "Absolute_Residual": 0.6774456372086775
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1972,
+      "Observed_CO2": 327.46,
+      "Fitted_CO2": 328.4695280871106,
+      "Residual": -1.0095280871105956,
+      "Absolute_Residual": 1.0095280871105956
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1973,
+      "Observed_CO2": 329.68,
+      "Fitted_CO2": 329.9482375818663,
+      "Residual": -0.26823758186628766,
+      "Absolute_Residual": 0.26823758186628766
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1974,
+      "Observed_CO2": 330.19,
+      "Fitted_CO2": 331.43360395521466,
+      "Residual": -1.2436039552146667,
+      "Absolute_Residual": 1.2436039552146667
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1975,
+      "Observed_CO2": 331.13,
+      "Fitted_CO2": 332.9256571752007,
+      "Residual": -1.795657175200688,
+      "Absolute_Residual": 1.795657175200688
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1976,
+      "Observed_CO2": 332.03,
+      "Fitted_CO2": 334.42442734478,
+      "Residual": -2.394427344780013,
+      "Absolute_Residual": 2.394427344780013
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1977,
+      "Observed_CO2": 333.84,
+      "Fitted_CO2": 335.929944702426,
+      "Residual": -2.08994470242601,
+      "Absolute_Residual": 2.08994470242601
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1978,
+      "Observed_CO2": 335.41,
+      "Fitted_CO2": 337.44223962274043,
+      "Residual": -2.0322396227404056,
+      "Absolute_Residual": 2.0322396227404056
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1979,
+      "Observed_CO2": 336.84,
+      "Fitted_CO2": 338.9613426170658,
+      "Residual": -2.1213426170658067,
+      "Absolute_Residual": 2.1213426170658067
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1980,
+      "Observed_CO2": 338.76,
+      "Fitted_CO2": 340.48728433410093,
+      "Residual": -1.7272843341009434,
+      "Absolute_Residual": 1.7272843341009434
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1981,
+      "Observed_CO2": 340.12,
+      "Fitted_CO2": 342.02009556051974,
+      "Residual": -1.9000955605197305,
+      "Absolute_Residual": 1.9000955605197305
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1982,
+      "Observed_CO2": 341.48,
+      "Fitted_CO2": 343.5598072215919,
+      "Residual": -2.0798072215918637,
+      "Absolute_Residual": 2.0798072215918637
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1983,
+      "Observed_CO2": 343.15,
+      "Fitted_CO2": 345.10645038180695,
+      "Residual": -1.9564503818069738,
+      "Absolute_Residual": 1.9564503818069738
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1984,
+      "Observed_CO2": 344.87,
+      "Fitted_CO2": 346.66005624550115,
+      "Residual": -1.7900562455011482,
+      "Absolute_Residual": 1.7900562455011482
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1985,
+      "Observed_CO2": 346.35,
+      "Fitted_CO2": 348.2206561574869,
+      "Residual": -1.8706561574869056,
+      "Absolute_Residual": 1.8706561574869056
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1986,
+      "Observed_CO2": 347.61,
+      "Fitted_CO2": 349.7882816036853,
+      "Residual": -2.1782816036852637,
+      "Absolute_Residual": 2.1782816036852637
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1987,
+      "Observed_CO2": 349.31,
+      "Fitted_CO2": 351.3629642117611,
+      "Residual": -2.0529642117610933,
+      "Absolute_Residual": 2.0529642117610933
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1988,
+      "Observed_CO2": 351.69,
+      "Fitted_CO2": 352.94473575176113,
+      "Residual": -1.2547357517611317,
+      "Absolute_Residual": 1.2547357517611317
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1989,
+      "Observed_CO2": 353.2,
+      "Fitted_CO2": 354.533628136755,
+      "Residual": -1.33362813675501,
+      "Absolute_Residual": 1.33362813675501
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1990,
+      "Observed_CO2": 354.45,
+      "Fitted_CO2": 356.12967342347935,
+      "Residual": -1.6796734234793576,
+      "Absolute_Residual": 1.6796734234793576
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1991,
+      "Observed_CO2": 355.7,
+      "Fitted_CO2": 357.7329038129841,
+      "Residual": -2.0329038129841024,
+      "Absolute_Residual": 2.0329038129841024
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1992,
+      "Observed_CO2": 356.54,
+      "Fitted_CO2": 359.34335165128243,
+      "Residual": -2.803351651282412,
+      "Absolute_Residual": 2.803351651282412
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1993,
+      "Observed_CO2": 357.21,
+      "Fitted_CO2": 360.9610494300035,
+      "Residual": -3.7510494300035475,
+      "Absolute_Residual": 3.7510494300035475
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1994,
+      "Observed_CO2": 358.96,
+      "Fitted_CO2": 362.58602978704766,
+      "Residual": -3.6260297870476847,
+      "Absolute_Residual": 3.6260297870476847
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1995,
+      "Observed_CO2": 360.97,
+      "Fitted_CO2": 364.21832550724514,
+      "Residual": -3.248325507245113,
+      "Absolute_Residual": 3.248325507245113
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1996,
+      "Observed_CO2": 362.74,
+      "Fitted_CO2": 365.8579695230174,
+      "Residual": -3.1179695230173934,
+      "Absolute_Residual": 3.1179695230173934
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1997,
+      "Observed_CO2": 363.88,
+      "Fitted_CO2": 367.5049949150417,
+      "Residual": -3.624994915041725,
+      "Absolute_Residual": 3.624994915041725
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1998,
+      "Observed_CO2": 366.84,
+      "Fitted_CO2": 369.1594349129184,
+      "Residual": -2.319434912918439,
+      "Absolute_Residual": 2.319434912918439
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 1999,
+      "Observed_CO2": 368.54,
+      "Fitted_CO2": 370.82132289584143,
+      "Residual": -2.281322895841413,
+      "Absolute_Residual": 2.281322895841413
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2000,
+      "Observed_CO2": 369.71,
+      "Fitted_CO2": 372.49069239327173,
+      "Residual": -2.7806923932717496,
+      "Absolute_Residual": 2.7806923932717496
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2001,
+      "Observed_CO2": 371.32,
+      "Fitted_CO2": 374.1675770856136,
+      "Residual": -2.8475770856135796,
+      "Absolute_Residual": 2.8475770856135796
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2002,
+      "Observed_CO2": 373.45,
+      "Fitted_CO2": 375.8520108048945,
+      "Residual": -2.4020108048945303,
+      "Absolute_Residual": 2.4020108048945303
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2003,
+      "Observed_CO2": 375.98,
+      "Fitted_CO2": 377.54402753544747,
+      "Residual": -1.564027535447451,
+      "Absolute_Residual": 1.564027535447451
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2004,
+      "Observed_CO2": 377.7,
+      "Fitted_CO2": 379.2436614145965,
+      "Residual": -1.5436614145964995,
+      "Absolute_Residual": 1.5436614145964995
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2005,
+      "Observed_CO2": 379.98,
+      "Fitted_CO2": 380.9509467333459,
+      "Residual": -0.9709467333458974,
+      "Absolute_Residual": 0.9709467333458974
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2006,
+      "Observed_CO2": 382.09,
+      "Fitted_CO2": 382.6659179370716,
+      "Residual": -0.5759179370716083,
+      "Absolute_Residual": 0.5759179370716083
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2007,
+      "Observed_CO2": 384.02,
+      "Fitted_CO2": 384.38860962621624,
+      "Residual": -0.36860962621625504,
+      "Absolute_Residual": 0.36860962621625504
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2008,
+      "Observed_CO2": 385.83,
+      "Fitted_CO2": 386.1190565569875,
+      "Residual": -0.2890565569875321,
+      "Absolute_Residual": 0.2890565569875321
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2009,
+      "Observed_CO2": 387.64,
+      "Fitted_CO2": 387.85729364205895,
+      "Residual": -0.21729364205896218,
+      "Absolute_Residual": 0.21729364205896218
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2010,
+      "Observed_CO2": 390.1,
+      "Fitted_CO2": 389.6033559512745,
+      "Residual": 0.49664404872549994,
+      "Absolute_Residual": 0.49664404872549994
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2011,
+      "Observed_CO2": 391.85,
+      "Fitted_CO2": 391.35727871235645,
+      "Residual": 0.49272128764357603,
+      "Absolute_Residual": 0.49272128764357603
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2012,
+      "Observed_CO2": 394.06,
+      "Fitted_CO2": 393.11909731161546,
+      "Residual": 0.9409026883845399,
+      "Absolute_Residual": 0.9409026883845399
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2013,
+      "Observed_CO2": 396.74,
+      "Fitted_CO2": 394.888847294665,
+      "Residual": 1.8511527053349823,
+      "Absolute_Residual": 1.8511527053349823
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2014,
+      "Observed_CO2": 398.81,
+      "Fitted_CO2": 396.66656436713845,
+      "Residual": 2.1434356328615536,
+      "Absolute_Residual": 2.1434356328615536
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2015,
+      "Observed_CO2": 401.01,
+      "Fitted_CO2": 398.45228439540915,
+      "Residual": 2.5577156045908396,
+      "Absolute_Residual": 2.5577156045908396
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2016,
+      "Observed_CO2": 404.41,
+      "Fitted_CO2": 400.24604340731463,
+      "Residual": 4.163956592685395,
+      "Absolute_Residual": 4.163956592685395
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2017,
+      "Observed_CO2": 406.76,
+      "Fitted_CO2": 402.04787759288274,
+      "Residual": 4.712122407117249,
+      "Absolute_Residual": 4.712122407117249
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2018,
+      "Observed_CO2": 408.72,
+      "Fitted_CO2": 403.8578233050624,
+      "Residual": 4.862176694937602,
+      "Absolute_Residual": 4.862176694937602
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2019,
+      "Observed_CO2": 411.66,
+      "Fitted_CO2": 405.6759170604569,
+      "Residual": 5.9840829395431,
+      "Absolute_Residual": 5.9840829395431
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2020,
+      "Observed_CO2": 414.24,
+      "Fitted_CO2": 407.5021955400604,
+      "Residual": 6.737804459939582,
+      "Absolute_Residual": 6.737804459939582
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "full_data",
+      "Year": 2021,
+      "Observed_CO2": 416.45,
+      "Fitted_CO2": 409.3366955899983,
+      "Residual": 7.1133044100016605,
+      "Absolute_Residual": 7.1133044100016605
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1959,
+      "Observed_CO2": 315.98,
+      "Fitted_CO2": 311.4110698138718,
+      "Residual": 4.568930186128227,
+      "Absolute_Residual": 4.568930186128227
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1960,
+      "Observed_CO2": 316.91,
+      "Fitted_CO2": 312.7291449897377,
+      "Residual": 4.1808550102623485,
+      "Absolute_Residual": 4.1808550102623485
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1961,
+      "Observed_CO2": 317.64,
+      "Fitted_CO2": 314.05279903654827,
+      "Residual": 3.5872009634517212,
+      "Absolute_Residual": 3.5872009634517212
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1962,
+      "Observed_CO2": 318.45,
+      "Fitted_CO2": 315.38205556737324,
+      "Residual": 3.0679444326267458,
+      "Absolute_Residual": 3.0679444326267458
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1963,
+      "Observed_CO2": 318.99,
+      "Fitted_CO2": 316.7169382952267,
+      "Residual": 2.2730617047732835,
+      "Absolute_Residual": 2.2730617047732835
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1964,
+      "Observed_CO2": 319.62,
+      "Fitted_CO2": 318.0574710334904,
+      "Residual": 1.5625289665096034,
+      "Absolute_Residual": 1.5625289665096034
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1965,
+      "Observed_CO2": 320.04,
+      "Fitted_CO2": 319.403677696338,
+      "Residual": 0.6363223036620411,
+      "Absolute_Residual": 0.6363223036620411
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1966,
+      "Observed_CO2": 321.37,
+      "Fitted_CO2": 320.7555822991623,
+      "Residual": 0.6144177008376914,
+      "Absolute_Residual": 0.6144177008376914
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1967,
+      "Observed_CO2": 322.18,
+      "Fitted_CO2": 322.1132089590033,
+      "Residual": 0.06679104099669075,
+      "Absolute_Residual": 0.06679104099669075
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1968,
+      "Observed_CO2": 323.05,
+      "Fitted_CO2": 323.4765818949787,
+      "Residual": -0.42658189497871035,
+      "Absolute_Residual": 0.42658189497871035
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1969,
+      "Observed_CO2": 324.62,
+      "Fitted_CO2": 324.8457254287156,
+      "Residual": -0.22572542871557744,
+      "Absolute_Residual": 0.22572542871557744
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1970,
+      "Observed_CO2": 325.68,
+      "Fitted_CO2": 326.22066398478444,
+      "Residual": -0.5406639847844303,
+      "Absolute_Residual": 0.5406639847844303
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1971,
+      "Observed_CO2": 326.32,
+      "Fitted_CO2": 327.6014220911351,
+      "Residual": -1.2814220911350844,
+      "Absolute_Residual": 1.2814220911350844
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1972,
+      "Observed_CO2": 327.46,
+      "Fitted_CO2": 328.98802437953407,
+      "Residual": -1.528024379534088,
+      "Absolute_Residual": 1.528024379534088
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1973,
+      "Observed_CO2": 329.68,
+      "Fitted_CO2": 330.38049558600403,
+      "Residual": -0.7004955860040241,
+      "Absolute_Residual": 0.7004955860040241
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1974,
+      "Observed_CO2": 330.19,
+      "Fitted_CO2": 331.77886055126515,
+      "Residual": -1.5888605512651566,
+      "Absolute_Residual": 1.5888605512651566
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1975,
+      "Observed_CO2": 331.13,
+      "Fitted_CO2": 333.18314422117794,
+      "Residual": -2.053144221177945,
+      "Absolute_Residual": 2.053144221177945
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1976,
+      "Observed_CO2": 332.03,
+      "Fitted_CO2": 334.5933716471888,
+      "Residual": -2.5633716471888306,
+      "Absolute_Residual": 2.5633716471888306
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1977,
+      "Observed_CO2": 333.84,
+      "Fitted_CO2": 336.0095679867763,
+      "Residual": -2.1695679867763147,
+      "Absolute_Residual": 2.1695679867763147
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1978,
+      "Observed_CO2": 335.41,
+      "Fitted_CO2": 337.4317585039005,
+      "Residual": -2.0217585039004575,
+      "Absolute_Residual": 2.0217585039004575
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1979,
+      "Observed_CO2": 336.84,
+      "Fitted_CO2": 338.8599685694534,
+      "Residual": -2.019968569453397,
+      "Absolute_Residual": 2.019968569453397
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1980,
+      "Observed_CO2": 338.76,
+      "Fitted_CO2": 340.2942236617115,
+      "Residual": -1.5342236617115077,
+      "Absolute_Residual": 1.5342236617115077
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1981,
+      "Observed_CO2": 340.12,
+      "Fitted_CO2": 341.7345493667905,
+      "Residual": -1.6145493667904702,
+      "Absolute_Residual": 1.6145493667904702
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1982,
+      "Observed_CO2": 341.48,
+      "Fitted_CO2": 343.18097137910144,
+      "Residual": -1.7009713791014178,
+      "Absolute_Residual": 1.7009713791014178
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1983,
+      "Observed_CO2": 343.15,
+      "Fitted_CO2": 344.6335155018094,
+      "Residual": -1.4835155018094497,
+      "Absolute_Residual": 1.4835155018094497
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1984,
+      "Observed_CO2": 344.87,
+      "Fitted_CO2": 346.09220764729366,
+      "Residual": -1.2222076472936578,
+      "Absolute_Residual": 1.2222076472936578
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1985,
+      "Observed_CO2": 346.35,
+      "Fitted_CO2": 347.5570738376098,
+      "Residual": -1.2070738376097552,
+      "Absolute_Residual": 1.2070738376097552
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1986,
+      "Observed_CO2": 347.61,
+      "Fitted_CO2": 349.0281402049543,
+      "Residual": -1.418140204954284,
+      "Absolute_Residual": 1.418140204954284
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1987,
+      "Observed_CO2": 349.31,
+      "Fitted_CO2": 350.5054329921303,
+      "Residual": -1.1954329921302929,
+      "Absolute_Residual": 1.1954329921302929
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1988,
+      "Observed_CO2": 351.69,
+      "Fitted_CO2": 351.98897855301607,
+      "Residual": -0.29897855301607024,
+      "Absolute_Residual": 0.29897855301607024
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1989,
+      "Observed_CO2": 353.2,
+      "Fitted_CO2": 353.478803353035,
+      "Residual": -0.27880335303501624,
+      "Absolute_Residual": 0.27880335303501624
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1990,
+      "Observed_CO2": 354.45,
+      "Fitted_CO2": 354.97493396962767,
+      "Residual": -0.524933969627682,
+      "Absolute_Residual": 0.524933969627682
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1991,
+      "Observed_CO2": 355.7,
+      "Fitted_CO2": 356.4773970927263,
+      "Residual": -0.7773970927262894,
+      "Absolute_Residual": 0.7773970927262894
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1992,
+      "Observed_CO2": 356.54,
+      "Fitted_CO2": 357.9862195252302,
+      "Residual": -1.4462195252301626,
+      "Absolute_Residual": 1.4462195252301626
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1993,
+      "Observed_CO2": 357.21,
+      "Fitted_CO2": 359.5014281834847,
+      "Residual": -2.2914281834846975,
+      "Absolute_Residual": 2.2914281834846975
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1994,
+      "Observed_CO2": 358.96,
+      "Fitted_CO2": 361.023050097761,
+      "Residual": -2.0630500977609927,
+      "Absolute_Residual": 2.0630500977609927
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1995,
+      "Observed_CO2": 360.97,
+      "Fitted_CO2": 362.55111241273795,
+      "Residual": -1.581112412737923,
+      "Absolute_Residual": 1.581112412737923
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1996,
+      "Observed_CO2": 362.74,
+      "Fitted_CO2": 364.08564238798715,
+      "Residual": -1.3456423879871409,
+      "Absolute_Residual": 1.3456423879871409
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1997,
+      "Observed_CO2": 363.88,
+      "Fitted_CO2": 365.6266673984584,
+      "Residual": -1.746667398458385,
+      "Absolute_Residual": 1.746667398458385
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1998,
+      "Observed_CO2": 366.84,
+      "Fitted_CO2": 367.1742149349687,
+      "Residual": -0.33421493496871335,
+      "Absolute_Residual": 0.33421493496871335
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 1999,
+      "Observed_CO2": 368.54,
+      "Fitted_CO2": 368.7283126046922,
+      "Residual": -0.1883126046921575,
+      "Absolute_Residual": 0.1883126046921575
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 2000,
+      "Observed_CO2": 369.71,
+      "Fitted_CO2": 370.28898813165296,
+      "Residual": -0.5789881316529772,
+      "Absolute_Residual": 0.5789881316529772
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 2001,
+      "Observed_CO2": 371.32,
+      "Fitted_CO2": 371.85626935721933,
+      "Residual": -0.5362693572193393,
+      "Absolute_Residual": 0.5362693572193393
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 2002,
+      "Observed_CO2": 373.45,
+      "Fitted_CO2": 373.43018424060097,
+      "Residual": 0.019815759399023136,
+      "Absolute_Residual": 0.019815759399023136
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 2003,
+      "Observed_CO2": 375.98,
+      "Fitted_CO2": 375.0107608593473,
+      "Residual": 0.9692391406527463,
+      "Absolute_Residual": 0.9692391406527463
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 2004,
+      "Observed_CO2": 377.7,
+      "Fitted_CO2": 376.59802740984827,
+      "Residual": 1.1019725901517177,
+      "Absolute_Residual": 1.1019725901517177
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 2005,
+      "Observed_CO2": 379.98,
+      "Fitted_CO2": 378.19201220783793,
+      "Residual": 1.7879877921620846,
+      "Absolute_Residual": 1.7879877921620846
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 2006,
+      "Observed_CO2": 382.09,
+      "Fitted_CO2": 379.7927436888988,
+      "Residual": 2.2972563111011937,
+      "Absolute_Residual": 2.2972563111011937
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 2007,
+      "Observed_CO2": 384.02,
+      "Fitted_CO2": 381.4002504089699,
+      "Residual": 2.619749591030086,
+      "Absolute_Residual": 2.619749591030086
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 2008,
+      "Observed_CO2": 385.83,
+      "Fitted_CO2": 383.0145610448557,
+      "Residual": 2.815438955144259,
+      "Absolute_Residual": 2.815438955144259
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 2009,
+      "Observed_CO2": 387.64,
+      "Fitted_CO2": 384.63570439473773,
+      "Residual": 3.004295605262257,
+      "Absolute_Residual": 3.004295605262257
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 2010,
+      "Observed_CO2": 390.1,
+      "Fitted_CO2": 386.2637093786885,
+      "Residual": 3.836290621311548,
+      "Absolute_Residual": 3.836290621311548
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Fit_Stage": "training_data",
+      "Year": 2011,
+      "Observed_CO2": 391.85,
+      "Fitted_CO2": 387.89860503918703,
+      "Residual": 3.9513949608129906,
+      "Absolute_Residual": 3.9513949608129906
+    }
+  ],
+  "test_predictions": [
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Year": 2012,
+      "Observed_CO2": 394.06,
+      "Forecast_CO2": 394.0259617518999,
+      "Error": 0.03403824810010292,
+      "Absolute_Error": 0.03403824810010292
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Year": 2013,
+      "Observed_CO2": 396.74,
+      "Forecast_CO2": 396.1542455201726,
+      "Error": 0.5857544798274148,
+      "Absolute_Error": 0.5857544798274148
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Year": 2014,
+      "Observed_CO2": 398.81,
+      "Forecast_CO2": 398.30622542336226,
+      "Error": 0.5037745766377384,
+      "Absolute_Error": 0.5037745766377384
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Year": 2015,
+      "Observed_CO2": 401.01,
+      "Forecast_CO2": 400.48190146146896,
+      "Error": 0.528098538531026,
+      "Absolute_Error": 0.528098538531026
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Year": 2016,
+      "Observed_CO2": 404.41,
+      "Forecast_CO2": 402.6812736344926,
+      "Error": 1.7287263655074412,
+      "Absolute_Error": 1.7287263655074412
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Year": 2017,
+      "Observed_CO2": 406.76,
+      "Forecast_CO2": 404.9043419424333,
+      "Error": 1.8556580575666999,
+      "Absolute_Error": 1.8556580575666999
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Year": 2018,
+      "Observed_CO2": 408.72,
+      "Forecast_CO2": 407.151106385291,
+      "Error": 1.5688936147090544,
+      "Absolute_Error": 1.5688936147090544
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Year": 2019,
+      "Observed_CO2": 411.66,
+      "Forecast_CO2": 409.42156696306563,
+      "Error": 2.2384330369343957,
+      "Absolute_Error": 2.2384330369343957
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Year": 2020,
+      "Observed_CO2": 414.24,
+      "Forecast_CO2": 411.7157236757573,
+      "Error": 2.5242763242426918,
+      "Absolute_Error": 2.5242763242426918
+    },
+    {
+      "Model": "Quadratic",
+      "Model_Key": "quadratic",
+      "Year": 2021,
+      "Observed_CO2": 416.45,
+      "Forecast_CO2": 414.033576523366,
+      "Error": 2.4164234766340087,
+      "Absolute_Error": 2.4164234766340087
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Year": 2012,
+      "Observed_CO2": 394.06,
+      "Forecast_CO2": 393.49768137966396,
+      "Error": 0.5623186203360433,
+      "Absolute_Error": 0.5623186203360433
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Year": 2013,
+      "Observed_CO2": 396.74,
+      "Forecast_CO2": 395.50856950966204,
+      "Error": 1.2314304903379707,
+      "Absolute_Error": 1.2314304903379707
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Year": 2014,
+      "Observed_CO2": 398.81,
+      "Forecast_CO2": 397.53248144382485,
+      "Error": 1.2775185561751528,
+      "Absolute_Error": 1.2775185561751528
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Year": 2015,
+      "Observed_CO2": 401.01,
+      "Forecast_CO2": 399.56903602748264,
+      "Error": 1.440963972517352,
+      "Absolute_Error": 1.440963972517352
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Year": 2016,
+      "Observed_CO2": 404.41,
+      "Forecast_CO2": 401.61785210596577,
+      "Error": 2.792147894034258,
+      "Absolute_Error": 2.792147894034258
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Year": 2017,
+      "Observed_CO2": 406.76,
+      "Forecast_CO2": 403.67854852460454,
+      "Error": 3.081451475395454,
+      "Absolute_Error": 3.081451475395454
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Year": 2018,
+      "Observed_CO2": 408.72,
+      "Forecast_CO2": 405.75074412872914,
+      "Error": 2.9692558712708887,
+      "Absolute_Error": 2.9692558712708887
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Year": 2019,
+      "Observed_CO2": 411.66,
+      "Forecast_CO2": 407.8340577636699,
+      "Error": 3.8259422363301496,
+      "Absolute_Error": 3.8259422363301496
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Year": 2020,
+      "Observed_CO2": 414.24,
+      "Forecast_CO2": 409.92810827475705,
+      "Error": 4.311891725242958,
+      "Absolute_Error": 4.311891725242958
+    },
+    {
+      "Model": "Cubic",
+      "Model_Key": "cubic",
+      "Year": 2021,
+      "Observed_CO2": 416.45,
+      "Forecast_CO2": 412.0325145073209,
+      "Error": 4.417485492679077,
+      "Absolute_Error": 4.417485492679077
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Year": 2012,
+      "Observed_CO2": 394.06,
+      "Forecast_CO2": 394.9562835677093,
+      "Error": -0.896283567709304,
+      "Absolute_Error": 0.896283567709304
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Year": 2013,
+      "Observed_CO2": 396.74,
+      "Forecast_CO2": 397.50739473031666,
+      "Error": -0.7673947303166528,
+      "Absolute_Error": 0.7673947303166528
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Year": 2014,
+      "Observed_CO2": 398.81,
+      "Forecast_CO2": 400.1599298296976,
+      "Error": -1.3499298296976008,
+      "Absolute_Error": 1.3499298296976008
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Year": 2015,
+      "Observed_CO2": 401.01,
+      "Forecast_CO2": 402.92087438889973,
+      "Error": -1.9108743888997424,
+      "Absolute_Error": 1.9108743888997424
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Year": 2016,
+      "Observed_CO2": 404.41,
+      "Forecast_CO2": 405.79747241089075,
+      "Error": -1.387472410890723,
+      "Absolute_Error": 1.387472410890723
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Year": 2017,
+      "Observed_CO2": 406.76,
+      "Forecast_CO2": 408.7972263785581,
+      "Error": -2.0372263785581026,
+      "Absolute_Error": 2.0372263785581026
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Year": 2018,
+      "Observed_CO2": 408.72,
+      "Forecast_CO2": 411.927897254709,
+      "Error": -3.207897254708996,
+      "Absolute_Error": 3.207897254708996
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Year": 2019,
+      "Observed_CO2": 411.66,
+      "Forecast_CO2": 415.1975044820711,
+      "Error": -3.5375044820710855,
+      "Absolute_Error": 3.5375044820710855
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Year": 2020,
+      "Observed_CO2": 414.24,
+      "Forecast_CO2": 418.6143259832914,
+      "Error": -4.374325983291385,
+      "Absolute_Error": 4.374325983291385
+    },
+    {
+      "Model": "Quartic",
+      "Model_Key": "quartic",
+      "Year": 2021,
+      "Observed_CO2": 416.45,
+      "Forecast_CO2": 422.18689816093706,
+      "Error": -5.7368981609370735,
+      "Absolute_Error": 5.7368981609370735
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Year": 2012,
+      "Observed_CO2": 394.06,
+      "Forecast_CO2": 389.54042054163773,
+      "Error": 4.519579458362273,
+      "Absolute_Error": 4.519579458362273
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Year": 2013,
+      "Observed_CO2": 396.74,
+      "Forecast_CO2": 391.1891851748898,
+      "Error": 5.550814825110194,
+      "Absolute_Error": 5.550814825110194
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Year": 2014,
+      "Observed_CO2": 398.81,
+      "Forecast_CO2": 392.8449283517602,
+      "Error": 5.965071648239814,
+      "Absolute_Error": 5.965071648239814
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Year": 2015,
+      "Observed_CO2": 401.01,
+      "Forecast_CO2": 394.5076796095583,
+      "Error": 6.502320390441696,
+      "Absolute_Error": 6.502320390441696
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Year": 2016,
+      "Observed_CO2": 404.41,
+      "Forecast_CO2": 396.1774686106129,
+      "Error": 8.232531389387134,
+      "Absolute_Error": 8.232531389387134
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Year": 2017,
+      "Observed_CO2": 406.76,
+      "Forecast_CO2": 397.8543251428008,
+      "Error": 8.905674857199187,
+      "Absolute_Error": 8.905674857199187
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Year": 2018,
+      "Observed_CO2": 408.72,
+      "Forecast_CO2": 399.5382791200793,
+      "Error": 9.181720879920704,
+      "Absolute_Error": 9.181720879920704
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Year": 2019,
+      "Observed_CO2": 411.66,
+      "Forecast_CO2": 401.2293605830187,
+      "Error": 10.430639416981307,
+      "Absolute_Error": 10.430639416981307
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Year": 2020,
+      "Observed_CO2": 414.24,
+      "Forecast_CO2": 402.9275996993389,
+      "Error": 11.312400300661125,
+      "Absolute_Error": 11.312400300661125
+    },
+    {
+      "Model": "Exponential",
+      "Model_Key": "exponential",
+      "Year": 2021,
+      "Observed_CO2": 416.45,
+      "Forecast_CO2": 404.63302676444727,
+      "Error": 11.816973235552723,
+      "Absolute_Error": 11.816973235552723
+    }
+  ]
+}

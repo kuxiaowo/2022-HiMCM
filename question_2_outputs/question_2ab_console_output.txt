@@ -1,0 +1,16 @@
+================================================================================
+QUESTION 2A/2B MODELING COMPLETE
+================================================================================
+
+2a best temperature forecast model by test RMSE:
+  Quadratic time trend | Test RMSE = 0.0935 C
+
+2b best CO2-temperature relationship model by test RMSE:
+  Quadratic centered CO2 | Test RMSE = 0.0909 C
+
+CO2-temperature correlation:
+  Pearson r = 0.9613
+  Spearman r = 0.9490
+
+Outputs saved in:
+  question_2_outputs
