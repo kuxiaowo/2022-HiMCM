@@ -1,0 +1,85 @@
+{
+  "run_timestamp": "2026-07-08T16:05:12",
+  "script": "1d_robustness_analysis.py",
+  "random_seed": 20260708,
+  "run_config": {
+    "n_simulations": 100,
+    "sigmas": [
+      0.5
+    ],
+    "include_sarima": true
+  },
+  "annual_models": [
+    {
+      "name": "Quadratic",
+      "key": "quadratic",
+      "type": "polynomial",
+      "degree": 2
+    },
+    {
+      "name": "Cubic",
+      "key": "cubic",
+      "type": "polynomial",
+      "degree": 3
+    },
+    {
+      "name": "Quartic",
+      "key": "quartic",
+      "type": "polynomial",
+      "degree": 4
+    },
+    {
+      "name": "Exponential",
+      "key": "exponential",
+      "type": "exponential"
+    }
+  ],
+  "sarima_spec": {
+    "name": "SARIMA(1,1,1)(2,1,2,12)",
+    "key": "sarima_1_1_1_2_1_2_12",
+    "order": [
+      1,
+      1,
+      1
+    ],
+    "seasonal_order": [
+      2,
+      1,
+      2,
+      12
+    ],
+    "trend": "c"
+  },
+  "test_years_count": 10,
+  "test_error_note": "All test metrics compare predictions to original true test data, not perturbed test values.",
+  "sarima_perturbation_note": "Annual perturbations are mapped to monthly observations by applying the same annual noise to every monthly value in that year, then SARIMA forecasts are aggregated to annual means for comparison.",
+  "primary_sigma": 0.5,
+  "most_stable_model_primary_sigma": {
+    "Sigma": 0.5,
+    "Model": "Quadratic",
+    "Model_Key": "quadratic",
+    "Model_Family": "annual_fit",
+    "Successful_Simulations": 100,
+    "RMSE_Mean": 1.5952780514140001,
+    "RMSE_Std": 0.28116082036919254,
+    "MAE_Mean": 1.3616851772439116,
+    "MAE_Std": 0.27700720799572087,
+    "MAPE_Mean": 0.3326276617667609,
+    "MAPE_Std": 0.06796508054677367,
+    "R2_Mean": 0.9495008799288103,
+    "R2_Std": 0.01776164841869736,
+    "Best_Count": 86,
+    "Best_Proportion": 0.86
+  },
+  "output_files": [
+    "question_1d_outputs\\robustness_analysis\\robustness_simulation_metrics.csv",
+    "question_1d_outputs\\robustness_analysis\\robustness_summary_by_sigma.csv",
+    "question_1d_outputs\\robustness_analysis\\robustness_summary_primary_sigma.csv",
+    "question_1d_outputs\\robustness_analysis\\plots\\robustness_best_frequency_sigma_0.5.svg",
+    "question_1d_outputs\\robustness_analysis\\plots\\robustness_mae_boxplot_sigma_0.5.svg",
+    "question_1d_outputs\\robustness_analysis\\plots\\robustness_mape_boxplot_sigma_0.5.svg",
+    "question_1d_outputs\\robustness_analysis\\plots\\robustness_mean_rmse_sigma_0.5.svg",
+    "question_1d_outputs\\robustness_analysis\\plots\\robustness_rmse_boxplot_sigma_0.5.svg",
+    "question_1d_outputs\\robustness_analysis\\plots\\robustness_rmse_std_sigma_0.5.svg"
+  ]
+}
