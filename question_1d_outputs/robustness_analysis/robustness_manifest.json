@@ -1,15 +1,15 @@
 {
-  "run_timestamp": "2026-07-08T16:20:42",
+  "run_timestamp": "2026-07-08T16:22:52",
   "script": "1d_robustness_analysis.py",
   "random_seed": 20260708,
   "run_config": {
-    "n_simulations": 2,
+    "n_simulations": 100,
     "sigmas": [
       0.5
     ],
     "include_sarima": true,
-    "max_workers": 2,
-    "actual_workers": 2
+    "max_workers": 24,
+    "actual_workers": 24
   },
   "annual_models": [
     {
@@ -61,17 +61,17 @@
     "Model": "SARIMA(1,1,1)(2,1,2,12)",
     "Model_Key": "sarima_1_1_1_2_1_2_12",
     "Model_Family": "monthly_sarima_annualized",
-    "Successful_Simulations": 2,
-    "RMSE_Mean": 1.1027709437677233,
-    "RMSE_Std": 0.6256789450978534,
-    "MAE_Mean": 0.9486221168550202,
-    "MAE_Std": 0.5203611987063893,
-    "MAPE_Mean": 0.23193496769746555,
-    "MAPE_Std": 0.1267688611893067,
-    "R2_Mean": 0.9728204275438398,
-    "R2_Std": 0.026565851199672665,
-    "Best_Count": 2,
-    "Best_Proportion": 1.0
+    "Successful_Simulations": 100,
+    "RMSE_Mean": 1.5529017365085374,
+    "RMSE_Std": 0.6743552144254908,
+    "MAE_Mean": 1.3570659228450515,
+    "MAE_Std": 0.6448950808568565,
+    "MAPE_Mean": 0.3320257622419635,
+    "MAPE_Std": 0.1579667877874317,
+    "R2_Mean": 0.9449087420183375,
+    "R2_Std": 0.04730120664686572,
+    "Best_Count": 56,
+    "Best_Proportion": 0.56
   },
   "output_files": [
     "question_1d_outputs\\robustness_analysis\\robustness_simulation_metrics.csv",
