@@ -269,44 +269,30 @@ def fit_temperature_time_model(spec, years, temp):
 
 def estimate_change_target_from_forecast(forecast_df, target_change):
     target_rows = forecast_df[
-        forecast_df["Forecast_Additional_Change_From_Last_Observed_Year_C"] >= target_change
+        forecast_df["Forecast_Temperature_Change_From_1951_1980_C"] >= target_change
     ]
 
     if len(target_rows) == 0:
         return None, None, None
 
     first_row = target_rows.iloc[0]
-    return (
-        int(first_row["Year"]),
-        float(first_row["Forecast_Additional_Change_From_Last_Observed_Year_C"]),
-        float(first_row["Forecast_Temperature_Change_From_1951_1980_C"]),
-    )
+    return int(first_row["Year"]), float(first_row["Forecast_Temperature_Change_From_1951_1980_C"])
 
 
-def plot_temperature_raw(years, temp, reference_year, reference_temp_change):
+def plot_temperature_raw(years, temp):
     plt.figure(figsize=(10, 6))
     plt.scatter(years, temp, s=28, color="black", label=f"Observed temperature change from {BASE_PERIOD_LABEL}")
     plt.plot(years, temp, color="black", linewidth=1)
     for target_change in TEMP_CHANGE_TARGETS:
-        target_level = reference_temp_change + target_change
         plt.axhline(
-            y=target_level,
+            y=target_change,
             linestyle="--",
             linewidth=1.2,
-            label=f"+{target_change:.2f} C from {reference_year}",
+            label=f"{target_change:.2f} C above {BASE_PERIOD_LABEL}",
         )
-    plt.axhline(
-        y=reference_temp_change,
-        color="gray",
-        linestyle=":",
-        linewidth=1.2,
-        label=f"{reference_year} observed level",
-    )
     plt.xlabel("Year")
     plt.ylabel(f"Temperature change from {BASE_PERIOD_LABEL} / C")
-    plt.title(
-        f"Observed Temperature Change and Future Additional-Change Targets from {reference_year}"
-    )
+    plt.title(f"Observed Temperature Change Relative to {BASE_PERIOD_LABEL}")
     plt.grid(True)
     plt.legend()
     save_plot(TEMP_OUTPUT_DIR / "plots" / "temperature_change_observed.svg")
@@ -320,8 +306,6 @@ def plot_temperature_model_fit(
     years_test,
     full_fit,
     train_fit,
-    reference_year,
-    reference_temp_change,
 ):
     model_dir = TEMP_OUTPUT_DIR / "models" / spec["key"]
     forecast_years = np.arange(int(years[0]), PLOT_END_YEAR + 1)
@@ -332,8 +316,7 @@ def plot_temperature_model_fit(
     plt.plot(forecast_years, train_fit["predict"](forecast_years), linewidth=2, linestyle="--", label="Training-only fit and forecast")
     plt.axvline(x=years_test[0], color="gray", linestyle="--", label="Start of test period")
     for target_change in TEMP_CHANGE_TARGETS:
-        target_level = reference_temp_change + target_change
-        plt.axhline(y=target_level, linestyle=":", linewidth=1.2, label=f"+{target_change:.2f} C from {reference_year}")
+        plt.axhline(y=target_change, linestyle=":", linewidth=1.2, label=f"{target_change:.2f} C above {BASE_PERIOD_LABEL}")
     plt.xlabel("Year")
     plt.ylabel(f"Temperature change from {BASE_PERIOD_LABEL} / C")
     plt.title(f"{spec['name']}: Temperature Fit and Forecast")
@@ -355,7 +338,7 @@ def plot_temperature_residuals(spec, years_values, residuals, label):
     save_plot(model_dir / f"{spec['key']}_{label}_residuals.svg")
 
 
-def plot_temperature_all_models(years, temp, forecast_df, reference_year, reference_temp_change):
+def plot_temperature_all_models(years, temp, forecast_df):
     plt.figure(figsize=(13, 7))
     plt.scatter(years, temp, s=26, color="black", label=f"Observed temperature change from {BASE_PERIOD_LABEL}")
     plt.plot(years, temp, color="black", linewidth=1)
@@ -369,31 +352,22 @@ def plot_temperature_all_models(years, temp, forecast_df, reference_year, refere
         plt.plot(model_df["Year"], model_df["Forecast_Temperature_Change_From_1951_1980_C"], linewidth=1.8, label=model_name)
 
     for target_change in TEMP_CHANGE_TARGETS:
-        target_level = reference_temp_change + target_change
         plt.axhline(
-            y=target_level,
+            y=target_change,
             linestyle="--",
             linewidth=1.2,
-            label=f"+{target_change:.2f} C from {reference_year}",
+            label=f"{target_change:.2f} C above {BASE_PERIOD_LABEL}",
         )
-
-    plt.axhline(
-        y=reference_temp_change,
-        color="gray",
-        linestyle=":",
-        linewidth=1.2,
-        label=f"{reference_year} observed level",
-    )
 
     plt.xlabel("Year")
     plt.ylabel(f"Temperature change from {BASE_PERIOD_LABEL} / C")
-    plt.title(f"Forecasts with Additional-Change Targets from {reference_year}")
+    plt.title(f"Forecasts of Temperature Change Relative to {BASE_PERIOD_LABEL}")
     plt.grid(True)
     plt.legend(fontsize=8)
     save_plot(TEMP_OUTPUT_DIR / "plots" / "temperature_all_model_forecasts.svg")
 
 
-def plot_temperature_all_models_zoomed(years, temp, forecast_df, reference_year, reference_temp_change):
+def plot_temperature_all_models_zoomed(years, temp, forecast_df):
     plt.figure(figsize=(13, 7))
     plt.scatter(years, temp, s=26, color="black", label=f"Observed temperature change from {BASE_PERIOD_LABEL}")
     plt.plot(years, temp, color="black", linewidth=1)
@@ -407,26 +381,17 @@ def plot_temperature_all_models_zoomed(years, temp, forecast_df, reference_year,
         plt.plot(model_df["Year"], model_df["Forecast_Temperature_Change_From_1951_1980_C"], linewidth=1.8, label=model_name)
 
     for target_change in TEMP_CHANGE_TARGETS:
-        target_level = reference_temp_change + target_change
         plt.axhline(
-            y=target_level,
+            y=target_change,
             linestyle="--",
             linewidth=1.2,
-            label=f"+{target_change:.2f} C from {reference_year}",
+            label=f"{target_change:.2f} C above {BASE_PERIOD_LABEL}",
         )
-
-    plt.axhline(
-        y=reference_temp_change,
-        color="gray",
-        linestyle=":",
-        linewidth=1.2,
-        label=f"{reference_year} observed level",
-    )
 
     plt.ylim(-0.25, 4.0)
     plt.xlabel("Year")
     plt.ylabel(f"Temperature change from {BASE_PERIOD_LABEL} / C")
-    plt.title(f"Forecasts with Additional-Change Targets from {reference_year} (Zoomed)")
+    plt.title(f"Forecasts of Temperature Change Relative to {BASE_PERIOD_LABEL} (Zoomed)")
     plt.grid(True)
     plt.legend(fontsize=8)
     save_plot(TEMP_OUTPUT_DIR / "plots" / "temperature_all_model_forecasts_zoomed.svg")
@@ -451,7 +416,7 @@ def plot_temperature_error_comparison(summary_df, metric_prefix, filename, title
 def plot_temperature_change_targets(target_df):
     plot_df = target_df[
         (target_df["Fit_Stage"] == "full_data")
-        & target_df["First_Year_Predicted_Additional_Change_At_Least_Target"].notna()
+        & target_df["First_Year_Predicted_Change_At_Least_Target"].notna()
     ].copy()
 
     if plot_df.empty:
@@ -459,8 +424,8 @@ def plot_temperature_change_targets(target_df):
 
     pivot_df = plot_df.pivot(
         index="Model",
-        columns="Target_Additional_Change_From_Last_Observed_Year_C",
-        values="First_Year_Predicted_Additional_Change_At_Least_Target",
+        columns="Target_Temperature_Change_From_1951_1980_C",
+        values="First_Year_Predicted_Change_At_Least_Target",
     )
     pivot_df = pivot_df.sort_values(TEMP_CHANGE_TARGETS[0])
 
@@ -477,8 +442,7 @@ def plot_temperature_change_targets(target_df):
 
     plt.xticks(rotation=25, ha="right")
     plt.ylabel("First predicted year")
-    reference_year = int(plot_df["Reference_Year"].iloc[0])
-    plt.title(f"Predicted Years When Temperature Increases by Target Amounts After {reference_year}")
+    plt.title(f"Predicted Years When Temperature Change Exceeds {BASE_PERIOD_LABEL} Targets")
     plt.grid(True)
     plt.legend()
     save_plot(TEMP_OUTPUT_DIR / "plots" / "temperature_change_target_years_comparison.svg")
@@ -487,8 +451,6 @@ def plot_temperature_change_targets(target_df):
 def run_temperature_forecast_models():
     years, temp = get_temperature_data()
     test_start_index = len(years) - TEST_YEARS_COUNT
-    reference_year = int(years[-1])
-    reference_temp_change = float(temp[-1])
 
     years_train = years[:test_start_index]
     years_test = years[test_start_index:]
@@ -503,13 +465,11 @@ def run_temperature_forecast_models():
     forecast_rows = []
     target_rows = []
 
-    plot_temperature_raw(years, temp, reference_year, reference_temp_change)
+    plot_temperature_raw(years, temp)
 
     raw_df = pd.DataFrame({
         "Year": years,
         "Temperature_Change_From_1951_1980_C": temp,
-        "Reference_Year_For_Future_Additional_Change": reference_year,
-        "Reference_Temperature_Change_From_1951_1980_C": reference_temp_change,
     })
     raw_df.to_csv(TEMP_OUTPUT_DIR / "temperature_observed_data.csv", index=False, encoding="utf-8-sig")
 
@@ -600,9 +560,6 @@ def run_temperature_forecast_models():
                     "Fit_Stage": fit_stage,
                     "Year": int(year),
                     "Forecast_Temperature_Change_From_1951_1980_C": float(value),
-                    "Reference_Year": reference_year,
-                    "Reference_Temperature_Change_From_1951_1980_C": reference_temp_change,
-                    "Forecast_Additional_Change_From_Last_Observed_Year_C": float(value - reference_temp_change),
                 }
                 forecast_rows.append(forecast_row)
                 model_forecast_rows.append(forecast_row)
@@ -610,20 +567,14 @@ def run_temperature_forecast_models():
             model_forecast_df = pd.DataFrame(model_forecast_rows)
 
             for target_change in TEMP_CHANGE_TARGETS:
-                first_year, first_additional_change, first_absolute_change = (
-                    estimate_change_target_from_forecast(model_forecast_df, target_change)
-                )
+                first_year, first_value = estimate_change_target_from_forecast(model_forecast_df, target_change)
                 target_rows.append({
                     "Model": spec["name"],
                     "Model_Key": spec["key"],
                     "Fit_Stage": fit_stage,
-                    "Reference_Year": reference_year,
-                    "Reference_Temperature_Change_From_1951_1980_C": reference_temp_change,
-                    "Target_Additional_Change_From_Last_Observed_Year_C": target_change,
-                    "Target_Temperature_Change_From_1951_1980_C": reference_temp_change + target_change,
-                    "First_Year_Predicted_Additional_Change_At_Least_Target": first_year,
-                    "Forecast_Additional_Change_At_First_Year_C": first_additional_change,
-                    "Forecast_Temperature_Change_From_1951_1980_At_First_Year_C": first_absolute_change,
+                    "Target_Temperature_Change_From_1951_1980_C": target_change,
+                    "First_Year_Predicted_Change_At_Least_Target": first_year,
+                    "Forecast_Change_At_First_Year_C": first_value,
                 })
 
     summary_df = pd.DataFrame(summary_rows).sort_values("Test_RMSE").reset_index(drop=True)
@@ -670,8 +621,8 @@ def run_temperature_forecast_models():
             model_dir / f"{spec['key']}_temperature_change_target_years.csv", index=False, encoding="utf-8-sig"
         )
 
-    plot_temperature_all_models(years, temp, forecast_df, reference_year, reference_temp_change)
-    plot_temperature_all_models_zoomed(years, temp, forecast_df, reference_year, reference_temp_change)
+    plot_temperature_all_models(years, temp, forecast_df)
+    plot_temperature_all_models_zoomed(years, temp, forecast_df)
     plot_temperature_error_comparison(summary_df, "Train", "temperature_training_error_comparison.svg", "Temperature Model Training Error Comparison")
     plot_temperature_error_comparison(summary_df, "Test", "temperature_test_error_comparison.svg", "Temperature Model Test Error Comparison")
     plot_temperature_change_targets(target_df)
@@ -1112,7 +1063,7 @@ def main():
             "test_years_count": TEST_YEARS_COUNT,
             "future_end_year": FUTURE_END_YEAR,
             "plot_end_year": PLOT_END_YEAR,
-            "additional_temperature_change_targets_from_last_observed_year": TEMP_CHANGE_TARGETS,
+            "temperature_change_targets_from_1951_1980": TEMP_CHANGE_TARGETS,
         },
         "temperature_best_by_test_rmse": temperature_results["summary"].iloc[0].to_dict(),
         "relationship_best_by_test_rmse": relationship_results["summary"].iloc[0].to_dict(),

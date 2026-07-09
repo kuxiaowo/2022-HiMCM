@@ -1,19 +1,19 @@
-﻿Model,Model_Key,Fit_Stage,Reference_Year,Reference_Temperature_Change_From_1951_1980_C,Target_Additional_Change_From_Last_Observed_Year_C,Target_Temperature_Change_From_1951_1980_C,First_Year_Predicted_Additional_Change_At_Least_Target,Forecast_Additional_Change_At_First_Year_C,Forecast_Temperature_Change_From_1951_1980_At_First_Year_C
-Quadratic time trend,quadratic_time,full_data,2021,0.84,1.25,2.09,2055,1.27315315934066,2.11315315934066
-Quadratic time trend,quadratic_time,full_data,2021,0.84,1.5,2.34,2061,1.5152037337662345,2.3552037337662344
-Quadratic time trend,quadratic_time,full_data,2021,0.84,2.0,2.84,2073,2.0369547327672337,2.8769547327672336
-Quadratic time trend,quadratic_time,training_data,2021,0.84,1.25,2.09,2054,1.2756879828766614,2.1156879828766613
-Quadratic time trend,quadratic_time,training_data,2021,0.84,1.5,2.34,2060,1.5227019814566969,2.3627019814566967
-Quadratic time trend,quadratic_time,training_data,2021,0.84,2.0,2.84,2071,2.0095525585525564,2.8495525585525563
-Quartic time trend,quartic_time,full_data,2021,0.84,1.25,2.09,2037,1.3318919113765846,2.1718919113765844
-Quartic time trend,quartic_time,full_data,2021,0.84,1.5,2.34,2039,1.5808010136603565,2.4208010136603564
-Quartic time trend,quartic_time,full_data,2021,0.84,2.0,2.84,2042,2.0131137033056894,2.8531137033056893
-Quartic time trend,quartic_time,training_data,2021,0.84,1.25,2.09,2035,1.2998291692616757,2.1398291692616755
-Quartic time trend,quartic_time,training_data,2021,0.84,1.5,2.34,2037,1.5656756431969812,2.405675643196981
-Quartic time trend,quartic_time,training_data,2021,0.84,2.0,2.84,2040,2.031348850311596,2.871348850311596
-Shifted exponential time trend,shifted_exp_time,full_data,2021,0.84,1.25,2.09,2042,1.3171194394465733,2.157119439446573
-Shifted exponential time trend,shifted_exp_time,full_data,2021,0.84,1.5,2.34,2045,1.534193384930668,2.374193384930668
-Shifted exponential time trend,shifted_exp_time,full_data,2021,0.84,2.0,2.84,2051,2.027567620076126,2.8675676200761258
-Shifted exponential time trend,shifted_exp_time,training_data,2021,0.84,1.25,2.09,2039,1.2644205542760263,2.104420554276026
-Shifted exponential time trend,shifted_exp_time,training_data,2021,0.84,1.5,2.34,2043,1.5626819583559284,2.4026819583559282
-Shifted exponential time trend,shifted_exp_time,training_data,2021,0.84,2.0,2.84,2049,2.0808589660718253,2.920858966071825
+﻿Model,Model_Key,Fit_Stage,Target_Temperature_Change_From_1951_1980_C,First_Year_Predicted_Change_At_Least_Target,Forecast_Change_At_First_Year_C
+Quadratic time trend,quadratic_time,full_data,1.25,2031,1.2704503621378622
+Quadratic time trend,quadratic_time,full_data,1.5,2039,1.5290402722277723
+Quadratic time trend,quadratic_time,full_data,2.0,2053,2.035258512321013
+Quadratic time trend,quadratic_time,training_data,1.25,2030,1.2585086590558283
+Quadratic time trend,quadratic_time,training_data,1.5,2038,1.520968136685117
+Quadratic time trend,quadratic_time,training_data,2.0,2052,2.036258353805523
+Quartic time trend,quartic_time,full_data,1.25,2027,1.302824977030958
+Quartic time trend,quartic_time,full_data,1.5,2030,1.5072398483383358
+Quartic time trend,quartic_time,full_data,2.0,2036,2.058216859077484
+Quartic time trend,quartic_time,training_data,1.25,2026,1.297833702251092
+Quartic time trend,quartic_time,training_data,1.5,2029,1.522563241226338
+Quartic time trend,quartic_time,training_data,2.0,2034,2.019100811061256
+Shifted exponential time trend,shifted_exp_time,full_data,1.25,2026,1.2643648247257557
+Shifted exponential time trend,shifted_exp_time,full_data,1.5,2031,1.5014226237402004
+Shifted exponential time trend,shifted_exp_time,full_data,2.0,2040,2.0222835167985362
+Shifted exponential time trend,shifted_exp_time,training_data,1.25,2024,1.250845438526243
+Shifted exponential time trend,shifted_exp_time,training_data,1.5,2030,1.5481843267668052
+Shifted exponential time trend,shifted_exp_time,training_data,2.0,2038,2.0351474256892246

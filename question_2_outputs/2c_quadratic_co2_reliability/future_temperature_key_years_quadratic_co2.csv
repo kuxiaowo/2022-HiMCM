@@ -1,0 +1,5 @@
+﻿Year,CO2_Model,Predicted_CO2_ppm,Predicted_Temperature_Change_C
+2050,Quadratic | annual_full_data,496.8051140451303,1.862769734346183
+2100,Quadratic | annual_full_data,688.3268217244595,4.129178314423051
+2050,"SARIMA(1,1,1)(2,1,2,12) | sarima_full_data_annual_mean",501.2571925489096,1.9129976780093947
+2100,"SARIMA(1,1,1)(2,1,2,12) | sarima_full_data_annual_mean",704.4963887805399,4.330429557525841

@@ -1,10 +1,10 @@
 {
-  "run_timestamp": "2026-07-08T15:55:40",
+  "run_timestamp": "2026-07-08T17:35:34",
   "settings": {
     "test_years_count": 10,
     "future_end_year": 2200,
     "plot_end_year": 2100,
-    "additional_temperature_change_targets_from_last_observed_year": [
+    "temperature_change_targets_from_1951_1980": [
       1.25,
       1.5,
       2.0

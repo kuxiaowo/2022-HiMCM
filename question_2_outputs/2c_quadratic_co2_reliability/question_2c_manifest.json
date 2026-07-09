@@ -1,0 +1,32 @@
+{
+  "run_timestamp": "2026-07-08T21:34:45",
+  "script": "2c_quadratic_co2_reliability.py",
+  "model": "Quadratic centered CO2-temperature relationship",
+  "formula": "T = a * (C - C_mean)^2 + b * (C - C_mean) + c",
+  "base_period": "1951-1980",
+  "future_co2_source": "question_1c_outputs\\question_1c_future_forecasts.csv",
+  "future_year_range": [
+    2022,
+    2100
+  ],
+  "rolling_train_end_years": [
+    1981,
+    1986,
+    1991,
+    1996,
+    2001
+  ],
+  "max_forecast_horizon": 20,
+  "outputs": [
+    "future_temperature_predictions_quadratic_co2.csv",
+    "future_temperature_key_years_quadratic_co2.csv",
+    "rolling_validation_by_horizon_quadratic_co2.csv",
+    "rolling_validation_all_residuals_quadratic_co2.csv",
+    "quadratic_co2_model_parameters_full_data.csv",
+    "future_temperature_prediction_quadratic_co2.svg",
+    "rolling_validation_rmse_mae_by_horizon_quadratic_co2.svg",
+    "rolling_validation_residuals_by_horizon_boxplot_quadratic_co2.svg",
+    "rolling_validation_residuals_over_time_quadratic_co2.svg",
+    "rolling_validation_mean_residual_by_horizon_quadratic_co2.svg"
+  ]
+}

@@ -1,7 +1,7 @@
-﻿Model,Model_Key,Fit_Stage,Reference_Year,Reference_Temperature_Change_From_1951_1980_C,Target_Additional_Change_From_Last_Observed_Year_C,Target_Temperature_Change_From_1951_1980_C,First_Year_Predicted_Additional_Change_At_Least_Target,Forecast_Additional_Change_At_First_Year_C,Forecast_Temperature_Change_From_1951_1980_At_First_Year_C
-Shifted exponential time trend,shifted_exp_time,full_data,2021,0.84,1.25,2.09,2042,1.3171194394465733,2.157119439446573
-Shifted exponential time trend,shifted_exp_time,full_data,2021,0.84,1.5,2.34,2045,1.534193384930668,2.374193384930668
-Shifted exponential time trend,shifted_exp_time,full_data,2021,0.84,2.0,2.84,2051,2.027567620076126,2.8675676200761258
-Shifted exponential time trend,shifted_exp_time,training_data,2021,0.84,1.25,2.09,2039,1.2644205542760263,2.104420554276026
-Shifted exponential time trend,shifted_exp_time,training_data,2021,0.84,1.5,2.34,2043,1.5626819583559284,2.4026819583559282
-Shifted exponential time trend,shifted_exp_time,training_data,2021,0.84,2.0,2.84,2049,2.0808589660718253,2.920858966071825
+﻿Model,Model_Key,Fit_Stage,Target_Temperature_Change_From_1951_1980_C,First_Year_Predicted_Change_At_Least_Target,Forecast_Change_At_First_Year_C
+Shifted exponential time trend,shifted_exp_time,full_data,1.25,2026,1.2643648247257557
+Shifted exponential time trend,shifted_exp_time,full_data,1.5,2031,1.5014226237402004
+Shifted exponential time trend,shifted_exp_time,full_data,2.0,2040,2.0222835167985362
+Shifted exponential time trend,shifted_exp_time,training_data,1.25,2024,1.250845438526243
+Shifted exponential time trend,shifted_exp_time,training_data,1.5,2030,1.5481843267668052
+Shifted exponential time trend,shifted_exp_time,training_data,2.0,2038,2.0351474256892246
